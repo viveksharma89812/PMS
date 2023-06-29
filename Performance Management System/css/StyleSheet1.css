@@ -1,0 +1,135 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    margin-left: initial;
+    background-color:gainsboro;
+    width:auto
+}
+
+.header {
+    background-color: #f1f1f1;
+    padding: 5px;
+    background-size: 100%;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: darkgrey;
+    
+}
+
+    /* Style the topnav links */
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align:center;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+        
+    }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: blue;
+           
+        }
+       
+.footer {
+    background-color: #555;
+    text-align: center;
+    
+    background-size: 100%;
+    width: 100%;
+   
+}
+
+.content {
+    background-size: 100%;
+    width:auto;
+  
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .content {
+      
+        width: auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    .header {
+        float: none;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .table-responsive {
+        width: auto;
+        background-position:center;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+       
+    }
+
+    .table-responsive {
+        min-height: .01%;
+        
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+
+@media only screen and (max-width:900px) {
+    #header {
+        width: 300px;
+    }
+
+    #topnav {
+        float: none;
+        width: auto;
+    }
+
+    #content {
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+
+    #topnav a {
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+
+  
+        .topnav, .header, .footer, .content, .topnav a {
+       
+    }
+   
+}
+
+
+

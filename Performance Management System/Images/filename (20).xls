@@ -1,0 +1,43 @@
+<div>
+	<table class="auto-style3" cellspacing="0" cellpadding="3" rules="cols" id="ContentPlaceHolder1_GridView1" style="background-color:White;border-color:#999999;border-width:1px;border-style:None;width:933px;border-collapse:collapse;">
+		<tr style="color:White;background-color:#000084;font-weight:bold;">
+			<th scope="col" style="font-size:Small;">Application No</th><th scope="col" style="font-size:Small;">Application Type</th><th scope="col" style="font-size:Small;">Department</th><th scope="col" style="font-size:Small;">Section</th><th scope="col" style="font-size:Small;">Applicant ID</th><th scope="col" style="font-size:Small;">Applicant Name</th><th scope="col" style="font-size:Small;">Description</th><th scope="col" style="font-size:Small;">Application Date</th><th scope="col" style="font-size:Small;">Expected Finishdate</th><th scope="col" style="font-size:Small;">Establlished received date</th><th scope="col" style="font-size:Small;">Actual Finishdate</th><th scope="col" style="font-size:Small;">Unit Incharge</th><th scope="col" style="font-size:Small;">Person Incharge</th><th scope="col" style="font-size:Small;">Status</th><th scope="col" style="font-size:Small;">Remark</th><th scope="col" style="font-size:Small;">Application Link</th>
+		</tr><tr style="color:Black;background-color:#EEEEEE;">
+			<td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label1_0">7601/1912001</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label2_0">Computerized Operation Application Form</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label3_0">Finance</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label4_0">Accounting & Tax,Cs & Finance</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label5_0">abcd</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label6_0">dfv</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label7_0">wed</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label8_0">19-12-2019 00:00:00</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label9_0">27-12-2019 00:00:00</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label10_0">28-12-2019 00:00:00</span>
+                </td><td style="font-size:Small;text-decoration:none;">
+                    <span id="ContentPlaceHolder1_GridView1_Label11_0">29-12-2019 00:00:00</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label12_0">IT Equipment,Operation IT</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label13_0">Artik, Ashish</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label14_0">Processing</span>
+                </td><td style="font-size:Small;">
+                    <span id="ContentPlaceHolder1_GridView1_Label15_0">dfr</span>
+                </td><td style="font-size:Small;">  <div id="ContentPlaceHolder1_GridView1_UpdatePanel2_0">
+				
+                                <a id="ContentPlaceHolder1_GridView1_LinkButton1_0" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl02$LinkButton1&#39;,&#39;&#39;)">Employee (5).pdf</a>    
+                           
+			</div> </td>
+		</tr>
+	</table>
+</div>

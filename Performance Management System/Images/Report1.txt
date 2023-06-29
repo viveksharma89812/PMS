@@ -1,0 +1,90 @@
+Operation stopped...
+
+- Initializing Data Flow Task (Success)
+
+- Initializing Connections (Success)
+
+- Setting SQL Command (Success)
+
+- Setting Source Connection (Success)
+
+- Setting Destination Connection (Success)
+
+- Validating (Error)
+	Messages
+	* Error 0xc0202049: Data Flow Task 1: Failure inserting into the read-only column "id".
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc0202045: Data Flow Task 1: Column metadata validation failed.
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc004706b: Data Flow Task 1: "Destination 1 - Access_Power_HR" failed validation and returned validation status "VS_ISBROKEN".
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc004700c: Data Flow Task 1: One or more component failed validation.
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc0024107: Data Flow Task 1: There were errors during task validation.
+	 (SQL Server Import and Export Wizard)
+	
+
+- Prepare for Execute (Stopped)
+
+- Pre-execute (Stopped)
+
+- Executing (Success)
+
+- Copying to [dbo].[123] (Stopped)
+
+- Copying to [dbo].[Access_Power_HR] (Stopped)
+
+- Copying to [dbo].[application1] (Stopped)
+
+- Copying to [dbo].[application1_logs] (Stopped)
+
+- Copying to [dbo].[appname] (Stopped)
+
+- Copying to [dbo].[Department] (Stopped)
+
+- Copying to [dbo].[dept] (Stopped)
+
+- Copying to [dbo].[employee] (Stopped)
+
+- Copying to [dbo].[Employee_Basic_Details] (Stopped)
+
+- Copying to [dbo].[Employee_Master] (Stopped)
+
+- Copying to [dbo].[Employees] (Stopped)
+
+- Copying to [dbo].[emport table] (Stopped)
+
+- Copying to [dbo].[FileUpload] (Stopped)
+
+- Copying to [dbo].[fileupload_logs] (Stopped)
+
+- Copying to [dbo].[HR_Login] (Stopped)
+
+- Copying to [dbo].[Leaves_ScoreDetails] (Stopped)
+
+- Copying to [dbo].[login] (Stopped)
+
+- Copying to [dbo].[Person_Incharge] (Stopped)
+
+- Copying to [dbo].[Registration] (Stopped)
+
+- Copying to [dbo].[Score_List] (Stopped)
+
+- Copying to [dbo].[section] (Stopped)
+
+- Copying to [dbo].[Section1] (Stopped)
+
+- Copying to [dbo].[unit_incharge] (Stopped)
+
+- Copying to [dbo].[uploadExceldata] (Stopped)
+
+- Copying to [dbo].[dept_section] (Stopped)
+
+- Post-execute (Stopped)
+
+
+

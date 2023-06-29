@@ -1,0 +1,1015 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{BBD3D5D5-514B-41B3-B94C-FB4817C25143}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Performance_Management_System</RootNamespace>
+    <AssemblyName>Performance Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Performance Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Performance Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\190089\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LIB\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.OleDb" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="0364_Planning.aspx" />
+    <Content Include="0365_Planning.aspx" />
+    <Content Include="0366_Planning.aspx" />
+    <Content Include="0386CL1.aspx" />
+    <Content Include="0386CL2.aspx" />
+    <Content Include="0386CO1.aspx" />
+    <Content Include="0386CO2.aspx" />
+    <Content Include="0386CS1.aspx" />
+    <Content Include="0386CS2.aspx" />
+    <Content Include="0386CST1.aspx" />
+    <Content Include="0386CUA2.aspx" />
+    <Content Include="0386CUL1.aspx" />
+    <Content Include="0386CUO1.aspx" />
+    <Content Include="0386EHS.aspx" />
+    <Content Include="0386EL1.aspx" />
+    <Content Include="0386EO1.aspx" />
+    <Content Include="0386ES1.aspx" />
+    <Content Include="0386EC1.aspx" />
+    <Content Include="0386EST1.aspx" />
+    <Content Include="0386M1.aspx" />
+    <Content Include="0386M2.aspx" />
+    <Content Include="0386M4.aspx" />
+    <Content Include="0386ME1.aspx" />
+    <Content Include="0386MO1.aspx" />
+    <Content Include="0386MR1.aspx" />
+    <Content Include="0386P1.aspx" />
+    <Content Include="0386QDO2.aspx" />
+    <Content Include="0386QIL1.aspx" />
+    <Content Include="0386QPL2.aspx" />
+    <Content Include="0386QPO4.aspx" />
+    <Content Include="0386QSTO3.aspx" />
+    <Content Include="0386QVO1.aspx" />
+    <Content Include="0386R1.aspx" />
+    <Content Include="0386TA1.aspx" />
+    <Content Include="0386TBO1.aspx" />
+    <Content Include="0386TL1.aspx" />
+    <Content Include="0386TL2.aspx" />
+    <Content Include="0386TRON03.aspx" />
+    <Content Include="0386TSO4.aspx" />
+    <Content Include="0386TSPO2.aspx" />
+    <Content Include="0386UE1.aspx" />
+    <Content Include="0386UO1.aspx" />
+    <Content Include="0386_Chef.aspx" />
+    <Content Include="0386_Planning.aspx" />
+    <Content Include="0399_Planning.aspx" />
+    <Content Include="0399_Production.aspx" />
+    <Content Include="0399_QA.aspx" />
+    <Content Include="0399_Rd2_Mold.aspx" />
+    <Content Include="0399_Utility.aspx" />
+    <Content Include="Bck_Img\1011.jpg" />
+    <Content Include="Bck_Img\123.jpg" />
+    <Content Include="Bck_Img\456.jpg" />
+    <Content Include="Bck_Img\6e2f7a69e4723a05ff3adc56c44e7f48.jpg" />
+    <Content Include="Bck_Img\789.jpg" />
+    <Content Include="Bck_Img\967.jpg" />
+    <Content Include="Bck_Img\BCK-IMG.jpg" />
+    <Content Include="Bck_Img\Feedback-2.jpg" />
+    <Content Include="Bck_Img\New5.png" />
+    <Content Include="Bck_Img\New3.png" />
+    <Content Include="Bck_Img\performance management 2.png" />
+    <Content Include="Bck_Img\Performance-App.png" />
+    <Content Include="css\boostrap-multiselect.css" />
+    <Content Include="css\boostrap-multiselect.js" />
+    <Content Include="css\boostrap.min.css" />
+    <Content Include="css\boostrap.min.js" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\Fa class.css" />
+    <Content Include="css\jquery-1.12.4.js" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery-ui.js" />
+    <Content Include="css\jquery.min.js" />
+    <Content Include="css\jquery1.js" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\03-Maxxis-Ikon-2.2-inch-tyres.jpg" />
+    <Content Include="Images\download %281%29.jpg" />
+    <Content Include="Images\download.jpg" />
+    <Content Include="Images\images %281%29.jpg" />
+    <Content Include="Images\images %282%29.jpg" />
+    <Content Include="Images\images.jpg" />
+    <Content Include="Images\maxxis-logo-141.png" />
+    <Content Include="Images\maxxis_logo1.gif" />
+    <Content Include="Images\messageImage_1662634718713.jpg" />
+    <Content Include="Images\messageImage_1662634733964.jpg" />
+    <Content Include="Images\monophy.gif" />
+    <Content Include="Images\Picture1.png" />
+    <Content Include="Images\Picture1_-_Copy-removebg-preview.png" />
+    <Content Include="Images\review.jpg" />
+    <Content Include="StyleSheet1.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Registration.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Upload_Details.aspx" />
+    <Content Include="View_Details.aspx" />
+    <Content Include="Upload_Document.aspx" />
+    <Content Include="View_Documents.aspx" />
+    <Content Include="Import_excel.aspx" />
+    <Content Include="0364.aspx" />
+    <Content Include="0365.aspx" />
+    <Content Include="0386.aspx" />
+    <Content Include="0503.aspx" />
+    <Content Include="0504.aspx" />
+    <Content Include="Employee_Details.aspx" />
+    <Content Include="0475.aspx" />
+    <Content Include="0367_Maintenance.aspx" />
+    <Content Include="0399_Maintenance.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Employee_Review_Cycle.aspx" />
+    <Content Include="Expire.aspx" />
+    <Content Include="Employee_Record_Histry.aspx" />
+    <Content Include="Employee_Score_Histry.aspx" />
+    <Content Include="0366_Production.aspx" />
+    <Content Include="0366_Rd2_Mold.aspx" />
+    <Content Include="0366_Utility.aspx" />
+    <Content Include="0366_QA.aspx" />
+    <Content Include="0367_Planning.aspx" />
+    <Content Include="0367_QA.aspx" />
+    <Content Include="0367_Production.aspx" />
+    <Content Include="0367_Rd2_Mold.aspx" />
+    <Content Include="0367_Utility.aspx" />
+    <Content Include="WebForm15.aspx" />
+    <Content Include="WebForm38.aspx" />
+    <Content Include="Change_Password.aspx" />
+    <Content Include="0386M3.aspx" />
+    <Content Include="0386M5.aspx" />
+    <Content Include="WebForm42.aspx" />
+    <Content Include="WebForm43.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="0364_Planning.aspx.designer.vb">
+      <DependentUpon>0364_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364_Planning.aspx.vb">
+      <DependentUpon>0364_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0365_Planning.aspx.designer.vb">
+      <DependentUpon>0365_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0365_Planning.aspx.vb">
+      <DependentUpon>0365_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0366_Planning.aspx.designer.vb">
+      <DependentUpon>0366_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366_Planning.aspx.vb">
+      <DependentUpon>0366_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386CL1.aspx.designer.vb">
+      <DependentUpon>0386CL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CL1.aspx.vb">
+      <DependentUpon>0386CL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CL2.aspx.designer.vb">
+      <DependentUpon>0386CL2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CL2.aspx.vb">
+      <DependentUpon>0386CL2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CO1.aspx.designer.vb">
+      <DependentUpon>0386CO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CO1.aspx.vb">
+      <DependentUpon>0386CO1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CO2.aspx.designer.vb">
+      <DependentUpon>0386CO2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CO2.aspx.vb">
+      <DependentUpon>0386CO2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CS1.aspx.designer.vb">
+      <DependentUpon>0386CS1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CS1.aspx.vb">
+      <DependentUpon>0386CS1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CS2.aspx.designer.vb">
+      <DependentUpon>0386CS2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CS2.aspx.vb">
+      <DependentUpon>0386CS2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CST1.aspx.designer.vb">
+      <DependentUpon>0386CST1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CST1.aspx.vb">
+      <DependentUpon>0386CST1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CUA2.aspx.designer.vb">
+      <DependentUpon>0386CUA2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CUA2.aspx.vb">
+      <DependentUpon>0386CUA2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CUL1.aspx.designer.vb">
+      <DependentUpon>0386CUL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CUL1.aspx.vb">
+      <DependentUpon>0386CUL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CUO1.aspx.designer.vb">
+      <DependentUpon>0386CUO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CUO1.aspx.vb">
+      <DependentUpon>0386CUO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386EHS.aspx.designer.vb">
+      <DependentUpon>0386EHS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EHS.aspx.vb">
+      <DependentUpon>0386EHS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386EL1.aspx.designer.vb">
+      <DependentUpon>0386EL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EL1.aspx.vb">
+      <DependentUpon>0386EL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386EO1.aspx.designer.vb">
+      <DependentUpon>0386EO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EO1.aspx.vb">
+      <DependentUpon>0386EO1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386ES1.aspx.designer.vb">
+      <DependentUpon>0386ES1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386ES1.aspx.vb">
+      <DependentUpon>0386ES1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386EC1.aspx.designer.vb">
+      <DependentUpon>0386EC1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EC1.aspx.vb">
+      <DependentUpon>0386EC1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386EST1.aspx.designer.vb">
+      <DependentUpon>0386EST1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EST1.aspx.vb">
+      <DependentUpon>0386EST1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386M1.aspx.designer.vb">
+      <DependentUpon>0386M1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386M1.aspx.vb">
+      <DependentUpon>0386M1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386M2.aspx.designer.vb">
+      <DependentUpon>0386M2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386M2.aspx.vb">
+      <DependentUpon>0386M2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386M4.aspx.designer.vb">
+      <DependentUpon>0386M4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386M4.aspx.vb">
+      <DependentUpon>0386M4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386ME1.aspx.designer.vb">
+      <DependentUpon>0386ME1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386ME1.aspx.vb">
+      <DependentUpon>0386ME1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386MO1.aspx.designer.vb">
+      <DependentUpon>0386MO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386MO1.aspx.vb">
+      <DependentUpon>0386MO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386MR1.aspx.designer.vb">
+      <DependentUpon>0386MR1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386MR1.aspx.vb">
+      <DependentUpon>0386MR1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386P1.aspx.designer.vb">
+      <DependentUpon>0386P1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386P1.aspx.vb">
+      <DependentUpon>0386P1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386QDO2.aspx.designer.vb">
+      <DependentUpon>0386QDO2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QDO2.aspx.vb">
+      <DependentUpon>0386QDO2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QIL1.aspx.designer.vb">
+      <DependentUpon>0386QIL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QIL1.aspx.vb">
+      <DependentUpon>0386QIL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386QPL2.aspx.designer.vb">
+      <DependentUpon>0386QPL2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QPL2.aspx.vb">
+      <DependentUpon>0386QPL2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386QPO4.aspx.designer.vb">
+      <DependentUpon>0386QPO4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QPO4.aspx.vb">
+      <DependentUpon>0386QPO4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QSTO3.aspx.designer.vb">
+      <DependentUpon>0386QSTO3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QSTO3.aspx.vb">
+      <DependentUpon>0386QSTO3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QVO1.aspx.designer.vb">
+      <DependentUpon>0386QVO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QVO1.aspx.vb">
+      <DependentUpon>0386QVO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386R1.aspx.designer.vb">
+      <DependentUpon>0386R1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386R1.aspx.vb">
+      <DependentUpon>0386R1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TA1.aspx.designer.vb">
+      <DependentUpon>0386TA1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TA1.aspx.vb">
+      <DependentUpon>0386TA1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TBO1.aspx.designer.vb">
+      <DependentUpon>0386TBO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TBO1.aspx.vb">
+      <DependentUpon>0386TBO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TL1.aspx.designer.vb">
+      <DependentUpon>0386TL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TL1.aspx.vb">
+      <DependentUpon>0386TL1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TL2.aspx.designer.vb">
+      <DependentUpon>0386TL2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TL2.aspx.vb">
+      <DependentUpon>0386TL2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TRON03.aspx.designer.vb">
+      <DependentUpon>0386TRON03.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TRON03.aspx.vb">
+      <DependentUpon>0386TRON03.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TSO4.aspx.designer.vb">
+      <DependentUpon>0386TSO4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TSO4.aspx.vb">
+      <DependentUpon>0386TSO4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386TSPO2.aspx.designer.vb">
+      <DependentUpon>0386TSPO2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TSPO2.aspx.vb">
+      <DependentUpon>0386TSPO2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386UE1.aspx.designer.vb">
+      <DependentUpon>0386UE1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386UE1.aspx.vb">
+      <DependentUpon>0386UE1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386UO1.aspx.designer.vb">
+      <DependentUpon>0386UO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386UO1.aspx.vb">
+      <DependentUpon>0386UO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386_Chef.aspx.designer.vb">
+      <DependentUpon>0386_Chef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386_Chef.aspx.vb">
+      <DependentUpon>0386_Chef.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386_Planning.aspx.designer.vb">
+      <DependentUpon>0386_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386_Planning.aspx.vb">
+      <DependentUpon>0386_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0399_Planning.aspx.designer.vb">
+      <DependentUpon>0399_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_Planning.aspx.vb">
+      <DependentUpon>0399_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0399_Production.aspx.designer.vb">
+      <DependentUpon>0399_Production.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_Production.aspx.vb">
+      <DependentUpon>0399_Production.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0399_QA.aspx.designer.vb">
+      <DependentUpon>0399_QA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_QA.aspx.vb">
+      <DependentUpon>0399_QA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0399_Rd2_Mold.aspx.designer.vb">
+      <DependentUpon>0399_Rd2_Mold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_Rd2_Mold.aspx.vb">
+      <DependentUpon>0399_Rd2_Mold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0399_Utility.aspx.designer.vb">
+      <DependentUpon>0399_Utility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_Utility.aspx.vb">
+      <DependentUpon>0399_Utility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="conmodule.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.vb">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.vb">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload_Details.aspx.designer.vb">
+      <DependentUpon>Upload_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload_Details.aspx.vb">
+      <DependentUpon>Upload_Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View_Details.aspx.designer.vb">
+      <DependentUpon>View_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Details.aspx.vb">
+      <DependentUpon>View_Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Upload_Document.aspx.designer.vb">
+      <DependentUpon>Upload_Document.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload_Document.aspx.vb">
+      <DependentUpon>Upload_Document.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="View_Documents.aspx.designer.vb">
+      <DependentUpon>View_Documents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Documents.aspx.vb">
+      <DependentUpon>View_Documents.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Import_excel.aspx.designer.vb">
+      <DependentUpon>Import_excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Import_excel.aspx.vb">
+      <DependentUpon>Import_excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0364.aspx.designer.vb">
+      <DependentUpon>0364.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364.aspx.vb">
+      <DependentUpon>0364.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0365.aspx.designer.vb">
+      <DependentUpon>0365.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0365.aspx.vb">
+      <DependentUpon>0365.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386.aspx.designer.vb">
+      <DependentUpon>0386.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386.aspx.vb">
+      <DependentUpon>0386.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0503.aspx.designer.vb">
+      <DependentUpon>0503.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0503.aspx.vb">
+      <DependentUpon>0503.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0504.aspx.designer.vb">
+      <DependentUpon>0504.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0504.aspx.vb">
+      <DependentUpon>0504.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Details.aspx.designer.vb">
+      <DependentUpon>Employee_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Details.aspx.vb">
+      <DependentUpon>Employee_Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0475.aspx.designer.vb">
+      <DependentUpon>0475.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0475.aspx.vb">
+      <DependentUpon>0475.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_Maintenance.aspx.designer.vb">
+      <DependentUpon>0367_Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_Maintenance.aspx.vb">
+      <DependentUpon>0367_Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0399_Maintenance.aspx.designer.vb">
+      <DependentUpon>0399_Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0399_Maintenance.aspx.vb">
+      <DependentUpon>0399_Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Review_Cycle.aspx.designer.vb">
+      <DependentUpon>Employee_Review_Cycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Review_Cycle.aspx.vb">
+      <DependentUpon>Employee_Review_Cycle.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Expire.aspx.designer.vb">
+      <DependentUpon>Expire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expire.aspx.vb">
+      <DependentUpon>Expire.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Record_Histry.aspx.designer.vb">
+      <DependentUpon>Employee_Record_Histry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Record_Histry.aspx.vb">
+      <DependentUpon>Employee_Record_Histry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Score_Histry.aspx.designer.vb">
+      <DependentUpon>Employee_Score_Histry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Score_Histry.aspx.vb">
+      <DependentUpon>Employee_Score_Histry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0366_Production.aspx.designer.vb">
+      <DependentUpon>0366_Production.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366_Production.aspx.vb">
+      <DependentUpon>0366_Production.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0366_Rd2_Mold.aspx.designer.vb">
+      <DependentUpon>0366_Rd2_Mold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366_Rd2_Mold.aspx.vb">
+      <DependentUpon>0366_Rd2_Mold.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0366_Utility.aspx.designer.vb">
+      <DependentUpon>0366_Utility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366_Utility.aspx.vb">
+      <DependentUpon>0366_Utility.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0366_QA.aspx.designer.vb">
+      <DependentUpon>0366_QA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366_QA.aspx.vb">
+      <DependentUpon>0366_QA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_Planning.aspx.designer.vb">
+      <DependentUpon>0367_Planning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_Planning.aspx.vb">
+      <DependentUpon>0367_Planning.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_QA.aspx.designer.vb">
+      <DependentUpon>0367_QA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_QA.aspx.vb">
+      <DependentUpon>0367_QA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_Production.aspx.designer.vb">
+      <DependentUpon>0367_Production.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_Production.aspx.vb">
+      <DependentUpon>0367_Production.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_Rd2_Mold.aspx.designer.vb">
+      <DependentUpon>0367_Rd2_Mold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_Rd2_Mold.aspx.vb">
+      <DependentUpon>0367_Rd2_Mold.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0367_Utility.aspx.designer.vb">
+      <DependentUpon>0367_Utility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0367_Utility.aspx.vb">
+      <DependentUpon>0367_Utility.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm15.aspx.designer.vb">
+      <DependentUpon>WebForm15.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm15.aspx.vb">
+      <DependentUpon>WebForm15.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm38.aspx.designer.vb">
+      <DependentUpon>WebForm38.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm38.aspx.vb">
+      <DependentUpon>WebForm38.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Change_Password.aspx.designer.vb">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Change_Password.aspx.vb">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386M3.aspx.designer.vb">
+      <DependentUpon>0386M3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386M3.aspx.vb">
+      <DependentUpon>0386M3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386M5.aspx.designer.vb">
+      <DependentUpon>0386M5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386M5.aspx.vb">
+      <DependentUpon>0386M5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm42.aspx.designer.vb">
+      <DependentUpon>WebForm42.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm42.aspx.vb">
+      <DependentUpon>WebForm42.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm43.aspx.designer.vb">
+      <DependentUpon>WebForm43.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm43.aspx.vb">
+      <DependentUpon>WebForm43.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\02. Attendance format.xlsx" />
+    <Content Include="Images\0364 Training_Probation Period During Review Form %28For Staff%29  V3.xlsx" />
+    <Content Include="Images\Copy of 02. Attendance format.xlsx" />
+    <Content Include="Images\Employee %285%29.pdf" />
+    <Content Include="Images\Employee %286%29.pdf" />
+    <Content Include="Images\Family day function notice announcement %281%29 %281%29.docx" />
+    <Content Include="Images\Family day function notice announcement %281%29.docx" />
+    <Content Include="Images\form1.xlsx" />
+    <Content Include="Images\INIT.ini" />
+    <Content Include="Images\PLY.docx" />
+    <Content Include="Images\Presentation1.pdf" />
+    <Content Include="Images\test.doc" />
+    <Content Include="Images\UNEP-FAO-CHW-RC-POPS-SYN-SOP.06-WebsitesContentManagement.English.pdf" />
+    <Content Include="DocFile\0364 Training_Probation Period During Review Form %28For Staff%29  V3.xlsx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Emp_File\" />
+    <Folder Include="Excel\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54958</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54958/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

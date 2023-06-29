@@ -1,0 +1,247 @@
+<div id="ContentPlaceHolder1_Panel1" class="auto-style33" style="border-style:Solid;width:1060px;">
+	
+        <table id="1" class="auto-style21" border="1" style="visibility: visible; list-style-type: circle; table-layout: fixed; border-collapse: separate; border-spacing: inherit" >
+            <tr>
+                <td class="auto-style31" colspan="6" style="font-size: x-large; font-style: oblique; "><center>Training Probation Period During Review Form (For Staff) 訓練期/試用期期間評核表(大專人員)</center></td>
+            </tr>
+            <tr>
+                <td class="auto-style31" colspan="6">
+                    <center>
+                        A.Employee Information</center>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style24">Employee Name</td>
+                <td class="auto-style26">
+                    <span id="ContentPlaceHolder1_Label3">Label</span>
+                </td>
+                <td class="auto-style25">Employee Code</td>
+                <td class="auto-style69">
+                    <span id="ContentPlaceHolder1_Label7">Label</span>
+                </td>
+                <td class="auto-style27">Designation</td>
+                <td>
+                    <span id="ContentPlaceHolder1_Label10">Label</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style24">Dept./Section</td>
+                <td class="auto-style26">
+                    <span id="ContentPlaceHolder1_Label4">Label</span>
+                </td>
+                <td class="auto-style25">DOJ</td>
+                <td class="auto-style69">
+                    <span id="ContentPlaceHolder1_Label8">Label</span>
+                </td>
+                <td class="auto-style27">Review Month</td>
+                <td>
+                    <span id="ContentPlaceHolder1_Label11">Label</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style24">Qualification</td>
+                <td class="auto-style26">
+                    <span id="ContentPlaceHolder1_Label5">Label</span>
+                </td>
+                <td class="auto-style25">Previous Experience</td>
+                <td class="auto-style69">
+                    <span id="ContentPlaceHolder1_Label9">Label</span>
+                </td>
+                <td class="auto-style27">Reporting To</td>
+                <td>
+                    <span id="ContentPlaceHolder1_Label12">Label</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style24">Period</td>
+                <td colspan="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_CheckBox1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBox1" disabled="disabled" /><label for="ContentPlaceHolder1_CheckBox1">Training Period</label></span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="aspNetDisabled"><input id="ContentPlaceHolder1_CheckBox2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBox2" disabled="disabled" /><label for="ContentPlaceHolder1_CheckBox2">Probation Period</label></span>
+                </td>
+            </tr>
+        </table>
+         <table id="2" class="auto-style20" border="1">
+        <tr>
+            <td colspan="7"><center class="auto-style68">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.Attendance Details</center></td>
+            <td class="auto-style43" >10%</td>
+        </tr>
+             <tr>
+                 <td class="auto-style62">Actual Working Days</td>
+                 <td class="auto-style63">Actual Present Days</td>
+                 <td class="auto-style64">CL</td>
+                 <td class="auto-style65">SL</td>
+                 <td class="auto-style66">PL</td>
+                 <td class="auto-style67">LWP</td>
+                 <td class="auto-style61">Absent Days</td>
+                 <td class="auto-style43">Scores</td>
+             </tr>
+             <tr>
+                 <td class="auto-style87">
+                     <span id="ContentPlaceHolder1_Label13">Label</span>
+                 </td>
+                 <td class="auto-style88">
+                     <span id="ContentPlaceHolder1_Label14">Label</span>
+                 </td>
+                 <td class="auto-style89">
+                     <span id="ContentPlaceHolder1_Label15">Label</span>
+                 </td>
+                 <td class="auto-style90">
+                     <span id="ContentPlaceHolder1_Label16">Label</span>
+                 </td>
+                 <td class="auto-style91">
+                     <span id="ContentPlaceHolder1_Label17">Label</span>
+                 </td>
+                 <td class="auto-style92">
+                     <span id="ContentPlaceHolder1_Label18">Label</span>
+                 </td>
+                 <td class="auto-style93">
+                     <span id="ContentPlaceHolder1_Label19">Label</span>
+                 </td>
+                 <td class="auto-style94">
+                     <span id="ContentPlaceHolder1_Label20">Label</span>
+                 </td>
+             </tr>
+    </table>
+        <table id="ContentPlaceHolder1_tb1" class="auto-style20" border="1">
+		<tr>
+			<td colspan="6" class="auto-style83"><Center>C.Performance Review</Center></td>
+			<td class="auto-style84"><center>90%</center></td>
+		</tr>
+		<tr>
+			<td class="auto-style86"><center>Assessment Parameter</center></td>
+			<td class="auto-style55">%</td>
+			<td class="auto-style56">5</td>
+			<td class="auto-style95">4</td>
+			<td class="auto-style96">3</td>
+			<td class="auto-style97">2</td>
+			<td class="auto-style59">1</td>
+		</tr>
+		<tr itemid="1">
+			<td class="auto-style86" title="a">1. Job Knowledge(工作知識) : In-depth technical knowledge of related areas to his / her function and keeping abreast with the latest developments in his / her functional area.
+            </td>
+			<td class="auto-style55" title="a">15%</td>
+			<td title="a" colspan="5">
+                &nbsp;&nbsp; &nbsp;`<table id="ContentPlaceHolder1_CheckBoxList1" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList1_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList1$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList1_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList1_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList1$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList1_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList1_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList1$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList1_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList1_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList1$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList1_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList1_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList1$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList1_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td class="auto-style86" colspan="1">2. Planning, Organising &amp; Resourcefulness (有組織性的規劃) : Organizes activities in terms of importance and priority and establishes schedules to complete assignments in time and is also able to deliver results under stress conditions.
+            </td>
+			<td class="auto-style55" colspan="1">15%</td>
+			<td colspan="5">
+                &nbsp;&nbsp; &nbsp;<table id="ContentPlaceHolder1_CheckBoxList2" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList2_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList2$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList2_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList2_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList2$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList2_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList2_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList2$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList2_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList2_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList2$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList2_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList2_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList2$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList2_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td class="auto-style86">3. Technical Skills(工作技巧) : Consider proficiency of technical/computer skills; ability to apply technical and computer skills to complete work.
+            </td>
+			<td class="auto-style55">15%</td>
+			<td colspan="5">
+                <table id="ContentPlaceHolder1_CheckBoxList3" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList3_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList3$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList3_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList3_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList3$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList3_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList3_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList3$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList3_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList3_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList3$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList3_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList3_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList3$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList3_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td class="auto-style86">4.Initiative Approach(積極主動性) : Taking initiative to achieve goals and complete assignments.
+            </td>
+			<td class="auto-style55">15%</td>
+			<td colspan="5">
+                <table id="ContentPlaceHolder1_CheckBoxList4" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList4_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList4$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList4_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList4_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList4$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList4_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList4_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList4$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList4_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList4_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList4$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList4_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList4_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList4$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList4_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td class="auto-style86">5. Willingness to learn(學習動機) : Being motivated to learn new skills &amp; technology.
+            </td>
+			<td class="auto-style55">15%</td>
+			<td colspan="5">
+                <table id="ContentPlaceHolder1_CheckBoxList5" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList5_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList5$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList5_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList5_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList5$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList5_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList5_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList5$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList5_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList5_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList5$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList5_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList5_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList5$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList5_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td class="auto-style86">6. Communication skills(溝通技巧) : Can effectively express ideas and opinions and provide information with clarity on a one to one level and to a group as a whole.
+            </td>
+			<td class="auto-style55">15%</td>
+			<td colspan="5">
+                <table id="ContentPlaceHolder1_CheckBoxList6" class="auto-style85" style="width:181px;">
+				<tr>
+					<td><input id="ContentPlaceHolder1_CheckBoxList6_0" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList6$0" onclick="MutExChkList(this);" value="5" /><label for="ContentPlaceHolder1_CheckBoxList6_0">5</label></td><td><input id="ContentPlaceHolder1_CheckBoxList6_1" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList6$1" onclick="MutExChkList(this);" value="4" /><label for="ContentPlaceHolder1_CheckBoxList6_1">4</label></td><td><input id="ContentPlaceHolder1_CheckBoxList6_2" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList6$2" onclick="MutExChkList(this);" value="3" /><label for="ContentPlaceHolder1_CheckBoxList6_2">3</label></td><td><input id="ContentPlaceHolder1_CheckBoxList6_3" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList6$3" onclick="MutExChkList(this);" value="2" /><label for="ContentPlaceHolder1_CheckBoxList6_3">2</label></td><td><input id="ContentPlaceHolder1_CheckBoxList6_4" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBoxList6$4" onclick="MutExChkList(this);" value="1" /><label for="ContentPlaceHolder1_CheckBoxList6_4">1</label></td>
+				</tr>
+			</table>
+            </td>
+		</tr>
+		<tr>
+			<td colspan="7">*(1) Mark a V (tick) against the appropriate rating. 5= Excellent(傑出), 4=Good(良好), 3=mediocre(尚符需求), 2=Improvement Required(須改進), 1=Fail(不適任) *(2) 評核項目轉換分數:勾選選項*3分 (最高為15分，最低為3分)</td>
+		</tr>
+		<tr>
+			<td class="auto-style86">7. Recommendation &amp; Areas of Improvement, Observation/Comment of supervisor : 建議及改進項目:<input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="Button" id="ContentPlaceHolder1_Button1" />
+                 </td>
+			<td colspan="6">
+                <textarea name="ctl00$ContentPlaceHolder1$TextBox9" rows="2" cols="20" id="ContentPlaceHolder1_TextBox9">
+</textarea>
+                 </td>
+		</tr>
+	</table>
+	
+        <table id="3" class="auto-style81" border="1">
+        <tr>
+            <td class="auto-style76"><center>Remarks</center></td>
+            <td rowspan="2" class="auto-style98"><center>Total Scores</center></td>
+            <td class="auto-style76" colspan="3"><center>Approvals</center></td>
+        </tr>
+        <tr>
+            <td rowspan="2">1. Part A &amp; B provided by HR Dept. A及B部分由人資提供。 2. Review employees&#39; performance in this period and give feedback or guidance in point 7. 評核該區間之表現並給予回饋。 3. Fail definition: 不適任說明： Training: 訓練期 (1) scores are 55 or below 55 in the three months continuously, (2) Average Score is 55 or below 55. 連續三次低於55分或平均低於55分 Probation:試用期 (1) scores are 60 or below 60 in the three months continuously (2) Average Score is 60 or below 60 連續三次低於60分或平均低於60分 In these two cases Employee services would be terminated.</td>
+            <td>Department Head</td>
+            <td>Section Head</td>
+            <td>Employee Signature</td>
+        </tr>
+        <tr>
+            <td class="auto-style98">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="ContentPlaceHolder1_Label21">Label</span>
+                <br />
+            </td>
+            <td>
+                <input id="ContentPlaceHolder1_CheckBox38" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBox38" />
+            </td>
+            <td>
+                <input id="ContentPlaceHolder1_CheckBox39" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBox39" />
+            </td>
+            <td>
+                <input id="ContentPlaceHolder1_CheckBox40" type="checkbox" name="ctl00$ContentPlaceHolder1$CheckBox40" />
+            </td>
+        </tr><tr>
+               <td colspan="5">
+
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="submit" name="ctl00$ContentPlaceHolder1$Button2" value="Submit" id="ContentPlaceHolder1_Button2" style="height:45px;width:122px;" />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="submit" name="ctl00$ContentPlaceHolder1$Button3" value="Employee Submit" id="ContentPlaceHolder1_Button3" class="auto-style102" style="height:43px;" />
+
+               </td> 
+           </tr>
+    </table>
+
+    
+</div>
