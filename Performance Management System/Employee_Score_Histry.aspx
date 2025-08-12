@@ -122,15 +122,11 @@
                 &nbsp;
                 <asp:LinkButton ID="export" runat="server" CssClass="btn btn-danger"><i class="fa fa-file-excel-o "></i>  Export</asp:LinkButton>
                 </div></div>
-    
-        
     </div>
-    
-    
         <h3>Employee Score Record</h3>
          <asp:HiddenField ID="hfScrollPosition" Value="0" runat="server"  />
           <div id="dvScroll" class="divcss" onscroll="setScrollPosition(this.scrollTop);" style="width:auto; height:500px; overflow:auto;  border-style:groove; font-family:Calibri; Font-Size:Small " >
-        <asp:GridView ID="GridView1" runat="server" EmptyDataText="No Record Found"   ShowHeaderWhenEmpty="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AutoGenerateColumns="False" AllowPaging="True" PageSize="18" >
+        <asp:GridView ID="GridView1" runat="server" EmptyDataText="No Record Found"  CssClass="table table-striped table-bordered table-hover"  ShowHeaderWhenEmpty="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AutoGenerateColumns="False" AllowPaging="True" PageSize="18" >
           
             <Columns>
                <%--  <asp:TemplateField HeaderText="ReviewForm">
@@ -507,7 +503,7 @@
                  <asp:TemplateField HeaderText="Action" ValidateRequestMode="Enabled" >  
                     <ItemTemplate>   
                          <asp:LinkButton ID="lnkBtnEdit" runat="server" Text="Edit" CssClass="btn-primary"
-                            OnClick="Display"  ></asp:LinkButton>                      
+                            OnClick="Display"   ></asp:LinkButton>                      
                     </ItemTemplate>  
                     <EditItemTemplate>  
                         <asp:LinkButton ID="btn_Update" runat="server" Text="Update" CommandName="Update" CommandArgument='<%# Bind("EmployeeCode") %>'  EnableViewState="true" ViewStateMode="Inherit" CausesValidation="False"></asp:LinkButton>
@@ -515,6 +511,21 @@
                     </EditItemTemplate>
                <ItemStyle VerticalAlign="Middle" HorizontalAlign="Center" />
                 </asp:TemplateField>
+
+
+
+
+      <asp:TemplateField HeaderText="Print" ValidateRequestMode="Enabled"  >  
+                    <ItemTemplate>   
+                         <asp:LinkButton ID="lnkBtnEdit1" runat="server" Text="Print" CssClass="btn-primary"
+                            OnClick="viewresult"  ></asp:LinkButton>                      
+                    </ItemTemplate>  
+                   
+               <ItemStyle VerticalAlign="Middle" HorizontalAlign="Center" />
+                </asp:TemplateField>
+
+
+
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" CssClass="stickyheader" />
@@ -560,7 +571,23 @@
                         <asp:TextBox ID="sl" runat="server" CssClass="form-control"></asp:TextBox>
                         PL
                         <asp:TextBox ID="pl" runat="server" CssClass="form-control"></asp:TextBox>
-                       
+                            <br />
+<div style="width: 405px; height: 40px; border: 2px solid #000; display: flex; justify-content: space-between; align-items: center; background-color: yellow;">
+     <h3 style="margin: 0; font-weight: bold; text-align: center; flex: 1;font-size:20px">Employee Picture</h3>
+     <h3 style="margin: 0; font-weight: bold; text-align: center; flex: 1;font-size:20px">Capture Image</h3>
+ </div>
+
+
+
+     <div style="width: 405px; height: 136px; border: 1px solid #000; display: flex;">
+         <div style="width: 200px; height: 100px;border-right:1px solid #000;">
+             <asp:Image ID="Image1" runat="server" Width="200" Height="134"  border="1px solid black" />
+         </div>
+
+         <div style="width: 200px; height: 100px;">
+             <asp:Image ID="imgDynamic" runat="server" Width="203" Height="134"  border="1px solid black; "/>
+         </div>
+     </div>
                     </div>                  
                   </div>
                      <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">    

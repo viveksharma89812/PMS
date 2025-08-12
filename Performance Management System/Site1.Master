@@ -18,6 +18,8 @@
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <script type="text/javascript" src="css/jquery1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
     <style type="text/css">
         .auto-style1 {
             margin-left: 0px;
@@ -31,13 +33,49 @@
             height: 45px;
             width: auto;
         }
+
+         table {
+            word-wrap: break-word;
+        }
+
+                  /* Adjust the camera container style */
+.camera-container {
+    width: 250px; 
+    padding: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#webcam {
+   
+    width: 100%; 
+    height: 180px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    object-fit: cover; 
+}
+
+#imgCapture {
+    width: 100%;
+    height: 150px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
         </style>
+
+
+
 </head>
-  
 <body id="masterbody" runat="server">
-   *<%-- style="background-color: #a2b9b991; background-image:url(/Bck_Img/New5.png); background-size:100%"--%>
- <%-- style="background-image:url(/Bck_Img/Performance-App.png);background-size:100%"--%>
-<%-- style="background-image:url(/Bck_Img/Performance-Management-Software.jpg);background-size:100%"--%>
    
     <form id="form1" runat="server" >
          <script type="text/javascript">
@@ -60,12 +98,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><asp:Image ID="Image1" runat="server" ImageUrl="~/Images/maxxis_logo1.gif" Height="25px" Width="131px" /></a>
+        <table>
+            <tr>
+                <td>
+   <a class="navbar-brand" href="#"><asp:Image ID="Image1" runat="server" ImageUrl="~/Images/maxxis_logo1.gif" Height="25px" Width="131px" /></a>
+                </td>
+                <td style="display:none">
+                    &nbsp; <a id="A5" href="Line.aspx" runat="server" style="color: white;display:none"> <img src="Images/LINENotify_image%20(1).png" style="height:60px; width:131px" /></a>   
+
+                </td>
+            </tr>
+        </table>
+     
+                             
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
+
              <li> <a id="a4" runat="server" href="~/Dashboard.aspx" style="color: white">Dashboard</a> </li>
+          
             <li> <a id="aeid" runat="server" href="~/Upload_Details.aspx" style="color: white">Upload Detail</a> </li>
+        
             <li> <a id="beid" runat="server" href="~/View_Details.aspx" style="color: white;">View Detail</a></li>
             <li> <a id="ceid" runat="server" href="~/Upload_Document.aspx" style="color: white">Upload Document</a></li>
          <%--  <li>  <a id="deid" runat="server" href="~/View Documents.aspx" style="color: white;">View Document</a></li>--%>
@@ -74,28 +127,26 @@
           <li><a href="Employee_Record_Histry.aspx" id="emphistry" runat="server" style="color: white;">Old Record History</a></li>
            <li>  <a id="A1" runat="server" href="~/Registration.aspx" style="color: white;"> Registration</a></li>
           <li><a id="h1" runat="server" href="~/Employee_Score_Histry.aspx" style="color:white;">Employee Score Detail</a></li>
-       
-          
-          
-          </ul>
+             <li> <a id="summary" runat="server" href="~/Summary.aspx" style="color: white">Summary</a> </li>
+           <li> <a id="Plog" runat="server" href="~/PmsLogs.aspx" style="color: white;">PMS History</a> </li>
+            </ul>
       <ul class="nav navbar-nav navbar-right">
+        <%--  <li><a><div id="google_translate_element"></div></a></li>--%>
             <%--Session Idle:&nbsp;<span id="secondsIdle"></span>&nbsp;seconds.--%>
-          <li> <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="White" Text="Label" Font-Italic="True" Font-Size="Large"  style="color: white;" Visible="True"></asp:Label></li> 
            <li><a id="B1" href="Registration.aspx" runat="server" style="color: white;"><i class="fa fa-user-plus" aria-hidden="true" ></i> Sign Up</a></li>
-        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="empdtl" runat="server" style="font:bold; color:white; font-size:large"  visible="false"><i  id="usr" runat="server"></i><span class="caret"></span></a></li>
-          <li>
+        <li>
             <a href="login.aspx" id="lnk" runat="server" onserverclick="lnk_serverclick" style="color: white;" ><i class="fa fa-sign-in" id="icl" aria-hidden="true" runat="server"></i> Login</a></li> 
+
         <%--  <li><asp:LinkButton ID="LinkButton1" runat="server" ForeColor="white" style="color: white;float:right" OnClientClick="return confirm('Are you sure you want to logout?');">Login</asp:LinkButton></li>--%>
           <li><a href="~/Change_Password.aspx" id="changpass" runat="server" style="color:white"><i class="fa fa-lock"></i> Change Password</a></li>
-         
-          <li><asp:Label ID="Label2" runat="server" Text="Label" Visible="False"  ></asp:Label></li>  
-         
+            <li><asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label></li>  
+         <li> <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="White" Text="Label" Font-Italic="True" style="color: white;" Visible="false"></asp:Label></li>
              </ul>
     </div>
   </div>
 </nav>
        
-        <div class="container-fluid text-center" style="padding-top:110px;">    
+        <div class="container-fluid text-center" style="padding-top:110px; height:1000px;">    
   <div class="row content">
        <div class="col-sm-12 col-md-12 col-lg-12 text-left " >
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

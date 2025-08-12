@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Performance Management System", "Performance Management System\Performance Management System.vbproj", "{BBD3D5D5-514B-41B3-B94C-FB4817C25143}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD3D5D5-514B-41B3-B94C-FB4817C25143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD3D5D5-514B-41B3-B94C-FB4817C25143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD3D5D5-514B-41B3-B94C-FB4817C25143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD3D5D5-514B-41B3-B94C-FB4817C25143}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E550DFB4-BC1F-4BF9-AE38-AE05EFFC2470}
+	EndGlobalSection
+EndGlobal

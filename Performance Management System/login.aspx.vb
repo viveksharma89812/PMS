@@ -3,80 +3,123 @@ Imports System.Configuration
 Imports System.String
 Imports System.Data.SqlClient
 Imports System.Web.Configuration
+Imports System
+Imports System.Text
+Imports System.Web
+Imports System.Net
+Imports System.IO
+Imports System.Net.Sockets
+Imports System.Xml
 
 Public Class WebForm2
     Inherits System.Web.UI.Page
     Dim strsql As String
+    Dim Position As String
+    Dim PMSclass As New PMSClass()
+    Public ReadOnly Property ViewBag As Object
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Label1.Text = ""
         If IsPostBack Then
             Dim password As String = pass.Text
             pass.Attributes.Add("value", password)
         End If
-        'If IsPostBack Then
-        '    Dim script As String = "$(document).ready(function () { $('[id*=Button1]').click(); });"
-        '    ClientScript.RegisterStartupScript(Me.GetType, "load", script, True)
-        'End If
+
         Dim masterPageBody As HtmlControl = Master.FindControl("masterbody")
         masterPageBody.Style.Add("background-image", "/Bck_Img/New3.png")
         masterPageBody.Style.Add("background-size", "100%")
 
-        empcode.Focus()
+
+        Session("emp code") = ""
         If Page.IsPostBack Then
+            Session.Clear()
+            Session.RemoveAll()
             Session.Remove("emp code")
         End If
     End Sub
-
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles login.Click
-        'strsql = "select EmployeeCode,Password,Designation,EmployeeName,Department,Access_Power from Employee_Master where EmployeeCode='" & empcode.Text & "' and Password='" & pass.Text & "' collate Latin1_General_CS_AS"
-        strsql = "select EmployeeCode,Password,Designation,EmployeeName,Department,Section,Access_Power from Employee_Master1 where EmployeeCode='" & empcode.Text & "' and Password='" & pass.Text & "' collate Latin1_General_CS_AS"
-        If sqlselect(constr, strsql, "Abc") Then
-            If ds.Tables("Abc").Rows.Count > 0 Then
-                Dim empid As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeCode"))
-                Dim name As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))
-                Dim desc As String = Convert.ToString(ds.Tables(0).Rows(0)("Designation"))
-                Dim dept As String = Convert.ToString(ds.Tables(0).Rows(0)("Department"))
-                Dim sect As String = Convert.ToString(ds.Tables(0).Rows(0)("Section"))
-                Dim access As String = Convert.ToString(ds.Tables(0).Rows(0)("Access_Power"))
 
-                Session("emp code") = empid
-                Session("user name") = name
-                Session("designation") = desc
-                Session("department") = dept
-                Session("section") = sect
-                Session("access power") = access
+        Dim dt As DataTable = PMSclass.Login(empcode.Text, pass.Text)
 
-                If Session("access power") = "1" Then
-                    Response.Redirect("Upload_Details.aspx")
-                ElseIf Session("access power") = "2" Then
-                    Response.Redirect("Employee_Details.aspx")
-                ElseIf Session("access power") = "4" Then
-                    Response.Redirect("Employee_Details.aspx")
-                ElseIf Session("access power") = "5" Then
-                    Response.Redirect("Employee_Details.aspx")
-                ElseIf Session("access power") = "3" Then
-                    Response.Redirect("View_Details.aspx")
+        If dt IsNot Nothing AndAlso dt.Rows.Count > 0 Then
 
+            Dim empid As String = dt.Rows(0)("EmployeeCode").ToString()
+            Dim name As String = dt.Rows(0)("EmployeeName").ToString()
+            Dim desc As String = dt.Rows(0)("Designation").ToString()
+            Dim dept As String = dt.Rows(0)("Department").ToString()
+            Dim sect As String = dt.Rows(0)("Section").ToString()
+            Dim access As String = dt.Rows(0)("Access_Power").ToString()
+            Session("emp code") = empid
+            Session("user name") = name
+            Session("designation") = desc
+            Session("department") = dept
+            Session("section") = sect
+            Session("access power") = access
+
+            Dim pcName As String = Environment.MachineName
+                Dim ipAddress As String = PMSclass.GetLocalIPAddress()
+                Dim logDate As String = DateTime.Now
+                Dim Status As String = "LogIn"
+                Dim AccessPowerName As String = String.Empty
+                Dim empname As String = Session("user name")
+
+                If Session("access power") = "4" Or Session("access power") = "2" Then
+
+                    Dim Designation As String = dt.Rows(0)("Designation").ToString()
+                    Dim output As String = "'" & String.Join("','", Designation.Split(",")) & "'"
+                    Session("desg") = output
                 End If
-            Else
-                'Label1.Visible = "true"
-                'Label1.Text = "Your Userid and Password is incorrect"
-                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your Userid and Password is incorrect');window.location = '" + Request.RawUrl + "';", True)
-                'empcode.Text = ""
-                'Dim Password As String = pass.Text
-                'pass.Attributes.Add("value", "")
+                ' Determine AccessPowerName based on session value
+                Select Case Session("access power")
+                    Case "1"
+                        AccessPowerName = "HR"
+                        If Not String.IsNullOrEmpty(AccessPowerName) Then
+                            PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                        End If
+                        Response.Redirect("Upload_Details.aspx")
+                    Case "2"
+                        AccessPowerName = "Section Head"
+                        If Not String.IsNullOrEmpty(AccessPowerName) Then
+                            PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                        End If
+                        Response.Redirect("Employee_Details.aspx")
+                    Case "4"
+                        AccessPowerName = "Department Head"
+                        If Not String.IsNullOrEmpty(AccessPowerName) Then
+                            PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                        End If
+                        Response.Redirect("Employee_Details.aspx")
+                    Case "5"
+                        AccessPowerName = "Plant Head"
+                        If Not String.IsNullOrEmpty(AccessPowerName) Then
+                            PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                        End If
+                    Response.Redirect("Employee_Details.aspx")
+                Case "6"
+                    AccessPowerName = "HRM"
+                    If Not String.IsNullOrEmpty(AccessPowerName) Then
+                        PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                    End If
+                    Response.Redirect("Variablepay.aspx")
+                Case "3"
+                        AccessPowerName = "Employee"
+                        If Not String.IsNullOrEmpty(AccessPowerName) Then
+                            PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                        End If
+                        Response.Redirect("View_Details.aspx")
+                    Case Else
+                        ' Handle unexpected values, if necessary
+                        Exit Sub
+                End Select
 
-            End If
+                ' Call the log save function after determining the access power
+                If Not String.IsNullOrEmpty(AccessPowerName) Then
+                    PMSclass.PMS_Log_Save(empid, empname, pcName, ipAddress, logDate, Status, AccessPowerName)
+                End If
+
+            Else
+                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your Userid and Password is incorrect');window.location = '" + Request.RawUrl + "';", True)
+
         End If
     End Sub
-
-    'Protected Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-    '    If CheckBox1.Checked = "True" Then
-    '        pass.TextMode = TextBoxMode.SingleLine
-    '    ElseIf CheckBox1.Checked = "False" Then
-    '        pass.TextMode = TextBoxMode.Password
-    '    End If
-    'End Sub
-
 
 End Class

@@ -24,36 +24,38 @@ Public Class _0364_Planning
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
 
+            If Session("access power") = "" Then
+                Response.Redirect("login.aspx")
+            End If
             If IsPostBack Then
+                up()
+                eve()
                 result()
 
-            End If
 
-            check()
-            If Session("access power") = "2" Then
-                empsign.Enabled = False
-                deptsign.Enabled = True
-                sectsign.Enabled = True
+            Else
+
+                If Session("access power") = "2" Then
+                ch3.Enabled = False
+                ch1.Enabled = False
+                ch2.Enabled = True
+            ElseIf Session("access power") = "4" Then
+                ch3.Enabled = False
+                ch1.Enabled = True
+                ch2.Enabled = False
             Else
                 If Session("access power") = "3" Then
-                    empsign.Enabled = True
-                    deptsign.Enabled = False
-                    sectsign.Enabled = False
+                    ch3.Enabled = True
+                    ch1.Enabled = False
+                    ch2.Enabled = False
+                    Time.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")
                 End If
             End If
 
-            Dim strsql As String
-            If Session("access power") <> "2" Then
-                CheckBoxList1.Enabled = "true"
-                CheckBoxList2.Enabled = "true"
-                CheckBoxList3.Enabled = "true"
-                CheckBoxList4.Enabled = "true"
-                CheckBoxList5.Enabled = "true"
-                CheckBoxList6.Enabled = "true"
-                'TextBox9.Enabled = "false"
-                'Button4.Visible = "false"
             End If
-            strsql = "select * from Employee_Master where EmployeeCode='" & Session("empl code") & "' or EmployeeCode='" & Session("form empid") & "'"
+            Dim strsql As String
+
+            strsql = "select * from Employee_Master1 where EmployeeCode='" & Session("empl code") & "' or EmployeeCode='" & Session("form empid") & "'"
             If sqlselect(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     empcode.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeCode"))
@@ -68,15 +70,7 @@ Public Class _0364_Planning
                     Dim revperiod As String = Convert.ToString(ds.Tables(0).Rows(0)("Review_Period"))
                     deptsec.InnerText = dept + "/" + sect
 
-                    'review.InnerText = Now.Month
 
-                    'If desc.InnerText = "GET" Or desc.InnerText = "MGMT" Then
-                    '    trai.Checked = "true"
-                    '    prob.Checked = "false"
-                    'Else
-                    '    prob.Checked = "true"
-                    '    trai.Checked = "false"
-                    'End If
                     revperiod = revperiod.Trim()
                     If revperiod = "Training" Then
                         trai.Checked = "true"
@@ -86,13 +80,9 @@ Public Class _0364_Planning
                         trai.Checked = "false"
                     End If
                 Else
-                    'Label22.Visible = "true"
-                    'Label22.Text = "Your detail not insereted "
                     Response.Write("<script>alert('Your detail not insereted');</script>")
                 End If
             End If
-
-            '   Dim mon As String = DateTime.Now.Month
             mon = DateTime.Now.AddMonths(-1).ToString("MMM")
 
             Dim yea As String = DateTime.Now.Year
@@ -120,61 +110,24 @@ Public Class _0364_Planning
                 Dim deptsi As String = Convert.ToString(ds.Tables(0).Rows(0)("Dept_Accept"))
                 Dim sectsi As String = Convert.ToString(ds.Tables(0).Rows(0)("Sect_Accept"))
                 If deptsi = "Done" Then
-                    deptsign.Checked = True
+                    ch1.Checked = True
 
                 End If
                 If sectsi = "Done" Then
-                    sectsign.Checked = True
+                    ch2.Checked = True
                 End If
 
-                If deptsi = "Done" Or sectsi = "Done" Then
 
-                    Dim sco1 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score1"))
-                    CheckBoxList1.SelectedValue = sco1 / 4
-                    CheckBoxList1.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco2 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score2"))
-                    CheckBoxList2.SelectedValue = sco2 / 4
-                    CheckBoxList2.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco3 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score3"))
-                    CheckBoxList3.SelectedValue = sco3 / 1
-                    CheckBoxList3.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco4 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score4"))
-                    CheckBoxList4.SelectedValue = sco4 / 2
-                    CheckBoxList4.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco5 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score5"))
-                    CheckBoxList5.SelectedValue = sco5 / 2
-                    CheckBoxList5.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco6 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score6"))
-                    CheckBoxList6.SelectedValue = sco6 / 1
-                    CheckBoxList6.SelectedItem.Attributes.Add("onclick", "return false")
-                    totmarks.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("TotalMarks"))
-                    Dim stat As String = Convert.ToString(ds.Tables(0).Rows(0)("Status"))
-
-                    remark.Text = Convert.ToString(ds.Tables(0).Rows(0)("Remark"))
-                    remark.ReadOnly = True
-                    remark.BackColor = System.Drawing.SystemColors.Window
-                End If
 
                 If Session("form empid") <> "" Then
 
-                    Dim sco1 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score1"))
-                    CheckBoxList1.SelectedValue = sco1 / 4
-                    CheckBoxList1.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco2 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score2"))
-                    CheckBoxList2.SelectedValue = sco2 / 4
-                    CheckBoxList2.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco3 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score3"))
-                    CheckBoxList3.SelectedValue = sco3 / 1
-                    CheckBoxList3.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco4 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score4"))
-                    CheckBoxList4.SelectedValue = sco4 / 2
-                    CheckBoxList4.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco5 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score5"))
-                    CheckBoxList5.SelectedValue = sco5 / 2
-                    CheckBoxList5.SelectedItem.Attributes.Add("onclick", "return false")
-                    Dim sco6 As Integer = Convert.ToString(ds.Tables(0).Rows(0)("Score6"))
-                    CheckBoxList6.SelectedValue = sco6 / 1
-                    CheckBoxList6.SelectedItem.Attributes.Add("onclick", "return false")
+                    score1.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score1"))
+                    score2.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score2"))
+                    score3.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score3"))
+
+                    score4.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score4"))
+                    score5.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score5"))
+                    score6.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score6"))
                     totmarks.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("TotalMarks"))
                     Dim stat As String = Convert.ToString(ds.Tables(0).Rows(0)("Status"))
 
@@ -190,57 +143,205 @@ Public Class _0364_Planning
 
         End Try
     End Sub
-    Private Sub check()
+    Public Sub eve()
 
-        For i As Integer = 0 To CheckBoxList1.Items.Count - 1
-            CheckBoxList1.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
+        mon = DateTime.Now.AddMonths(-1).ToString("MMM")
 
-        Next
-        For i As Integer = 0 To CheckBoxList2.Items.Count - 1
-            CheckBoxList2.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        Next
-        For i As Integer = 0 To CheckBoxList3.Items.Count - 1
-            CheckBoxList3.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        Next
-        For i As Integer = 0 To CheckBoxList4.Items.Count - 1
-            CheckBoxList4.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        Next
-        For i As Integer = 0 To CheckBoxList5.Items.Count - 1
-            CheckBoxList5.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        Next
-        For i As Integer = 0 To CheckBoxList6.Items.Count - 1
-            CheckBoxList6.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        Next
+        Dim yea As String = DateTime.Now.Year
+        tyear = DateTime.Now.ToString("yy")
+        If mon = "Dec" Then
+            yea = DateTime.Now.AddYears(-1).ToString("yyyy")
+            tyear = DateTime.Now.AddYears(-1).ToString("yy")
+        End If
+
+
+        tyear = mon + "-" + tyear
+        tot = yea
+        tot = "[dbo]" + ". " + "[" + tot + "]"
+
+        strsql = "select * from" + " " + tot + " " + "where (EmployeeCode='" & Session("empl code") & "' or EmployeeCode='" & Session("form empid") & "') and ReviewMonth='" & tyear & "'"
+        If sqlselect(constr, strsql, "Abc") Then
+
+            review.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("ReviewMonth"))
+            Dim deptsi As String = Convert.ToString(ds.Tables(0).Rows(0)("Dept_Accept"))
+            Dim sectsi As String = Convert.ToString(ds.Tables(0).Rows(0)("Sect_Accept"))
+            If deptsi = "Done" Then
+                ch1.Checked = True
+
+            End If
+            If sectsi = "Done" Then
+                ch2.Checked = True
+            End If
+
+            If deptsi = "Done" Or sectsi = "Done" Then
+
+                score1.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score1"))
+                score2.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score2"))
+                score3.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score3"))
+
+                score4.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score4"))
+                score5.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score5"))
+                score6.Text = Convert.ToString(ds.Tables(0).Rows(0)("Score6"))
+                totmarks.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("TotalMarks"))
+                Dim stat As String = Convert.ToString(ds.Tables(0).Rows(0)("Status"))
+
+                remark.Text = Convert.ToString(ds.Tables(0).Rows(0)("Remark"))
+                'remark.ReadOnly = True
+                'remark.BackColor = System.Drawing.SystemColors.Window
+
+            End If
+
+        End If
+
     End Sub
-    'Protected Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
 
-    'End Sub
+    Public Sub up()
 
 
+        mon = DateTime.Now.AddMonths(-1).ToString("MMM")
+
+        Dim yea As String = DateTime.Now.Year
+        tyear = DateTime.Now.ToString("yy")
+        If mon = "Dec" Then
+            yea = DateTime.Now.AddYears(-1).ToString("yyyy")
+            tyear = DateTime.Now.AddYears(-1).ToString("yy")
+        End If
+
+
+        tyear = mon + "-" + tyear
+        tot = yea
+        tot = "[dbo]" + ". " + "[" + tot + "]"
+
+        Dim s1 As String = score1.Text
+        Dim s2 As String = score2.Text
+        Dim s3 As String = score3.Text
+        Dim s4 As String = score4.Text
+        Dim s5 As String = score5.Text
+        Dim s6 As String = score6.Text
+
+
+
+
+        Dim deptaccept As String = ""
+        Dim sectaccept As String = ""
+        If ch1.Checked = True Then
+            deptaccept = "Done"
+        End If
+        If ch2.Checked = True Then
+            sectaccept = "Done"
+        End If
+
+        If ch1.Checked = True Then
+            strsql = "update" + " " + tot + " " + "set Score1='" & score1.Text & "',Score2='" & score2.Text & "',Score3='" & score3.Text & "',Score4='" & score4.Text & "',Score5='" & score5.Text & "',Score6='" & score6.Text & "',  TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='DONE',Form_ID='44',Dept_Accept='" & deptaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
+
+            If sqlexe(constr, strsql) Then
+                result()
+                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Data Entered successfully');window.close()", True)
+            End If
+        End If
+    End Sub
 
     Private Sub result()
-        Dim Tot, Tot1, Tot2, Tot3, Tot4, Tot5, Tot6, Gtot As Double
-        Tot = Double.Parse(CheckBoxList1.SelectedValue)
-        scor1.Text = Tot * 4
-        Tot1 = Double.Parse(CheckBoxList2.SelectedValue)
-        scor2.Text = Tot1 * 4
-        Tot2 = Double.Parse(CheckBoxList3.SelectedValue)
-        scor3.Text = Tot2 * 1
-        Tot3 = Double.Parse(CheckBoxList4.SelectedValue)
-        scor4.Text = Tot3 * 2
-        Tot4 = Double.Parse(CheckBoxList5.SelectedValue)
-        scor5.Text = Tot4 * 2
-        Tot5 = Double.Parse(CheckBoxList6.SelectedValue)
-        scor6.Text = Tot5 * 1
+
+        Dim Tot, Tot1, Tot2, Tot3, Tot4, Tot5, Tot6, Tot7, Tot8, Tot9, Tot10, Tot11, Tot12, Tot13, Gtot As Double
+        If score1.Text <> "" And score1.Text = 20 Or score1.Text = 16 Or score1.Text = 12 Or score1.Text = 8 Or score1.Text = 4 Then
+            Tot = Double.Parse(score1.Text)
+            score1.BackColor = Color.White
+            score1.ForeColor = Color.Black
+        Else
+            score1.ForeColor = Color.Red
+            score1.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
+        If score2.Text <> "" And score2.Text = 20 Or score2.Text = 16 Or score2.Text = 12 Or score2.Text = 8 Or score2.Text = 4 Then
+            Tot1 = Double.Parse(score2.Text)
+            score2.BackColor = Color.White
+            score2.ForeColor = Color.Black
+        Else
+            score2.ForeColor = Color.Red
+            score2.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
+        If score3.Text <> "" And score3.Text = 5 Or score3.Text = 4 Or score3.Text = 3 Or score3.Text = 2 Or score3.Text = 1 Then
+            Tot2 = Double.Parse(score3.Text)
+            score3.BackColor = Color.White
+            score3.ForeColor = Color.Black
+        Else
+            score3.ForeColor = Color.Red
+            score3.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
+        If score4.Text <> "" And score4.Text = 10 Or score4.Text = 8 Or score4.Text = 6 Or score4.Text = 4 Or score4.Text = 2 Then
+            Tot3 = Double.Parse(score4.Text)
+            score4.BackColor = Color.White
+            score4.ForeColor = Color.Black
+        Else
+            score4.ForeColor = Color.Red
+            score4.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
+        If score5.Text <> "" And score5.Text = 10 Or score5.Text = 8 Or score5.Text = 6 Or score5.Text = 4 Or score5.Text = 2 Then
+            Tot4 = Double.Parse(score5.Text)
+            score5.BackColor = Color.White
+            score5.ForeColor = Color.Black
+        Else
+            score5.ForeColor = Color.Red
+            score5.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
+        If score6.Text <> "" And score6.Text = 5 Or score6.Text = 4 Or score6.Text = 3 Or score6.Text = 2 Or score6.Text = 1 Then
+            Tot5 = Double.Parse(score6.Text)
+            score6.BackColor = Color.White
+            score6.ForeColor = Color.Black
+        Else
+            score6.ForeColor = Color.Red
+            score6.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system % please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        End If
         Tot6 = Double.Parse(scor.InnerText)
-        Dim totid As Integer = Tot + Tot1
-        Dim totid1 As Integer = Tot3 + Tot4
-        Dim totid2 As Integer = Tot2 + Tot5
-        totid = totid * 4
-        totid1 = totid1 * 2
-        totid1 = totid1 * 1
-        Gtot = totid + totid1 + totid2 + Tot6
-        totmarks.InnerText = Gtot.ToString
+
+        Gtot = Tot + Tot1 + Tot2 + Tot3 + Tot4 + Tot5 + Tot6
+        If Gtot >= 101 Then
+            Gtot = Tot + Tot1 + Tot2 + Tot3 + Tot4 + Tot5 + Tot6
+            'score1.ForeColor = Color.Red
+            'score2.ForeColor = Color.Red
+            'score3.ForeColor = Color.Red
+            'score4.ForeColor = Color.Red
+            'score5.ForeColor = Color.Red
+            'score6.ForeColor = Color.Red
+            'score1.BackColor = Color.Yellow
+            'score2.BackColor = Color.Yellow
+            'score3.BackColor = Color.Yellow
+            'score4.BackColor = Color.Yellow
+            'score5.BackColor = Color.Yellow
+            'score6.BackColor = Color.Yellow
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Your fill number is more the system 100% please according to Max fill.       你填寫的百分比高過制度，請重新確認與填寫');window.close()", True)
+        Else
+            Gtot = Tot + Tot1 + Tot2 + Tot3 + Tot4 + Tot5 + Tot6
+            'score1.ForeColor = Color.Black
+            'score2.ForeColor = Color.Black
+            'score3.ForeColor = Color.Black
+            'score4.ForeColor = Color.Black
+            'score5.ForeColor = Color.Black
+            'score6.ForeColor = Color.Black
+            'score1.BackColor = Color.White
+            'score2.BackColor = Color.White
+            'score3.BackColor = Color.White
+            'score4.BackColor = Color.White
+            'score5.BackColor = Color.White
+            'score6.BackColor = Color.White
+
+            If score1.Text <> "" And score2.Text <> "" And score3.Text <> "" And score4.Text <> "" And score5.Text <> "" And score6.Text <> "" And scor.InnerText <> "" Then
+                totmarks.InnerText = Gtot.ToString
+            End If
+
+        End If
+
+        'If score1.Text <> "" And score2.Text <> "" And score3.Text <> "" And score4.Text <> "" And score5.Text <> "" And score6.Text <> "" Then
+        '    totmarks.InnerText = Gtot.ToString
+        'End If
+
+
     End Sub
 
 
@@ -250,15 +351,15 @@ Public Class _0364_Planning
 
             Dim deptaccept As String = ""
             Dim sectaccept As String = ""
-            If deptsign.Checked = True Then
+            If ch1.Checked = True Then
                 deptaccept = "Done"
             End If
-            If sectsign.Checked = True Then
+            If ch2.Checked = True Then
                 sectaccept = "Done"
             End If
 
-            If deptsign.Checked = True Then
-                strsql = "update" + " " + tot + " " + "set Score1='" & scor1.Text & "',Score2='" & scor2.Text & "',Score3='" & scor3.Text & "',Score4='" & scor4.Text & "',Score5='" & scor5.Text & "',Score6='" & scor6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='DONE',Form_ID='27',Dept_Accept='" & deptaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
+            If ch1.Checked = True Then
+                strsql = "update" + " " + tot + " " + "set Score1='" & score1.Text & "',Score2='" & score2.Text & "',Score3='" & score3.Text & "',Score4='" & score4.Text & "',Score5='" & score5.Text & "',Score6='" & score6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='DONE',Form_ID='44',Dept_Accept='" & deptaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
                 If sqlexe(constr, strsql) Then
 
                     ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Inserted successfully');window.close()", True)
@@ -266,16 +367,16 @@ Public Class _0364_Planning
                 End If
             End If
 
-            If sectsign.Checked = True Then
-                strsql = "update" + " " + tot + " " + "set Score1='" & scor1.Text & "',Score2='" & scor2.Text & "',Score3='" & scor3.Text & "',Score4='" & scor4.Text & "',Score5='" & scor5.Text & "',Score6='" & scor6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='PENDING',Form_ID='27',Sect_Accept='" & sectaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
+            If ch2.Checked = True Then
+                strsql = "update" + " " + tot + " " + "set Score1='" & score1.Text & "',Score2='" & score2.Text & "',Score3='" & score3.Text & "',Score4='" & score4.Text & "',Score5='" & score5.Text & "',Score6='" & score6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='PENDING',Form_ID='44',Sect_Accept='" & sectaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
                 If sqlexe(constr, strsql) Then
 
                     ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Inserted successfully');window.close()", True)
                     ' clear()
                 End If
             End If
-            If deptsign.Checked = True And sectsign.Checked = True Then
-                strsql = "update" + " " + tot + " " + "set Score1='" & scor1.Text & "',Score2='" & scor2.Text & "',Score3='" & scor3.Text & "',Score4='" & scor4.Text & "',Score5='" & scor5.Text & "',Score6='" & scor6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='DONE',Form_ID='27',Dept_Accept='" & deptaccept & "',Sect_Accept='" & sectaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
+            If ch1.Checked = True And ch2.Checked = True Then
+                strsql = "update" + " " + tot + " " + "set Score1='" & score1.Text & "',Score2='" & score2.Text & "',Score3='" & score3.Text & "',Score4='" & score4.Text & "',Score5='" & score5.Text & "',Score6='" & score6.Text & "',TotalMarks='" & totmarks.InnerText & "',Remark='" & remark.Text & "',Form_Status='DONE',Form_ID='44',Dept_Accept='" & deptaccept & "',Sect_Accept='" & sectaccept & "' where EmployeeCode='" & Session("empl code") & "' and ReviewMonth='" & tyear & "'"
                 If sqlexe(constr, strsql) Then
 
                     ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Inserted successfully');window.close()", True)
@@ -287,32 +388,81 @@ Public Class _0364_Planning
             Response.Write("<script language='javascript'>alert('" + Server.HtmlEncode(ex.Message) + "')</script>")
         End Try
     End Sub
-
-    Protected Sub empsign_CheckedChanged(sender As Object, e As EventArgs) Handles empsign.CheckedChanged
+    Protected Sub ch3_CheckedChanged(sender As Object, e As EventArgs) Handles ch3.CheckedChanged
         strsql = "update" + " " + tot + " " + "Set Emp_Accept='Done' where EmployeeCode='" & Session("form empid") & "' and ReviewMonth='" & tyear & "'"
         If sqlexe(constr, strsql) Then
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Submitted successfully');window.close()", True)
         End If
     End Sub
-
-    Private Sub clear()
-        empname.InnerText = ""
-        empcode.InnerText = ""
-        desc.InnerText = ""
-        deptsec.InnerText = ""
-        deptsec.InnerText = ""
-        deptsec.InnerText = ""
-        doj.InnerText = ""
-        review.InnerText = ""
-        qual.InnerText = ""
-        prev.InnerText = ""
-        repto.InnerText = ""
-        cla.InnerText = ""
-        sla.InnerText = ""
-        pla.InnerText = ""
-        lwpa.InnerText = ""
-
+    Public Sub msg()
+        MsgBox("Please enter only numeric 請輸入數字")
     End Sub
+    Protected Sub score1_TextChanged(sender As Object, e As EventArgs) Handles score1.TextChanged
+        If score1.Text.Length > 0 Then
+            If Not IsNumeric(score1.Text) Then
+                msg()
+                score1.Text = 0
+            End If
+        End If
+    End Sub
+    Protected Sub score2_TextChanged(sender As Object, e As EventArgs) Handles score2.TextChanged
+        If score2.Text.Length > 0 Then
+            If Not IsNumeric(score2.Text) Then
+                msg()
+                score2.Text = 0
+            End If
+        End If
+    End Sub
+    Protected Sub score3_TextChanged(sender As Object, e As EventArgs) Handles score3.TextChanged
+        If score3.Text.Length > 0 Then
+            If Not IsNumeric(score3.Text) Then
+                msg()
+                score3.Text = 0
+            End If
+        End If
+    End Sub
+    Protected Sub score4_TextChanged(sender As Object, e As EventArgs) Handles score4.TextChanged
+        If score4.Text.Length > 0 Then
+            If Not IsNumeric(score4.Text) Then
+                msg()
+                score4.Text = 0
+            End If
+        End If
+    End Sub
+    Protected Sub score5_TextChanged(sender As Object, e As EventArgs) Handles score5.TextChanged
+        If score5.Text.Length > 0 Then
+            If Not IsNumeric(score5.Text) Then
+                msg()
+                score5.Text = 0
+            End If
+        End If
+    End Sub
+    Protected Sub score6_TextChanged(sender As Object, e As EventArgs) Handles score6.TextChanged
+        If score6.Text.Length > 0 Then
+            If Not IsNumeric(score6.Text) Then
+                msg()
+                score6.Text = 0
+            End If
+        End If
+    End Sub
+
+    Protected Sub update_Click(sender As Object, e As EventArgs) Handles update.Click
+        Dim s1 As String = score1.Text
+        Dim s2 As String = score2.Text
+        Dim s3 As String = score3.Text
+        Dim s4 As String = score4.Text
+        Dim s5 As String = score5.Text
+        Dim s6 As String = score6.Text
+
+
+
+        up()
+    End Sub
+
+    Protected Sub show_Click(sender As Object, e As EventArgs) Handles show.Click
+        eve()
+    End Sub
+
 
     'Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles export.Click
     '    Try
@@ -372,9 +522,10 @@ Public Class _0364_Planning
     'End Sub
 
 
-    Public Overloads Overrides Sub VerifyRenderingInServerForm(ByVal control As Control)
-        ' Verifies that the control is rendered
-    End Sub
+    ''''Public Overloads Overrides Sub VerifyRenderingInServerForm(ByVal control As Control)
+    ''''    ' Verifies that the control is rendered
+    ''''End Sub
+
 
 
 End Class

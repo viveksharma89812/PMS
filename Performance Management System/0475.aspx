@@ -41,75 +41,8 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>
      
     <br /><center>
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-      <br />   
-                   <%--  <asp:Button ID="Button3" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%><br />
-    <%--<asp:TextBox ID="TextBox12" runat="server" AutoPostBack="True"></asp:TextBox>--%>
+     
+              
     &nbsp;<asp:Label ID="Label12" runat="server" Text="Label" Visible="false"></asp:Label>
    
     <center><asp:Panel ID="Panel1" runat="server" Width="970px" BorderStyle="Solid" BackColor="#ffffff">
@@ -362,10 +295,7 @@
                     <asp:Label ID="Label22" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
-            <caption>
-                <br />
-                <br />
-            </caption>
+           
             
         </table>
    
@@ -374,7 +304,14 @@
 
    
         
-         <asp:Button ID="insert" runat="server" Text="Submit"  CssClass="btn btn-primary" /></center> 
+        <center>
+               <asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
+                  <em></td>
+                  </tr>
+                 </em></em>&nbsp;<span class="auto-style184"><asp:Button ID="update" runat="server" cssclass="btn btn-primary" OnClick="update_Click" style="font-family: call; font-size: small;" Text="Update" ValidationGroup="insert" />
+                  &nbsp;<asp:Button ID="show" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Show" ValidationGroup="insert" />
+                  </span>
+            </center>
     </asp:Panel>
    </center>
     <br /></ContentTemplate></asp:UpdatePanel>

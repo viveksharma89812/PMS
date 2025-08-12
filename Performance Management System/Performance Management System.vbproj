@@ -46,6 +46,15 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\190089\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
@@ -54,6 +63,9 @@
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>LIB\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -104,11 +116,18 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="0364FIO1.aspx" />
+    <Content Include="0364PS1.aspx" />
+    <Content Include="0364PS2.aspx" />
+    <Content Include="0364PS3.aspx" />
     <Content Include="0364_Planning.aspx" />
     <Content Include="0365_Planning.aspx" />
+    <Content Include="0366GAORPS.aspx" />
     <Content Include="0366_Planning.aspx" />
+    <Content Include="0386CA1.aspx" />
     <Content Include="0386CL1.aspx" />
     <Content Include="0386CL2.aspx" />
+    <Content Include="0386CNC2.aspx" />
     <Content Include="0386CO1.aspx" />
     <Content Include="0386CO2.aspx" />
     <Content Include="0386CS1.aspx" />
@@ -119,7 +138,10 @@
     <Content Include="0386CUO1.aspx" />
     <Content Include="0386EHS.aspx" />
     <Content Include="0386EL1.aspx" />
+    <Content Include="0386EM2.aspx" />
     <Content Include="0386EO1.aspx" />
+    <Content Include="0386EOS1.aspx" />
+    <Content Include="0386ER2.aspx" />
     <Content Include="0386ES1.aspx" />
     <Content Include="0386EC1.aspx" />
     <Content Include="0386EST1.aspx" />
@@ -130,29 +152,45 @@
     <Content Include="0386MO1.aspx" />
     <Content Include="0386MR1.aspx" />
     <Content Include="0386P1.aspx" />
+    <Content Include="0386QCL1.aspx" />
+    <Content Include="0386QDC1.aspx" />
     <Content Include="0386QDO2.aspx" />
     <Content Include="0386QIL1.aspx" />
+    <Content Include="0386QIL2.aspx" />
     <Content Include="0386QPL2.aspx" />
+    <Content Include="0386HCWO1.aspx" />
+    <Content Include="0386QPS2.aspx" />
+    <Content Include="0386S1.aspx" />
+    <Content Include="0386S2.aspx" />
+    <Content Include="0386S3.aspx" />
+    <Content Include="0386S4.aspx" />
+    <Content Include="0386S5.aspx" />
+    <Content Include="0386TA1.aspx" />
+    <Content Include="0386TL1.aspx" />
+    <Content Include="0386TL2.aspx" />
+    <Content Include="0386WHO1.aspx" />
+    <Content Include="0386QPO5.aspx" />
     <Content Include="0386QPO4.aspx" />
     <Content Include="0386QSTO3.aspx" />
     <Content Include="0386QVO1.aspx" />
     <Content Include="0386R1.aspx" />
-    <Content Include="0386TA1.aspx" />
+    <Content Include="0386TAL3.aspx" />
     <Content Include="0386TBO1.aspx" />
-    <Content Include="0386TL1.aspx" />
-    <Content Include="0386TL2.aspx" />
     <Content Include="0386TRON03.aspx" />
     <Content Include="0386TSO4.aspx" />
     <Content Include="0386TSPO2.aspx" />
     <Content Include="0386UE1.aspx" />
     <Content Include="0386UO1.aspx" />
-    <Content Include="0386_Chef.aspx" />
+    <Content Include="0386WIOL1.aspx" />
+    <Content Include="0386WPL1.aspx" />
     <Content Include="0386_Planning.aspx" />
     <Content Include="0399_Planning.aspx" />
     <Content Include="0399_Production.aspx" />
     <Content Include="0399_QA.aspx" />
     <Content Include="0399_Rd2_Mold.aspx" />
     <Content Include="0399_Utility.aspx" />
+    <Content Include="Auditing_New.aspx" />
+    <Content Include="Banking_New.aspx" />
     <Content Include="Bck_Img\1011.jpg" />
     <Content Include="Bck_Img\123.jpg" />
     <Content Include="Bck_Img\456.jpg" />
@@ -160,11 +198,21 @@
     <Content Include="Bck_Img\789.jpg" />
     <Content Include="Bck_Img\967.jpg" />
     <Content Include="Bck_Img\BCK-IMG.jpg" />
+    <Content Include="Bck_Img\excel.jpg" />
+    <Content Include="Bck_Img\excelpng-removebg-preview.png" />
+    <Content Include="Bck_Img\excelpng.png" />
+    <Content Include="Bck_Img\excelsimage.png" />
     <Content Include="Bck_Img\Feedback-2.jpg" />
+    <Content Include="Bck_Img\logout.png" />
+    <Content Include="Bck_Img\logouts.png" />
     <Content Include="Bck_Img\New5.png" />
     <Content Include="Bck_Img\New3.png" />
+    <Content Include="Bck_Img\pdf.png" />
+    <Content Include="Bck_Img\Pdf_337946.png" />
     <Content Include="Bck_Img\performance management 2.png" />
     <Content Include="Bck_Img\Performance-App.png" />
+    <Content Include="Cheff.aspx" />
+    <Content Include="Costing_New.aspx" />
     <Content Include="css\boostrap-multiselect.css" />
     <Content Include="css\boostrap-multiselect.js" />
     <Content Include="css\boostrap.min.css" />
@@ -177,13 +225,21 @@
     <Content Include="css\jquery.min.js" />
     <Content Include="css\jquery1.js" />
     <Content Include="css\StyleSheet1.css" />
+    <Content Include="enslish.aspx" />
+    <Content Include="Final_Review_New.aspx" />
+    <Content Include="Finance_Accounting_Payable_New.aspx" />
+    <Content Include="Finance_Accounting_Receivable_New.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Images\03-Maxxis-Ikon-2.2-inch-tyres.jpg" />
     <Content Include="Images\download %281%29.jpg" />
     <Content Include="Images\download.jpg" />
+    <Content Include="Images\downloadlimenotify.png" />
     <Content Include="Images\images %281%29.jpg" />
     <Content Include="Images\images %282%29.jpg" />
     <Content Include="Images\images.jpg" />
+    <Content Include="Images\Line.png" />
+    <Content Include="Images\LINENotify_image %281%29.png" />
     <Content Include="Images\maxxis-logo-141.png" />
     <Content Include="Images\maxxis_logo1.gif" />
     <Content Include="Images\messageImage_1662634718713.jpg" />
@@ -192,7 +248,21 @@
     <Content Include="Images\Picture1.png" />
     <Content Include="Images\Picture1_-_Copy-removebg-preview.png" />
     <Content Include="Images\review.jpg" />
+    <Content Include="Line.aspx" />
+    <Content Include="MailTemplate\Maxxis Logo New-2022_0.png" />
+    <Content Include="MailTemplate\ReminderEmailTemplate.html" />
+    <Content Include="MailTemplate\TemplateOfAttendance.html" />
+    <Content Include="Maintenannce2or3.aspx" />
+    <Content Include="PBVP_Report.aspx" />
+    <Content Include="PmsLogs.aspx" />
+    <Content Include="ReSales.aspx" />
+    <Content Include="ReSalesStaff.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="Summary.aspx" />
+    <Content Include="Tax_New.aspx" />
+    <Content Include="testing.aspx" />
+    <Content Include="Utility2or3.aspx" />
+    <Content Include="Variablepay.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -226,15 +296,39 @@
     <Content Include="0367_Production.aspx" />
     <Content Include="0367_Rd2_Mold.aspx" />
     <Content Include="0367_Utility.aspx" />
-    <Content Include="WebForm15.aspx" />
-    <Content Include="WebForm38.aspx" />
     <Content Include="Change_Password.aspx" />
     <Content Include="0386M3.aspx" />
     <Content Include="0386M5.aspx" />
-    <Content Include="WebForm42.aspx" />
-    <Content Include="WebForm43.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="0364FIO1.aspx.designer.vb">
+      <DependentUpon>0364FIO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364FIO1.aspx.vb">
+      <DependentUpon>0364FIO1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0364PS1.aspx.designer.vb">
+      <DependentUpon>0364PS1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364PS1.aspx.vb">
+      <DependentUpon>0364PS1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0364PS2.aspx.designer.vb">
+      <DependentUpon>0364PS2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364PS2.aspx.vb">
+      <DependentUpon>0364PS2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0364PS3.aspx.designer.vb">
+      <DependentUpon>0364PS3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0364PS3.aspx.vb">
+      <DependentUpon>0364PS3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="0364_Planning.aspx.designer.vb">
       <DependentUpon>0364_Planning.aspx</DependentUpon>
     </Compile>
@@ -249,12 +343,26 @@
       <DependentUpon>0365_Planning.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="0366GAORPS.aspx.designer.vb">
+      <DependentUpon>0366GAORPS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0366GAORPS.aspx.vb">
+      <DependentUpon>0366GAORPS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="0366_Planning.aspx.designer.vb">
       <DependentUpon>0366_Planning.aspx</DependentUpon>
     </Compile>
     <Compile Include="0366_Planning.aspx.vb">
       <DependentUpon>0366_Planning.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386CA1.aspx.designer.vb">
+      <DependentUpon>0386CA1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CA1.aspx.vb">
+      <DependentUpon>0386CA1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="0386CL1.aspx.designer.vb">
       <DependentUpon>0386CL1.aspx</DependentUpon>
@@ -268,6 +376,13 @@
     </Compile>
     <Compile Include="0386CL2.aspx.vb">
       <DependentUpon>0386CL2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386CNC2.aspx.designer.vb">
+      <DependentUpon>0386CNC2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386CNC2.aspx.vb">
+      <DependentUpon>0386CNC2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="0386CO1.aspx.designer.vb">
@@ -340,11 +455,32 @@
       <DependentUpon>0386EL1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="0386EM2.aspx.designer.vb">
+      <DependentUpon>0386EM2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EM2.aspx.vb">
+      <DependentUpon>0386EM2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="0386EO1.aspx.designer.vb">
       <DependentUpon>0386EO1.aspx</DependentUpon>
     </Compile>
     <Compile Include="0386EO1.aspx.vb">
       <DependentUpon>0386EO1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386EOS1.aspx.designer.vb">
+      <DependentUpon>0386EOS1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386EOS1.aspx.vb">
+      <DependentUpon>0386EOS1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386ER2.aspx.designer.vb">
+      <DependentUpon>0386ER2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386ER2.aspx.vb">
+      <DependentUpon>0386ER2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="0386ES1.aspx.designer.vb">
@@ -415,6 +551,20 @@
     </Compile>
     <Compile Include="0386P1.aspx.vb">
       <DependentUpon>0386P1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QCL1.aspx.designer.vb">
+      <DependentUpon>0386QCL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QCL1.aspx.vb">
+      <DependentUpon>0386QCL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386QDC1.aspx.designer.vb">
+      <DependentUpon>0386QDC1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QDC1.aspx.vb">
+      <DependentUpon>0386QDC1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="0386QDO2.aspx.designer.vb">
@@ -431,12 +581,103 @@
       <DependentUpon>0386QIL1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="0386QIL2.aspx.designer.vb">
+      <DependentUpon>0386QIL2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QIL2.aspx.vb">
+      <DependentUpon>0386QIL2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="0386QPL2.aspx.designer.vb">
       <DependentUpon>0386QPL2.aspx</DependentUpon>
     </Compile>
     <Compile Include="0386QPL2.aspx.vb">
       <DependentUpon>0386QPL2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386HCWO1.aspx.designer.vb">
+      <DependentUpon>0386HCWO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386HCWO1.aspx.vb">
+      <DependentUpon>0386HCWO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QPS2.aspx.designer.vb">
+      <DependentUpon>0386QPS2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QPS2.aspx.vb">
+      <DependentUpon>0386QPS2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386S1.aspx.designer.vb">
+      <DependentUpon>0386S1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386S1.aspx.vb">
+      <DependentUpon>0386S1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386S2.aspx.designer.vb">
+      <DependentUpon>0386S2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386S2.aspx.vb">
+      <DependentUpon>0386S2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386S3.aspx.designer.vb">
+      <DependentUpon>0386S3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386S3.aspx.vb">
+      <DependentUpon>0386S3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386S4.aspx.designer.vb">
+      <DependentUpon>0386S4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386S4.aspx.vb">
+      <DependentUpon>0386S4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386S5.aspx.designer.vb">
+      <DependentUpon>0386S5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386S5.aspx.vb">
+      <DependentUpon>0386S5.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386TA1.aspx.designer.vb">
+      <DependentUpon>0386TA1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TA1.aspx.vb">
+      <DependentUpon>0386TA1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386TL1.aspx.designer.vb">
+      <DependentUpon>0386TL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TL1.aspx.vb">
+      <DependentUpon>0386TL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386TL2.aspx.designer.vb">
+      <DependentUpon>0386TL2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386TL2.aspx.vb">
+      <DependentUpon>0386TL2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386WHO1.aspx.designer.vb">
+      <DependentUpon>0386WHO1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386WHO1.aspx.vb">
+      <DependentUpon>0386WHO1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="0386QPO5.aspx.designer.vb">
+      <DependentUpon>0386QPO5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386QPO5.aspx.vb">
+      <DependentUpon>0386QPO5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="0386QPO4.aspx.designer.vb">
       <DependentUpon>0386QPO4.aspx</DependentUpon>
@@ -466,11 +707,11 @@
       <DependentUpon>0386R1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="0386TA1.aspx.designer.vb">
-      <DependentUpon>0386TA1.aspx</DependentUpon>
+    <Compile Include="0386TAL3.aspx.designer.vb">
+      <DependentUpon>0386TAL3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="0386TA1.aspx.vb">
-      <DependentUpon>0386TA1.aspx</DependentUpon>
+    <Compile Include="0386TAL3.aspx.vb">
+      <DependentUpon>0386TAL3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="0386TBO1.aspx.designer.vb">
@@ -478,20 +719,6 @@
     </Compile>
     <Compile Include="0386TBO1.aspx.vb">
       <DependentUpon>0386TBO1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="0386TL1.aspx.designer.vb">
-      <DependentUpon>0386TL1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="0386TL1.aspx.vb">
-      <DependentUpon>0386TL1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="0386TL2.aspx.designer.vb">
-      <DependentUpon>0386TL2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="0386TL2.aspx.vb">
-      <DependentUpon>0386TL2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="0386TRON03.aspx.designer.vb">
@@ -529,11 +756,18 @@
       <DependentUpon>0386UO1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="0386_Chef.aspx.designer.vb">
-      <DependentUpon>0386_Chef.aspx</DependentUpon>
+    <Compile Include="0386WIOL1.aspx.designer.vb">
+      <DependentUpon>0386WIOL1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="0386_Chef.aspx.vb">
-      <DependentUpon>0386_Chef.aspx</DependentUpon>
+    <Compile Include="0386WIOL1.aspx.vb">
+      <DependentUpon>0386WIOL1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="0386WPL1.aspx.designer.vb">
+      <DependentUpon>0386WPL1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="0386WPL1.aspx.vb">
+      <DependentUpon>0386WPL1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="0386_Planning.aspx.designer.vb">
@@ -578,9 +812,79 @@
       <DependentUpon>0399_Utility.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Auditing_New.aspx.designer.vb">
+      <DependentUpon>Auditing_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auditing_New.aspx.vb">
+      <DependentUpon>Auditing_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Banking_New.aspx.designer.vb">
+      <DependentUpon>Banking_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Banking_New.aspx.vb">
+      <DependentUpon>Banking_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Cheff.aspx.designer.vb">
+      <DependentUpon>Cheff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cheff.aspx.vb">
+      <DependentUpon>Cheff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="conmodule.vb" />
+    <Compile Include="Costing_New.aspx.designer.vb">
+      <DependentUpon>Costing_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Costing_New.aspx.vb">
+      <DependentUpon>Costing_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="enslish.aspx.designer.vb">
+      <DependentUpon>enslish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enslish.aspx.vb">
+      <DependentUpon>enslish.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Final_Review_New.aspx.designer.vb">
+      <DependentUpon>Final_Review_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Final_Review_New.aspx.vb">
+      <DependentUpon>Final_Review_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Finance_Accounting_Payable_New.aspx.designer.vb">
+      <DependentUpon>Finance_Accounting_Payable_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_Accounting_Payable_New.aspx.vb">
+      <DependentUpon>Finance_Accounting_Payable_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Finance_Accounting_Receivable_New.aspx.designer.vb">
+      <DependentUpon>Finance_Accounting_Receivable_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_Accounting_Receivable_New.aspx.vb">
+      <DependentUpon>Finance_Accounting_Receivable_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Line.aspx.designer.vb">
+      <DependentUpon>Line.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Line.aspx.vb">
+      <DependentUpon>Line.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenannce2or3.aspx.designer.vb">
+      <DependentUpon>Maintenannce2or3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenannce2or3.aspx.vb">
+      <DependentUpon>Maintenannce2or3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -600,6 +904,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PBVP_Report.aspx.designer.vb">
+      <DependentUpon>PBVP_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PBVP_Report.aspx.vb">
+      <DependentUpon>PBVP_Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PMSClass.vb" />
+    <Compile Include="PmsLogs.aspx.designer.vb">
+      <DependentUpon>PmsLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PmsLogs.aspx.vb">
+      <DependentUpon>PmsLogs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ReSales.aspx.designer.vb">
+      <DependentUpon>ReSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReSales.aspx.vb">
+      <DependentUpon>ReSales.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ReSalesStaff.aspx.designer.vb">
+      <DependentUpon>ReSalesStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReSalesStaff.aspx.vb">
+      <DependentUpon>ReSalesStaff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.vb">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -622,11 +955,46 @@
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Summary.aspx.designer.vb">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.vb">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Tax_New.aspx.designer.vb">
+      <DependentUpon>Tax_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tax_New.aspx.vb">
+      <DependentUpon>Tax_New.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testing.aspx.designer.vb">
+      <DependentUpon>testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testing.aspx.vb">
+      <DependentUpon>testing.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Upload_Details.aspx.designer.vb">
       <DependentUpon>Upload_Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Upload_Details.aspx.vb">
       <DependentUpon>Upload_Details.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Utility2or3.aspx.designer.vb">
+      <DependentUpon>Utility2or3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility2or3.aspx.vb">
+      <DependentUpon>Utility2or3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Variablepay.aspx.designer.vb">
+      <DependentUpon>Variablepay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Variablepay.aspx.vb">
+      <DependentUpon>Variablepay.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="View_Details.aspx.designer.vb">
@@ -818,20 +1186,6 @@
       <DependentUpon>0367_Utility.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="WebForm15.aspx.designer.vb">
-      <DependentUpon>WebForm15.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm15.aspx.vb">
-      <DependentUpon>WebForm15.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="WebForm38.aspx.designer.vb">
-      <DependentUpon>WebForm38.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm38.aspx.vb">
-      <DependentUpon>WebForm38.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Change_Password.aspx.designer.vb">
       <DependentUpon>Change_Password.aspx</DependentUpon>
     </Compile>
@@ -851,20 +1205,6 @@
     </Compile>
     <Compile Include="0386M5.aspx.vb">
       <DependentUpon>0386M5.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm42.aspx.designer.vb">
-      <DependentUpon>WebForm42.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm42.aspx.vb">
-      <DependentUpon>WebForm42.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="WebForm43.aspx.designer.vb">
-      <DependentUpon>WebForm43.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm43.aspx.vb">
-      <DependentUpon>WebForm43.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
@@ -891,10 +1231,13 @@
     <Content Include="Images\test.doc" />
     <Content Include="Images\UNEP-FAO-CHW-RC-POPS-SYN-SOP.06-WebsitesContentManagement.English.pdf" />
     <Content Include="DocFile\0364 Training_Probation Period During Review Form %28For Staff%29  V3.xlsx" />
+    <Content Include="Excel\SamplePvbp.xlsx" />
+    <Content Include="Excel\ReSalesDummy.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -902,6 +1245,7 @@
     </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="PDF\01. PMS Quarter Evaluation System %28 Increment and PBVP Both Eligible %29.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -912,8 +1256,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Emp_File\" />
-    <Folder Include="Excel\" />
+    <Folder Include="Level1\" />
+    <Folder Include="Level2\" />
+    <Folder Include="Level3\" />
     <Folder Include="Models\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

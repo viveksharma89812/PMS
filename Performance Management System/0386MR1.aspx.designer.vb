@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class _0386MR1
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''UpdatePanel1 control.
     '''</summary>
@@ -30,7 +30,16 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
-    
+
+    '''<summary>
+    '''outerimgdiv control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents outerimgdiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''supldr control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents supldr As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''op control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents op As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''empname control.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents empname As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''empcode control.
     '''</summary>
@@ -75,7 +84,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents empcode As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''desc control.
     '''</summary>
@@ -84,7 +93,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents desc As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''deptsect control.
     '''</summary>
@@ -93,7 +102,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents deptsect As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''doj control.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents doj As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''repto control.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents repto As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''trai control.
     '''</summary>
@@ -120,7 +129,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents trai As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''prob control.
     '''</summary>
@@ -129,7 +138,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents prob As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''Conf control.
     '''</summary>
@@ -138,7 +147,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Conf As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''revmonth control.
     '''</summary>
@@ -147,7 +156,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents revmonth As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''month control.
     '''</summary>
@@ -156,7 +165,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents month As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''q1 control.
     '''</summary>
@@ -165,7 +174,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents q1 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''q2 control.
     '''</summary>
@@ -174,7 +183,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents q2 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''q3 control.
     '''</summary>
@@ -183,7 +192,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents q3 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''q4 control.
     '''</summary>
@@ -192,7 +201,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents q4 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''RequiredFieldValidator15 control.
     '''</summary>
@@ -201,7 +210,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator15 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''score1 control.
     '''</summary>
@@ -210,7 +219,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score1 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''RequiredFieldValidator4 control.
     '''</summary>
@@ -219,7 +228,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''score6 control.
     '''</summary>
@@ -228,7 +237,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score6 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score2 control.
     '''</summary>
@@ -237,7 +246,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score2 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''RequiredFieldValidator14 control.
     '''</summary>
@@ -246,7 +255,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator14 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''score7 control.
     '''</summary>
@@ -255,7 +264,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score7 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score3 control.
     '''</summary>
@@ -264,7 +273,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score3 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score4 control.
     '''</summary>
@@ -273,7 +282,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score4 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''RequiredFieldValidator10 control.
     '''</summary>
@@ -282,7 +291,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator10 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''score5 control.
     '''</summary>
@@ -291,7 +300,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score5 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ldr control.
     '''</summary>
@@ -300,7 +309,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ldr As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score8 control.
     '''</summary>
@@ -309,7 +318,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score8 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''shead control.
     '''</summary>
@@ -318,7 +327,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents shead As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score9 control.
     '''</summary>
@@ -327,7 +336,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score9 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''dhead control.
     '''</summary>
@@ -336,7 +345,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dhead As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''score10 control.
     '''</summary>
@@ -345,7 +354,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents score10 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Label30 control.
     '''</summary>
@@ -354,7 +363,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label30 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''pass control.
     '''</summary>
@@ -363,7 +372,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pass As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''extend control.
     '''</summary>
@@ -372,7 +381,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents extend As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''Image8 control.
     '''</summary>
@@ -381,7 +390,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Image8 As Global.System.Web.UI.WebControls.Image
-    
+
     '''<summary>
     '''Image9 control.
     '''</summary>
@@ -390,7 +399,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Image9 As Global.System.Web.UI.WebControls.Image
-    
+
     '''<summary>
     '''famnt control.
     '''</summary>
@@ -399,7 +408,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents famnt As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''plus control.
     '''</summary>
@@ -408,7 +417,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents plus As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''amnt2 control.
     '''</summary>
@@ -417,7 +426,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents amnt2 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Sub1 control.
     '''</summary>
@@ -426,7 +435,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Sub1 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''famnt1 control.
     '''</summary>
@@ -435,7 +444,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents famnt1 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''empn control.
     '''</summary>
@@ -444,7 +453,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents empn As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''empd control.
     '''</summary>
@@ -453,7 +462,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents empd As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ldrn control.
     '''</summary>
@@ -462,7 +471,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ldrn As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ldrd control.
     '''</summary>
@@ -471,7 +480,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ldrd As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''sheadn control.
     '''</summary>
@@ -480,7 +489,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sheadn As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''sheadd control.
     '''</summary>
@@ -489,7 +498,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sheadd As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''dheadn control.
     '''</summary>
@@ -498,7 +507,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dheadn As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''dheadd control.
     '''</summary>
@@ -507,7 +516,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dheadd As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''remark1 control.
     '''</summary>
@@ -516,7 +525,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents remark1 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''empsign control.
     '''</summary>
@@ -525,7 +534,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents empsign As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''remark2 control.
     '''</summary>
@@ -534,7 +543,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents remark2 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ldrsign control.
     '''</summary>
@@ -543,7 +552,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ldrsign As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''remark3 control.
     '''</summary>
@@ -552,7 +561,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents remark3 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''sheadsign control.
     '''</summary>
@@ -561,7 +570,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sheadsign As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''remark4 control.
     '''</summary>
@@ -570,7 +579,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents remark4 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''dheadsign control.
     '''</summary>
@@ -579,7 +588,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dheadsign As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''sameas control.
     '''</summary>
@@ -588,7 +597,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sameas As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''sincrease control.
     '''</summary>
@@ -597,7 +606,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sincrease As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''sdecrease control.
     '''</summary>
@@ -606,7 +615,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sdecrease As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''totmarks control.
     '''</summary>
@@ -615,7 +624,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents totmarks As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''ch1 control.
     '''</summary>
@@ -624,7 +633,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ch1 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ch2 control.
     '''</summary>
@@ -633,7 +642,25 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ch2 As Global.System.Web.UI.WebControls.CheckBox
-    
+
+    '''<summary>
+    '''lblEmpsign control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblEmpsign As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblEmpDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblEmpDate As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     '''<summary>
     '''ch3 control.
     '''</summary>
@@ -642,7 +669,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ch3 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''Time control.
     '''</summary>
@@ -651,7 +678,7 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Time As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''insert control.
     '''</summary>
@@ -660,4 +687,31 @@ Partial Public Class _0386MR1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents insert As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''update control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents update As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''show control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents show As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''print control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents print As Global.System.Web.UI.WebControls.LinkButton
 End Class

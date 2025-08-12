@@ -46,6 +46,9 @@ Public Class _0386EST1
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            If Session("access power") = "" Then
+                Response.Redirect("login.aspx")
+            End If
             supldr.Checked = False And supldr.Enabled = False
             q1.Checked = False And q1.Enabled = False
             q2.Checked = False And q2.Enabled = False

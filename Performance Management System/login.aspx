@@ -37,6 +37,7 @@ span.psw {
 }
 </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><%--<div style="background-image:url(Images/Webp.net-resizeimage.jpg);background-size:100%;">--%><br />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>        
@@ -60,7 +61,7 @@ span.psw {
                   <div class="form-group" style="font-weight:bold;color:white">
                       User ID: <br />
                     <div class="input-group"><span class="input-group-addon" style="border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;" ><i class="fa fa-user fa-lg "></i></span>  <asp:TextBox ID="empcode" runat="server" placeholder="Employee ID" TabIndex="1"  Height="36px" CssClass="form-control" Style="border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;" ><i class="fa fa-user fa-lg "></i></span>  <asp:TextBox ID="empcode" runat="server" placeholder="Employee ID" TabIndex="1" ForeColor="Black"  Height="36px" CssClass="form-control" Style="border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;"  required></asp:TextBox></div>
                       Password: <br />
                    <div class="input-group">                                              
@@ -77,70 +78,11 @@ span.psw {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;" TabIndex="3"   />
                    <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
-                  
-                 
- 
-                      <asp:Label ID="Label3" runat="server"  TabIndex="5" Visible="false"></asp:Label>
+                  <asp:Label ID="Label3" runat="server"  TabIndex="5" Visible="false"></asp:Label>
                   </div>
-<%--              class="col-lg-6 col-sm-6 col-md-6 col-xs-12"--%>
-              <%--  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/monophy.gif"   />
-                             </div>--%>
-                <br />                                                                                                
-   
-                                                         
-         </div>
-        <!-- Modal content-->
-        <%--<div class="modal-content"  style="background-color:beige">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" >
-                     
-                    &times;</button><center> 
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/maxxis-logo-141.png" Height="76px"  alt="Avatar" class="avatar"></asp:Image>
-                <h2 class="modal-title" >
-                    Login Here</h2></center> 
-            </div>
-            <div class="modal-body">
-                
-              <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                                    
-                    <div class="form-group">
-                
-                      
-                        <asp:Label ID="Label3" runat="server" Text="User ID" Font-Bold="true"></asp:Label>
- <div class="input-group"><span class="input-group-addon" ><i class="fa fa-user fa-lg "></i></span>  <asp:TextBox ID="empcode" runat="server" cssclass="form-control" placeholder="Enter EmployeeCode" Font-Bold="true" Font-Size="Large" TabIndex="1" required></asp:TextBox>
-           
-                </div>
-                     
-                    <asp:Label ID="Label4" runat="server" Text="Password" Font-Bold="true"></asp:Label>   <div class="input-group">                                              
-                       <span class="input-group-addon"><i class="fa fa-key "></i> </span> <asp:TextBox ID="pass" runat="server" cssclass="form-control" placeholder="Enter Password" Font-Bold="true" Font-Size="Large" TextMode="Password" TabIndex="2" required></asp:TextBox>  
-                         <span class="input-group-addon">   <button id="show_password" class="btn-primary"  type="button" >  
-                            <span class="fa fa-eye-slash icon"></span>    
-                            </button>  
-                         </span> </div>
-                 <asp:Label ID="Label5" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label> 
-                     
-                    </div>                   
-                
-                        </div>  
-            <div class="modal-footer">
-                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                           <div class="form-group">
-                <asp:Button ID="Button1" runat="server"  Text="Login"  CssClass="form-control" TabIndex="4" BackColor="#669999" ForeColor="White" Font-Bold="True" Font-Size="Larger" Height="40px"  />
-                               </div></div>                             
-                                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                           <div class="form-group">
-                               <asp:Label ID="Label2" runat="server" Text="Are you not register ?" TabIndex="5"></asp:Label>
-                                 <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Registration.aspx" TabIndex="6" CssClass="btn btn-primary">Register</asp:LinkButton>
-           <asp:Label ID="Label1" runat="server"  TabIndex="5" Visible="false"></asp:Label>     </div></div>
-            </div>
-              
-         </div>
-           
-    </div>--%>
-                  
-                                                         
-         <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
+
+                <br />                                   
+         </div>  <div id="dvMessage" runat="server" visible="false" class="alert alert-danger">
         <strong>Error!</strong>
         <asp:Label ID="lblMessage" runat="server" />
    </div>
@@ -162,12 +104,10 @@ span.psw {
                 $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');  
             });  
         });  
-    </script>       
+    </script>   
    
-<br />
-        <br />
-
-  <%-- </div>--%>
-      
+     <br />
+  <br />
+       
      </ContentTemplate></asp:UpdatePanel>
 </asp:Content>

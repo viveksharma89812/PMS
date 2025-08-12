@@ -1,0 +1,399 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Performance Management System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\import_excel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\import_excel.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\pmsclass.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\pmsclass.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|e:\\performance management system\\performance management system\\import_excel.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\import_excel.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|e:\\performance management system\\performance management system\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|e:\\performance management system\\performance management system\\login.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\login.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\resales.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\resales.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\conmodule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\conmodule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\summary.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\summary.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\mailtemplate\\reminderemailtemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\mailtemplate\\reminderemailtemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\summary.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\summary.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\resalesstaff.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\resalesstaff.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\resalesstaff.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\resalesstaff.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\variablepay.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\variablepay.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\variablepay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\variablepay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\resales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\resales.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\0366_planning.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\0366_planning.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\view_details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\view_details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\employee_details.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\employee_details.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\employee_details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\employee_details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\0366_planning.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\0366_planning.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\view_details.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\view_details.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\employee_score_histry.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\employee_score_histry.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|E:\\Performance Management System\\performance management system\\employee_score_histry.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BBD3D5D5-514B-41B3-B94C-FB4817C25143}|Performance Management System\\Performance Management System.vbproj|solutionrelative:performance management system\\employee_score_histry.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "login.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\login.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\login.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\login.aspx",
+              "RelativeToolTip": "Performance Management System\\login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-12T06:39:21.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Import_excel.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Import_excel.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\Import_excel.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Import_excel.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\Import_excel.aspx.vb",
+              "ViewState": "AgIAAD8DAAAAAAAAAAA7wEwDAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-08-08T06:29:00.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "View_Details.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\View_Details.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\View_Details.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\View_Details.aspx",
+              "RelativeToolTip": "Performance Management System\\View_Details.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-26T06:59:29.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PMSClass.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\PMSClass.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\PMSClass.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\PMSClass.vb",
+              "RelativeToolTip": "Performance Management System\\PMSClass.vb",
+              "ViewState": "AgIAABACAAAAAAAAAAAYwCMCAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-11T06:32:20.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Employee_Score_Histry.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Employee_Score_Histry.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\Employee_Score_Histry.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Employee_Score_Histry.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\Employee_Score_Histry.aspx.vb",
+              "ViewState": "AgIAALcBAAAAAAAAAAAcwLwBAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-26T06:56:47.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "0366_Planning.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\0366_Planning.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\0366_Planning.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\0366_Planning.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\0366_Planning.aspx.vb",
+              "ViewState": "AgIAAEAAAAAAAAAAAAArwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-11T06:04:32.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Import_excel.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Import_excel.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\Import_excel.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Import_excel.aspx",
+              "RelativeToolTip": "Performance Management System\\Import_excel.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-01T04:08:30.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReSales.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\ReSales.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\ReSales.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\ReSales.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\ReSales.aspx.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-26T06:49:27.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "login.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\login.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\login.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\login.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\login.aspx.vb",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwEkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-08-12T06:39:24.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "conmodule.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\conmodule.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\conmodule.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\conmodule.vb",
+              "RelativeToolTip": "Performance Management System\\conmodule.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-23T09:51:03.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Summary.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Summary.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\Summary.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Summary.aspx",
+              "RelativeToolTip": "Performance Management System\\Summary.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-19T05:15:17.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Summary.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Summary.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\Summary.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Summary.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\Summary.aspx.vb",
+              "ViewState": "AgIAANYAAAAAAAAAAAD4v/gAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-19T05:15:20.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReminderEmailTemplate.html",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\MailTemplate\\ReminderEmailTemplate.html",
+              "RelativeDocumentMoniker": "Performance Management System\\MailTemplate\\ReminderEmailTemplate.html",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\MailTemplate\\ReminderEmailTemplate.html",
+              "RelativeToolTip": "Performance Management System\\MailTemplate\\ReminderEmailTemplate.html",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvyQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-19T05:54:19.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Variablepay.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Variablepay.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\Variablepay.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Variablepay.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\Variablepay.aspx.vb",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAAABUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-11T06:35:36.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReSalesStaff.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\ReSalesStaff.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\ReSalesStaff.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\ReSalesStaff.aspx",
+              "RelativeToolTip": "Performance Management System\\ReSalesStaff.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-26T06:52:04.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReSalesStaff.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\ReSalesStaff.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\ReSalesStaff.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\ReSalesStaff.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\ReSalesStaff.aspx.vb",
+              "ViewState": "AgIAALYBAAAAAAAAAAASwNMBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-26T06:52:21.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Variablepay.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Variablepay.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\Variablepay.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Variablepay.aspx",
+              "RelativeToolTip": "Performance Management System\\Variablepay.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-11T06:24:33.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Employee_Details.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Employee_Details.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\Employee_Details.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Employee_Details.aspx",
+              "RelativeToolTip": "Performance Management System\\Employee_Details.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-26T07:29:27.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReSales.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\ReSales.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\ReSales.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\ReSales.aspx",
+              "RelativeToolTip": "Performance Management System\\ReSales.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-26T06:49:05.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "0366_Planning.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\0366_Planning.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\0366_Planning.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\0366_Planning.aspx",
+              "RelativeToolTip": "Performance Management System\\0366_Planning.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-11T06:04:25.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Employee_Details.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Employee_Details.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\Employee_Details.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Employee_Details.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\Employee_Details.aspx.vb",
+              "ViewState": "AgIAAJkBAAAAAAAAAAAIwKcBAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-26T07:29:30.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "View_Details.aspx.vb",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\View_Details.aspx.vb",
+              "RelativeDocumentMoniker": "Performance Management System\\View_Details.aspx.vb",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\View_Details.aspx.vb",
+              "RelativeToolTip": "Performance Management System\\View_Details.aspx.vb",
+              "ViewState": "AgIAACcBAAAAAAAAAAAcwD4BAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-26T06:59:32.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Employee_Score_Histry.aspx",
+              "DocumentMoniker": "E:\\Performance Management System\\Performance Management System\\Employee_Score_Histry.aspx",
+              "RelativeDocumentMoniker": "Performance Management System\\Employee_Score_Histry.aspx",
+              "ToolTip": "E:\\Performance Management System\\Performance Management System\\Employee_Score_Histry.aspx",
+              "RelativeToolTip": "Performance Management System\\Employee_Score_Histry.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-23T11:08:04.371Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

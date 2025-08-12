@@ -66,11 +66,12 @@
             $('[id*=myModal]').modal('show');
         }  
 </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional"><Triggers><asp:PostBackTrigger ControlID="empid" /><asp:PostBackTrigger ControlID="export" /><asp:PostBackTrigger ControlID="upload" /></Triggers><ContentTemplate>--%>
-    <br />
+    
         <div class="container-fluid" style="font-weight:bold"  >
             <div class="col-sm-6 col-lg-6 col-md-6">
             <h3>Upload Documents of Employee</h3><hr />

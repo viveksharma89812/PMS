@@ -89,10 +89,6 @@
             height: 25px;
         }
 
-        .auto-style85 {
-            margin-left: 33px;
-        }
-
         .auto-style86 {
             width: 602px;
         }
@@ -169,7 +165,7 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    4<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             
@@ -204,7 +200,7 @@
             <%--</center>--%>
             &nbsp;<br />
 <center>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
     function ValidateCheckBoxList(sender, args) {
         var checkBoxList = document.getElementById("<%=CheckBoxList1.ClientID %>"); 
         var checkboxes = checkBoxList.getElementsByTagName("input");
@@ -277,8 +273,8 @@
         }
         args.IsValid = isValid;
     }
-</script>
-     
+</script>--%>
+
           <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" EnableViewState="true" Width="920px" BackColor="#ffffff" CssClass="auto-style99">
 
             <table id="1" border="1" class="auto-style21" style="visibility: visible; width:915px; list-style-type: circle; table-layout: fixed; border-collapse: separate; border-spacing: inherit">
@@ -399,94 +395,64 @@
                             Assessment Parameter</center>
                     </td>
                     <td class="auto-style55">%</td>
-                    <td class="auto-style56">5</td>
-                    <td class="auto-style95">4</td>
-                    <td class="auto-style96">3</td>
-                    <td class="auto-style97">2</td>
-                    <td class="auto-style59">1</td>
+                    <td class="auto-style56">15</td>
+                    <td class="auto-style95">12</td>
+                    <td class="auto-style96">9</td>
+                    <td class="auto-style97">6</td>
+                    <td class="auto-style59">3</td>
                 </tr>
                 <tr itemid="1">
                     <td class="auto-style86" title="a" style="text-align:left" colspan="2"><b>1. Job Knowledge(工作知識) :</b> In-depth technical knowledge of related areas to his / her function and keeping abreast with the latest developments in his / her functional area.<asp:TextBox ID="scor1" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" title="a" style="font-weight:bold">15%</td>
-                    <td colspan="5" title="a"><asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red" ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                        <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5" title="a"><em>
+                        <asp:TextBox ID="score1" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="1" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style86" colspan="2" style="text-align:left"><b>2. Planning, Organising & Resourcefulness (有組織性的規劃) :</b> Organizes activities in terms of importance and priority and establishes schedules to complete assignments in time and is also able to deliver results under stress conditions.<asp:TextBox ID="scor2" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" colspan="1" style="font-weight:bold">15%</td>
-                    <td colspan="5"><asp:CustomValidator ID="CustomValidator2" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red" ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList1"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList2" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                        <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5"><em>
+                        <asp:TextBox ID="score2" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="2" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style86" style="text-align:left" colspan="2"><b>3. Technical Skills(工作技巧) :</b> Consider proficiency of technical/computer skills; ability to apply technical and computer skills to complete work.<asp:TextBox ID="scor3" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" style="font-weight:bold">15%</td>
-                    <td colspan="5"><asp:CustomValidator ID="CustomValidator3" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red" ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList2"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList3" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                             <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5"><em>
+                        <asp:TextBox ID="score3" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="3" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style86" style="text-align:left" colspan="2"><b>4.Initiative Approach(積極主動性) :</b> Taking initiative to achieve goals and complete assignments.<asp:TextBox ID="scor4" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" style="font-weight:bold">15%</td>
-                    <td colspan="5"><asp:CustomValidator ID="CustomValidator4" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red" ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList3"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList4" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                             <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5"><em>
+                        <asp:TextBox ID="score4" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="4" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style86" style="text-align:left" colspan="2"><b>5. Willingness to learn(學習動機) :</b> Being motivated to learn new skills &amp; technology.<asp:TextBox ID="scor5" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" style="font-weight:bold">15%</td>
-                    <td colspan="5"><asp:CustomValidator ID="CustomValidator5" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red" ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList4"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList5" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                             <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5"><em>
+                        <asp:TextBox ID="score5" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="4" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style86" style="text-align:left" colspan="2"><b>6. Communication skills(溝通技巧) :</b> Can effectively express ideas and opinions and provide information with clarity on a one to one level and to a group as a whole.<asp:TextBox ID="scor6" runat="server" Visible="False"></asp:TextBox>
                     </td>
                     <td class="auto-style55" style="font-weight:bold">15%</td>
-                    <td colspan="5"><asp:CustomValidator ID="CustomValidator6" runat="server" ErrorMessage="Please select at least one item." ForeColor="Red"  ValidationGroup="insert" ClientValidationFunction="ValidateCheckBoxList5"></asp:CustomValidator>
-                        <asp:CheckBoxList ID="CheckBoxList6" runat="server" AutoPostBack="True" CssClass="auto-style85" RepeatDirection="Horizontal" Width="181px" CausesValidation="true">
-                            <asp:ListItem Value="5" ></asp:ListItem>
-                        <asp:ListItem Value="4" ></asp:ListItem>
-                        <asp:ListItem  Value="3"></asp:ListItem>
-                        <asp:ListItem Value="2"></asp:ListItem>
-                        <asp:ListItem Value="1"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td colspan="5"><em>
+                        <asp:TextBox ID="score6" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="4" Width="70px"></asp:TextBox>
+                        </em>
                     </td>
                 </tr>
                 <tr>
@@ -543,13 +509,13 @@
                     <%--  <asp:Label ID="totmarks" runat="server" Text="Label"></asp:Label>--%>
                      </td>
                   <td >
-                      <asp:CheckBox ID="deptsign" runat="server" />
+                      <asp:CheckBox ID="ch1" runat="server" />
                      </td>
                   <td>
-                      <asp:CheckBox ID="sectsign" runat="server" />
+                      <asp:CheckBox ID="ch2" runat="server" />
                      </td>
                   <td>
-                      <asp:CheckBox ID="empsign" runat="server" AutoPostBack="true" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" />
+                      <asp:CheckBox ID="ch3" runat="server" AutoPostBack="true" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" />
                      </td>
                      
              </tr>
@@ -562,18 +528,17 @@
                 </tr>--%>
                 <tr>
                     <td runat="server" colspan="4">
-                        <asp:Label ID="Label23" runat="server"></asp:Label>
+                        <asp:Label ID="Time" runat="server" Text="Label"></asp:Label>
                     </td>
                 </tr>
             </table>
-              <br />
-              <br />
                <center>
-                  <asp:Button ID="insert" runat="server"  Text="Submit" cssclass="btn btn-primary" ValidationGroup="insert" />  
              <%--<asp:Button ID="Button3" runat="server" CssClass="auto-style102" Height="43px" Text="Export To Pdf" />--%>
                   <%-- <asp:LinkButton ID="export" runat="server" CssClass="btn btn-danger" ><i class="fa fa-file-excel-o "></i>  Export</asp:LinkButton>  --%>
-<asp:LinkButton runat="server" id="print" cssclass="btn btn-warning" OnClientClick = "return PrintPanel();"><i class="fa fa-print"></i> Print</asp:LinkButton>
-            </center>
+                   <asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
+                   <span class="auto-style184">&nbsp;&nbsp;
+                   <asp:Button ID="insert0" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
+                   </span></center>
         </asp:Panel>
        
 
