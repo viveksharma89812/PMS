@@ -262,12 +262,12 @@
             border-width: 1px;
         }
         .auto-style332 {
-            width: 67px;
+            width: 148px;
             font-family: Calibri;
             text-align: left;
         }
         .auto-style333 {
-            width: 221%
+            width: 101%
         }
         .auto-style334 {
             border: 1px solid #000000;
@@ -275,98 +275,140 @@
             background-color: #D9E1F2;
         }
         </style>
-    <script type = "text/javascript">
-        function PrintPanel() {
-            var panel = document.getElementById("<%=Panel1.ClientID %>");
-            var printWindow = window.open('', '', 'height=400,width=800,toolbar=0');
-            printWindow.document.write('<html><head><title</title>');
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(panel.innerHTML);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-      
-            setTimeout(function () {
-                printWindow.print();
-            }, 500);
-            return false;
-        }
-    </script>
+         <script>
+             function printDiv(divId) {
+                 var printableContent = document.getElementById(divId).innerHTML;
+                 var originalContent = document.body.innerHTML;
+
+                 // Create a new window for printing
+                 var printWindow = window.open('', '_blank');
+
+                 printWindow.document.write('<html><head><title></title>');
+                 printWindow.document.write('<style type="text/css">');
+                 printWindow.document.write('@media print {');
+                 printWindow.document.write('    body {');
+                 printWindow.document.write('        font-family: Arial, sans-serif;');
+                 printWindow.document.write('        color: #333; /* Text color */');
+                 printWindow.document.write('        text-align: center; /* Center align text */');
+                 // Add more CSS styles as needed
+                 printWindow.document.write('    }');
+                 printWindow.document.write('}');
+                 printWindow.document.write('</style>');
+                 printWindow.document.write('</head><body>');
+
+                 // Write printable content into the new window
+                 printWindow.document.write(printableContent);
+
+                 printWindow.document.write('</body></html>');
+                 printWindow.document.close();
+
+                 // Focus and print the new window
+                 printWindow.focus();
+                 printWindow.print();
+                 printWindow.close();
+
+                 // Restore original content on the main page
+                 document.body.innerHTML = originalContent;
+             }
+
+           
+         </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><%--<Triggers><asp:PostBackTrigger ControlID="Button2" /></Triggers>--%><ContentTemplate>
        <center>
             <center>
-                <asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
-                <span class="auto-style184"><%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%></span>
+                <%--<asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />--%>
+                <%--<span class="auto-style184"><%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%></span>
       </center>
-           <%-- <br class="auto-style184" />
-            <span class="auto-style184">
-            <script type="text/javascript">--%>
-   <%-- function ValidateCheckBoxList(sender, args) {
-        var checkBoxList = document.getElementById("<%=CheckBoxList1.ClientID %>"); 
-        var checkboxes = checkBoxList.getElementsByTagName("input");
-        var isValid = false;
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                isValid = true;
-                break;
-            }
-        }
-        args.IsValid = isValid;
-        }
-         function ValidateCheckBoxList1(sender, args) {
-        var checkBoxList = document.getElementById("<%=CheckBoxList2.ClientID %>"); 
-        var checkboxes = checkBoxList.getElementsByTagName("input");
-        var isValid = false;
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                isValid = true;
-                break;
-            }
-        }
-        args.IsValid = isValid;
-        }
-         function ValidateCheckBoxList2(sender, args) {
-        var checkBoxList = document.getElementById("<%=CheckBoxList3.ClientID %>"); 
-        var checkboxes = checkBoxList.getElementsByTagName("input");
-        var isValid = false;
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                isValid = true;
-                break;
-            }
-        }
-        args.IsValid = isValid;
-        }
-         function ValidateCheckBoxList3(sender, args) {
-        var checkBoxList = document.getElementById("<%=CheckBoxList4.ClientID %>"); 
-        var checkboxes = checkBoxList.getElementsByTagName("input");
-        var isValid = false;
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                isValid = true;
-                break;
-            }
-        }
-        args.IsValid = isValid;
-        }
-         function ValidateCheckBoxList4(sender, args) {
-        var checkBoxList = document.getElementById("<%=CheckBoxList5.ClientID %>"); 
-        var checkboxes = checkBoxList.getElementsByTagName("input");
-        var isValid = false;
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                isValid = true;
-                break;
-            }
-        }
-        args.IsValid = isValid;
-        }
-        --%>
-<%--</script>--%>
-      
+         <script>
+             $(function () {
+                 var power = '<%= Session("access power") %>';
+                 if (power == 3) {
+                     var webcamWidth = $('#webcam').width();
+                     var webcamHeight = $('#webcam').height();
+
+                     Webcam.set({
+                         width: webcamWidth,
+                         height: webcamHeight,
+                         image_format: 'jpeg',
+                         jpeg_quality: 90
+                     });
+
+                     Webcam.attach('#webcam');
+
+                     $("#btnCapture").click(function () {
+                         Webcam.snap(function (data_uri) {
+                             var img = new Image();
+                             img.src = data_uri;
+                             img.onload = function () {
+                                 var canvas = document.createElement('canvas');
+                                 var ctx = canvas.getContext('2d');
+
+                                 canvas.width = img.width;
+                                 canvas.height = img.height + 30;
+
+                                 ctx.drawImage(img, 0, 0);
+
+                                 ctx.font = '20px Arial';
+                                 ctx.fillStyle = 'white';
+                                 ctx.textAlign = 'center';
+
+                                 var currentDate = new Date();
+                                 var dateTimeText = currentDate.toLocaleString();
+
+                                 ctx.fillText(dateTimeText, canvas.width / 2, canvas.height - 10);
+
+                                 var finalImage = canvas.toDataURL('image/jpeg');
+
+                                 $("#imgCapture")[0].src = finalImage;
+
+                             };
+                         });
+                     });
+
+                     $("#btnUpload").click(function () {
+                         var imageData = $("#imgCapture")[0].src;
+
+                         $.ajax({
+                             type: "POST",
+                             url: "Finance_Accounting_Payable_New.aspx/SaveCapturedImage",
+                             data: JSON.stringify({ data: imageData }),
+                             contentType: "application/json; charset=utf-8",
+                             dataType: "json",
+                             success: function (r) {
+                                 alert('Image saved successfully!');
+                                 chk3Display()
+                             },
+                             error: function (xhr, status, error) {
+                                 alert("There was an error uploading the image.");
+                             }
+                         });
+                     });
+                 }
+             });
+
+             function chk3Display() {
+                 $(".emps").css("display", "block");
+             }
+         </script>
+
      </span>
+                        <!-- Webcam Container -->
+<div id="outerimgdiv" style="position:fixed;" runat="server">
+    <div class="camera-container">
+        <div id="webcam"></div>
+         <button id="btnCapture" type="button" class="btn-success form-control">Capture</button>
+    </div>
+    <br />
+    <div class="camera-container">
+        <img id="imgCapture" />
+        <button id="btnUpload" type="button" class="form-control btn-primary" >Upload</button>
+    </div>
+</div>
+        <!-- Webcam Container -->
+           <div id="printableContent">
             <asp:Panel ID="Panel1" runat="server" BackColor="#ffffff" BorderStyle="Solid" CssClass="auto-style183" Width="900px">
                 <table id="1" border="1" class="auto-style21" style="width:895px">
                     <tr>
@@ -374,11 +416,10 @@
                             <center>
                                 <table class="nav-justified">
                                     <tr>
-                                        <td class="auto-style114">Performance Review Form 绩效考核表 IQC TB &amp; Cutting 中檢(成型&amp;裁斷/IQC Extrusion 中檢(押出)</td>
+                                        <td class="auto-style114">Performance Review Form For Variable Pay (Only for level 3) 績效評核_可變薪酬評核表-僅適用於第三級作業職</td>
                                         </em>
                                         <td class="auto-style323">
-                                            <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="Medium" Text="Supervisior / Leader" />
-                                            &nbsp;<asp:CheckBox ID="CheckBox2" runat="server" Font-Size="Medium" Text="OP" />
+                                            &nbsp;<asp:CheckBox ID="CheckBox2" runat="server" Font-Size="Medium" Text="OP" Checked="True" />
                                         </td>
                                     </tr>
                                 </table>
@@ -401,59 +442,64 @@
                 </tr>
              
                 </em></em>
-                <table id="2" border="1" class="auto-style20">
+                <table id="2" class="auto-style20"   style="width:100%; border-collapse: collapse; text-align:center">
                     <tr>
                         <td class="auto-style280">
-                            <table class="nav-justified">
+                            <table class="nav-justified" style="width:100%; border-collapse: collapse; text-align:center">
                                 <tr>
                                     <td class="auto-style122">
-                                        <table class="nav-justified">
+                                        <table class="nav-justified" border="0"  style="width:100%; border-collapse: collapse; text-align:center">
                                             <tr>
-                                                <td class="auto-style302">Employee Name</td>
-                                                <td class="auto-style301">
-                                                    <asp:Label ID="Label31" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                                <td class="auto-style302">Employee Code</td>
-                                                <em>
-                                                <td class="auto-style301">
-                                                    <asp:Label ID="Label33" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                                <td class="auto-style302">Desgnation</td>
                                                 <td class="auto-style122">
-                                                    <asp:Label ID="Label35" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                                </em>
-                                            </tr>
-                                            <tr>
-                                                <td class="auto-style302">Dept./ Section</td>
-                                                <td class="auto-style301">
-                                                    <asp:Label ID="Label32" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                                <td class="auto-style302">DOJ</td>
-                                                <td class="auto-style301">
-                                                    <asp:Label ID="Label34" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                                <td class="auto-style302">Reporting To</td>
-                                                <td class="auto-style122">
-                                                    <asp:Label ID="Label36" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="auto-style302">Review Time</td>
-                                                <td class="auto-style122" colspan="2">
-                                                    <asp:CheckBox ID="CheckBox32" runat="server" CssClass="auto-style280" Text="Training" />
-                                                    &nbsp;<asp:CheckBox ID="CheckBox33" runat="server" CssClass="auto-style280" Text="Probation" />
-                                                    &nbsp;<asp:CheckBox ID="CheckBox34" runat="server" CssClass="auto-style280" Text="Confirm" />
-                                                </td>
-                                                <td class="auto-style122" colspan="3">Year : <em>
-                                                    <asp:Label ID="Label37" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
-                                                    &nbsp;
-                                                    </em>
-                                                    <asp:CheckBox ID="CheckBox35" runat="server" CssClass="auto-style280" Text="Monthly" />
-                                                    <em>&nbsp;</em><asp:CheckBox ID="CheckBox38" runat="server" CssClass="auto-style280" Text="Q1" />
-                                                    <em>&nbsp;</em><asp:CheckBox ID="CheckBox37" runat="server" CssClass="auto-style280" Text="Q2" />
-                                                    <em>&nbsp;</em><asp:CheckBox ID="CheckBox39" runat="server" CssClass="auto-style280" Text="Q3" />
-                                                    <em>&nbsp;</em><asp:CheckBox ID="CheckBox40" runat="server" CssClass="auto-style280" Text="Q4" />
+                                                    <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                                        <tr>
+                                                            <td class="auto-style302">Employee Name</td>
+                                                            <td class="auto-style301">
+                                                                <asp:Label ID="empname" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                            <td class="auto-style302">Employee Code</td>
+                                                            <em>
+                                                            <td class="auto-style301">
+                                                                <asp:Label ID="empcode" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                            <td class="auto-style302">Desgnation</td>
+                                                            <td class="auto-style122">
+                                                                <asp:Label ID="desc" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                            </em>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style302">Dept./ Section</td>
+                                                            <td class="auto-style301">
+                                                                <asp:Label ID="deptsect" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                            <td class="auto-style302">DOJ</td>
+                                                            <td class="auto-style301">
+                                                                <asp:Label ID="doj" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                            <td class="auto-style302">Reporting To</td>
+                                                            <td class="auto-style122">
+                                                                <asp:Label ID="repto" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style302">Review Time</td>
+                                                            <td class="auto-style122" colspan="2">
+                                                                <asp:CheckBox ID="trai" runat="server" AutoPostBack="True" CssClass="auto-style280" Enabled="False" Text="Training" />
+                                                                &nbsp;<asp:CheckBox ID="prob" runat="server" AutoPostBack="True" CssClass="auto-style280" Enabled="False" Text="Probation" />
+                                                                &nbsp;<asp:CheckBox ID="conf" runat="server" AutoPostBack="True" CssClass="auto-style280" Enabled="False" Text="Confirm" />
+                                                            </td>
+                                                            <td class="auto-style122" colspan="3">Year : <em>
+                                                                <asp:Label ID="revmonth" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                                &nbsp; </em>
+                                                                <asp:CheckBox ID="month" runat="server" AutoPostBack="True" Checked="True" CssClass="auto-style280" Text="Monthly" />
+                                                                <em>&nbsp;</em><asp:CheckBox ID="q1" runat="server" AutoPostBack="True" CssClass="auto-style280" Text="Q1" Visible="False" />
+                                                                <em>&nbsp;</em><asp:CheckBox ID="q2" runat="server" AutoPostBack="True" CssClass="auto-style280" Text="Q2" Visible="False" />
+                                                                <em>&nbsp;</em><asp:CheckBox ID="q3" runat="server" AutoPostBack="True" CssClass="auto-style280" Text="Q3" Visible="False" />
+                                                                <em>&nbsp;</em><asp:CheckBox ID="q4" runat="server" AutoPostBack="True" CssClass="auto-style280" Text="Q4" Visible="False" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </td>
                                             </tr>
                                         </table>
@@ -468,12 +514,12 @@
                    
                     <tr>
                         <td class="auto-style284"><em>
-                            <table class="nav-justified">
-                                <tr>
-                                    <td class="auto-style334"><strong>B. Fixed固定的</strong></td>
+                            <table class="nav-justified"  border ="1" style="width:100%; border-collapse: collapse; text-align:center">
+                                <tr style="background-color: #D9E1F2; text-align:center">
+                                    <td class="auto-style334" ><strong>B. Fixed固定的</strong></td>
                                     <td class="auto-style329"><strong>76%</strong></td>
                                     <td class="auto-style328"><strong>C. Variable 可變的 </strong></td>
-                                    <td class="auto-style328">16<strong>%</strong></td>
+                                    <td class="auto-style328">15<strong>%</strong></td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style284">1. Attendance 出勤率 <em>
@@ -484,7 +530,7 @@
                                             <tr>
                                                 <td class="auto-style293">12%</td>
                                                 <td class="auto-style304">
-                                                    <asp:TextBox ID="score1" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="score1" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px" TabIndex="1"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -497,7 +543,7 @@
                                             <tr>
                                                 <td class="auto-style293">10%</span></td>
                                                 <td class="auto-style131">
-                                                    <asp:TextBox ID="score4" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="score5" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px" TabIndex="5"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -511,8 +557,8 @@
                                         <table class="nav-justified">
                                             <tr>
                                                 <td class="auto-style293">40%</span></td>
-                                                <td class="auto-style131">
-                                                    <asp:TextBox ID="score2" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" Width="70px"></asp:TextBox>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score2" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" Width="70px" TabIndex="2"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -524,7 +570,7 @@
                                             <tr>
                                                 <td class="auto-style293">5%</span></td>
                                                 <td class="auto-style131">
-                                                    <asp:TextBox ID="score5" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="score6" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" Width="70px" TabIndex="6"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -540,7 +586,7 @@
                                                 <td class="auto-style293">12%</td>
                                                 <td class="auto-style304">
                                                     <em>
-                                                    <asp:TextBox ID="score6" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="score3" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" Width="70px" TabIndex="3"></asp:TextBox>
                                                     </em></td>
                                             </tr>
                                         </table>
@@ -554,7 +600,7 @@
                                                 <td class="auto-style293">12%</td>
                                                 <td class="auto-style304">
                                                     <em>
-                                                    <asp:TextBox ID="score7" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" Width="70px"></asp:TextBox>
+                                                    <asp:TextBox ID="score4" runat="server" AutoPostBack="True" CssClass="auto-style165" Height="21px" style="text-align:center" TabIndex="4" Width="70px"></asp:TextBox>
                                                     </em></td>
                                             </tr>
                                         </table>
@@ -563,87 +609,82 @@
                             </table>
                             </em></td>
                     </tr>
+                    
+                </table>
+                <table class="nav-justified"  border ="1" style="width:100%; border-collapse: collapse; text-align:center">
                     <tr>
-                        <td class="auto-style280">
+                        <td class="auto-style312" colspan="2" style="background-color: #8EA9DB;text-align:center">
+                            <strong>D. Leaders Review 領導者</strong></td>
+                        <td class="auto-style314" style="background-color: #FFD966; text-align:center"><strong>9%</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style137">1. Shift Leader Post Support</td>
+                        <td class="auto-style138">
+                            <asp:TextBox ID="sldr" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="10" Width="244px"></asp:TextBox>
+                        </td>
+                        <td class="auto-style303">
                             <table class="nav-justified">
                                 <tr>
-                                    <td class="auto-style312" colspan="2"><strong>D. Leaders Review 領導者</strong></td>
-                                    <td class="auto-style314"><strong>9%</strong></td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style137">1. Shift Leader Post Support <em>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </em></td>
-                                    <td class="auto-style138">
-                                        <asp:TextBox ID="TextBox34" runat="server" CssClass="auto-style165" Width="244px"></asp:TextBox>
-                                    </td>
+                                    <td class="auto-style327">2</td>
                                     <td class="auto-style303">
-                                        <table class="nav-justified">
-                                            <tr>
-                                                <td class="auto-style327">2</td>
-                                                <td class="auto-style303">
-                                                    <asp:TextBox ID="TextBox35" runat="server" CssClass="auto-style165" Width="122px"></asp:TextBox>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style137">2. Leader <em>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </em></td>
-                                    <td class="auto-style138">
-                                        <asp:TextBox ID="TextBox7" runat="server" CssClass="auto-style165" Width="244px"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style303">
-                                        <table class="nav-justified">
-                                            <tr>
-                                                <td class="auto-style327">4</td>
-                                                <td class="auto-style303">
-                                                    <asp:TextBox ID="TextBox26" runat="server" CssClass="auto-style165" Width="122px"></asp:TextBox>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style291">3. Section Head <em>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </em></td>
-                                    <td class="auto-style138">
-                                        <asp:TextBox ID="TextBox9" runat="server" CssClass="auto-style165" Width="244px"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style122">
-                                        <table class="nav-justified">
-                                            <tr>
-                                                <td class="auto-style327">3</td>
-                                                <td class="auto-style303">
-                                                    <asp:TextBox ID="TextBox28" runat="server" CssClass="auto-style165" Width="122px"></asp:TextBox>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style291">4. Department Head</td>
-                                    <td class="auto-style138">
-                                        <asp:TextBox ID="TextBox30" runat="server" CssClass="auto-style165" Width="244px"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style122">
-                                        <asp:TextBox ID="TextBox29" runat="server" CssClass="auto-style165" Width="244px"></asp:TextBox>
+                                        <asp:TextBox ID="score7" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="7" Width="122px"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
-                            <span class="auto-style292"></span></td>
+                        </td>
                     </tr>
-                    
-                </table>
-                </em></em>
-                <table class="nav-justified">
                     <tr>
-                        <td class="auto-style284" colspan="2">
+                        <td class="auto-style291">2.Leader</td>
+                        <td class="auto-style138">
+                            <asp:TextBox ID="ldr" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="11" Width="244px"></asp:TextBox>
+                        </td>
+                        <td class="auto-style122">
                             <table class="nav-justified">
                                 <tr>
+                                    <td class="auto-style327">4</td>
+                                    <td class="auto-style303">
+                                        <asp:TextBox ID="score8" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="8" Width="122px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style291">3. Section Head/ Section </td>
+                        <td class="auto-style138">
+                            <asp:TextBox ID="shead" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="12" Width="244px"></asp:TextBox>
+                        </td>
+                        <td class="auto-style122">
+                            <table class="nav-justified">
+                                <tr>
+                                    <td class="auto-style327">3</td>
+                                    <td class="auto-style303">
+                                        <asp:TextBox ID="score9" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="9" Width="122px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style291">4. Department Head</td>
+                        <td class="auto-style138">
+                            <asp:TextBox ID="dhead" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="13" Width="244px"></asp:TextBox>
+                        </td>
+                        <td class="auto-style122">
+                            <asp:TextBox ID="score10" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="10" Width="244px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+                <span class="auto-style292"></span>
+                </td>
+                </tr>
+                </table>
+                </em></em>
+                <table class="nav-justified"  border="1" style="width:100%; border-collapse: collapse; text-align:center; ">
+                    <tr>
+                        <td class="auto-style284" colspan="2">
+                            <table class="nav-justified"  border="1" style="width:100%; border-collapse: collapse; text-align:center;">
+                                <tr  style="background-color: #D9E1F2; text-align:center">
                                     <td class="auto-style315" colspan="5"><strong>Criteria of after Monthly /Quarterly /Yearly performance 月/季/年業績後標準</strong></td>
                                 </tr>
                                 <tr>
@@ -652,26 +693,26 @@
                                         </span></td>
                                     <td class="auto-style298"><strong>Status of Review Period</strong></td>
                                     <td class="auto-style316"><strong>
-                                        <asp:CheckBox ID="CheckBox30" runat="server" CssClass="auto-style280" Text="Pass" />
+                                        <asp:CheckBox ID="pass" runat="server" CssClass="auto-style280" Text="Pass" AutoPostBack="True" />
                                         </strong></td>
                                     <td class="auto-style317">Total Score</td>
                                     <td class="auto-style122"><strong>
-                                        <asp:CheckBox ID="CheckBox31" runat="server" CssClass="auto-style280" Text="Extend" />
+                                        <asp:CheckBox ID="extend" runat="server" CssClass="auto-style280" Text="Extend" AutoPostBack="True" />
                                         </strong></td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style122" colspan="2">100
-                                        <asp:Image ID="Image8" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634718713.jpg" Width="160px" />
+                                        <asp:Image ID="Image10" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634718713.jpg" Width="160px" />
                                     </td>
                                     <td class="auto-style317">76</td>
                                     <td class="auto-style122">
-                                        <asp:Image ID="Image9" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634733964.jpg" Width="160px" />
+                                        <asp:Image ID="Image11" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634733964.jpg" Width="160px" />
                                         &nbsp;0</td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style297">Coefficient 係數</td>
                                     <td class="auto-style122" colspan="2" rowspan="3">
-                                        <table class="nav-justified">
+                                        <table  class="nav-justified" border ="1"  style="width:100%; border-collapse: collapse; text-align:center">
                                             <tr>
                                                 <td class="auto-style319">1.3</td>
                                                 <td class="auto-style319">1.2</td>
@@ -691,7 +732,7 @@
                                     </td>
                                     <td class="auto-style318">1</td>
                                     <td class="auto-style122" rowspan="3">
-                                        <table class="nav-justified">
+                                        <table class="nav-justified" border ="1"  style="width:100%; border-collapse: collapse; text-align:center">
                                             <tr>
                                                 <td class="auto-style122">0.9</td>
                                                 <td class="auto-style122">0.8</td>
@@ -719,22 +760,24 @@
                                     <td class="auto-style318">300</td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style122">Final amount (+/-) 最终金额 (+/-)&nbsp; <em>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </em></td>
+                                    <td class="auto-style122">Final amount (+/-) 最终金额 (+/-)&nbsp; </td>
                                     <td class="auto-style122" colspan="4">
-                                        <asp:TextBox ID="TextBox21" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px"></asp:TextBox>
-                                    </td>
+                                        <asp:TextBox ID="famnt" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small; text-align: center;" Width="150px" AutoPostBack="True"></asp:TextBox>
+                                        <asp:CheckBox ID="plus" runat="server" AutoPostBack="True" Font-Bold="True" Font-Size="Small" Height="24px" Text="Increase" Width="65px" />
+                                        <asp:TextBox ID="amnt2" runat="server" AutoPostBack="True" OnTextChanged="amnt2_TextChanged" ReadOnly="True" Width="32px"></asp:TextBox>
+                                        <asp:CheckBox ID="Sub1" runat="server" AutoPostBack="True" Font-Bold="True" Font-Size="Small" Height="24px" Text=" Decrease" />
+                                        <asp:TextBox ID="famnt1" runat="server" AutoPostBack="True" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px"></asp:TextBox>
+                                        &nbsp;&nbsp; &nbsp;</td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="background-color: #D9E1F2; text-align:center">
                         <td class="auto-style305" colspan="2"><span class="auto-style289"><strong>If when you fail in Review Month 如果你在 Review Month 中失敗了</strong></span></td>
                     </tr>
                     <tr>
                         <td class="auto-style122" colspan="2">
-                            <table class="nav-justified">
+                            <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
                                 <tr>
                                     <td class="auto-style285"><strong>Evaluate By<br /> &nbsp;評估依據</strong></td>
                                     <td class="auto-style287"><strong>Salary Effect of Monthly base 月基工資效應</strong></td>
@@ -748,15 +791,15 @@
                                 <tr>
                                     <td class="auto-style228"><span class="auto-style165">By Own Self (Employee)</span><em><br class="auto-style213" /><span class="auto-style165">&nbsp;</span></em><span class="auto-style165">自己（員工）</span></td>
                                     <td class="auto-style226" rowspan="4">
-                                        <table class="nav-justified">
+                                        <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
                                             <tr>
                                                 <td class="auto-style307">
-                                                    <asp:CheckBox ID="CheckBox16" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="empn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <em>
                                                 <td class="auto-style308"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
                                                 <td class="auto-style307">
-                                                    <asp:CheckBox ID="CheckBox26" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="empd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style308"><span class="auto-style280">Salary decrease (Deduct) </span><em>
                                                     <br class="auto-style286" />
@@ -765,11 +808,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox17" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="ldrn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox27" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="ldrd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
                                                     <br class="auto-style286" />
@@ -777,11 +820,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox24" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="sheadn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox28" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="sheadd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
                                                     <br class="auto-style286" />
@@ -789,11 +832,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox25" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="dheadn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /></em><span class="auto-style280">&nbsp;與（不扣除）相同</span></td>
                                                 <td class="auto-style231">
-                                                    <asp:CheckBox ID="CheckBox29" runat="server" CssClass="auto-style165" />
+                                                    <asp:CheckBox ID="dheadd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
                                                 </td>
                                                 <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
                                                     <br class="auto-style286" />
@@ -802,71 +845,69 @@
                                         </table>
                                     </td>
                                     <td class="auto-style227">
-                                        <asp:TextBox ID="TextBox17" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" Font-Overline="True" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="remark1" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" Font-Overline="True" TextMode="MultiLine"></asp:TextBox>
                                     </td>
                                     <td class="auto-style209"><span class="auto-style289">
-                                        <asp:CheckBox ID="empsign4" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        <asp:CheckBox ID="empsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
                                         </span></td>
                                 </tr>
                                 <em>
                                 <tr>
-                                    <td class="auto-style285">By Leader<br /> &nbsp;主管</span><em></em></td>
+                                    <td class="auto-style285">By Leader<br /> &nbsp;主管</span></td>
                                     <td class="auto-style227">
-                                        <asp:TextBox ID="TextBox18" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="remark2" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
                                     </td>
                                     <td class="auto-style209"><span class="auto-style289">
-                                        <asp:CheckBox ID="empsign5" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        <asp:CheckBox ID="ldrsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
                                         </span></td>
                                 </tr>
-                                <em>
                                 <tr>
                                     <td class="auto-style285">By Section Head
                                         <br />
-                                        課長</span><em></em></td>
+                                        課長</span></td>
                                     <td class="auto-style227">
-                                        <asp:TextBox ID="TextBox19" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="remark3" runat="server" AutoPostBack="True" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" TextMode="MultiLine" Width="150px"></asp:TextBox>
                                     </td>
                                     <td class="auto-style209"><span class="auto-style289">
-                                        <asp:CheckBox ID="empsign2" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        <asp:CheckBox ID="sheadsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
                                         </span></td>
                                 </tr>
-                                <em>
                                 <tr>
                                     <td class="auto-style285">By Dept. Head
                                         <br />
-                                        部門經理</span><em></em></td>
+                                        部門經理</span></td>
                                     <td class="auto-style227">
-                                        <asp:TextBox ID="TextBox20" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine"></asp:TextBox>
+                                        <asp:TextBox ID="remark4" runat="server" AutoPostBack="True" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" TextMode="MultiLine" Width="150px"></asp:TextBox>
                                     </td>
                                     <td class="auto-style209"><span class="auto-style289">
-                                        <asp:CheckBox ID="empsign3" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        <asp:CheckBox ID="dheadsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
                                         </span></td>
                                 </tr>
-                                </em></em></em>
+                                </em>
                             </table>
                         </td>
                     </tr>
                     <em>
-                    <tr>
+                    <tr style="background-color: #D9E1F2; text-align:center">
                         <td class="auto-style305" colspan="2"><strong>The final decision is taken by Department Head for deduction for salary 扣除工資的最終決定由部門負責人做出</strong></td>
                     </tr>
                     <tr>
                         <td class="auto-style283">Final Salary decision 薪酬</td>
                         <td class="auto-style122">
-                            <table class="nav-justified">
+                            <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
                                 <tr>
                                     <td class="auto-style117"><span class="auto-style280">Same as </span><em>
-                                        <asp:CheckBox ID="CheckBox13" runat="server" CssClass="auto-style280" />
+                                        <asp:CheckBox ID="sameas" runat="server" CssClass="auto-style280" AutoPostBack="True" onclick="if(!confirm('Are you sure salary will be Same as?'))return false;" />
                                         </em><span class="auto-style280">一樣 </span></td>
                                     <td class="auto-style117"><span class="auto-style280">Salary Increase </span><em>
-                                        <asp:CheckBox ID="CheckBox14" runat="server" CssClass="auto-style280" />
+                                        <asp:CheckBox ID="sincrease" runat="server" CssClass="auto-style280" AutoPostBack="True" onclick="if(!confirm('Are you sure salary will be Increase?'))return false;" />
                                         </em><span class="auto-style280">漲薪 </span></td>
                                     <td class="auto-style117"><span class="auto-style280">Salary decrease </span><em>
-                                        <asp:CheckBox ID="CheckBox15" runat="server" CssClass="auto-style280" />
+                                        <asp:CheckBox ID="sdecrease" runat="server" CssClass="auto-style280" AutoPostBack="True" onclick="if(!confirm('Are you sure salary will be Decrease?'))return false;" />
                                         </em><span class="auto-style280">減薪</span></td>
                                     <td class="auto-style122"><span class="auto-style280">Other： </span><em>
                                         <br class="auto-style280" />
-                                        </em><span class="auto-style280">其他：</span><em></span><em></em></em></td>
+                                        </em><span class="auto-style280">其他：</span><em></span></em></td>
                                 </tr>
                             </table>
                         </td>
@@ -877,7 +918,7 @@
                 </tr>
                 </table>
                 </em></em></em></em>
-                <table border="1" class="auto-style169">
+                <table border="1" class="auto-style169"   style="width:100%; border-collapse: collapse; text-align:center">
                     <tr>
                         <td class="auto-style282" style="background-color:#eea236"><strong>Remarks 評論</strong></td>
                         <td class="auto-style175" rowspan="2" style="background-color:#eea236"><strong>Total Score<br /> &nbsp;總得分<br /> &nbsp;100%</strong></td>
@@ -885,7 +926,8 @@
                     </tr>
                     <em>
                     <tr>
-                        <td class="auto-style172" rowspan="2" style="text-align:left; font-size:small"><span class="auto-style280">Performance status definition :考核結果說明 </span>
+                        <td class="auto-style172" rowspan="3" style="text-align:left; font-size:small">
+                            <span class="auto-style280">Performance status definition :考核結果說明 </span>
                             <br class="auto-style280" />
                             <span class="auto-style280">1.Pass: Score is 76 or more than 76 every time </span>
                             <br class="auto-style280" />
@@ -904,24 +946,52 @@
                     </tr>
                     <tr>
                         <td class="auto-style175" style="font-size:small">
-                            <asp:Label ID="Label38" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="totmarks" runat="server" Text="marks"></asp:Label>
                         </td>
                         <td class="auto-style178">
-                            <asp:CheckBox ID="ch1" runat="server" CssClass="auto-style280" />
+                            <asp:CheckBox ID="ch1" runat="server" CssClass="auto-style280" AutoPostBack="True" />
                         </td>
                         <td class="auto-style178">
-                            <asp:CheckBox ID="ch2" runat="server" CssClass="auto-style280" />
+                            <asp:CheckBox ID="ch2" runat="server" CssClass="auto-style280" AutoPostBack="True" />
                         </td>
                         <td class="auto-style178">
-                            <asp:CheckBox ID="ch3" runat="server" AutoPostBack="true" CssClass="auto-style280" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" />
+                            <label id="lblEmpsign" runat="server"></label>
+<label id="lblEmpDate" runat="server"></label>
+                            <asp:CheckBox ID="ch3" runat="server" AutoPostBack="true" CssClass="auto-style280 emps" style="display:none" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" />
                         </td>
                     </tr>
                     </em>
+                    <tr>
+                        <td class="auto-style280" colspan="4" style="font-size:small">
+                            <asp:Label ID="Time" runat="server" Text="Label"></asp:Label>
+                        </td>
+                    </tr>
                 </table>
+              
                 <em><em></td>
                 </tr>
                 </em></em></em>
             </asp:Panel>
+                 <!-- This code for footer title -->
+                <div style="display: flex; width:900px; justify-content: space-between; align-items: flex-end; text-align: center; margin-top:10px;">
+    <div style="text-align: left;">
+        Retention Period: Keep until <br />
+        the employee's relieving <br />
+        period is completed <br />
+        label
+    </div>
+    <div style="text-align: center;">MAXXIS RUBBER INDIA PVT. LTD.</div>
+    <div style="text-align: right;">A4/A3 No. 0399-1</div>
+</div>
+                <!-- This code for footer title  end-->
+               </div><br />
+             <asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
+                </em></td>
+                </tr>
+                </em>&nbsp;<span class="auto-style184"><asp:Button ID="update" runat="server" cssclass="btn btn-primary" OnClick="update_Click" style="font-family: call; font-size: small;" Text="Update" ValidationGroup="insert" />
+                &nbsp;<asp:Button ID="show" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Show" ValidationGroup="insert" />
+                </span>
+            <asp:LinkButton runat="server" id="print" cssclass="btn btn-warning" OnClientClick = "printDiv('printableContent')"><i class="fa fa-print"></i> Print</asp:LinkButton>
        </center>
         <br/>
         </ContentTemplate></asp:UpdatePanel>

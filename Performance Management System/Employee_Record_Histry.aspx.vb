@@ -10,6 +10,9 @@ Public Class WebForm21
     Inherits System.Web.UI.Page
     Dim strsql As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("access power") = "" Then
+            Response.Redirect("login.aspx")
+        End If
         fill()
         filter()
     End Sub
@@ -25,32 +28,19 @@ Public Class WebForm21
         Dim str As String = String.Join(" and ", TextStr.ToArray())
 
         strsql = strsql + " " + "where" + " " + str
-        If sqlselect(constr, strsql, "Abc") Then
+        If sqlselectmaster(constr, strsql, "Abc") Then
             GridView1.DataSource = ds
             GridView1.DataBind()
         End If
         If department.SelectedValue = "All" And Section.SelectedValue = "All" And empcode.Text = "" Then
             'strsql = "Select * from Employee_Master_Histry"
             strsql = "Select * from Employee_Master_Histry1"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 GridView1.DataSource = ds
                 GridView1.DataBind()
             End If
         End If
-        'If department.SelectedValue <> "All" Then
-        '    strsql = "select * from Employee_Master where Department='" & department.SelectedValue & "'"
-        '    If sqlselect(constr, strsql, "Abc") Then
-        '        GridView1.DataSource = ds.Tables("Abc")
-        '        GridView1.DataBind()
-        '    End If
-        'End If
-        'If Section.SelectedValue <> "All" And department.SelectedValue <> "All" Then
-        '    strsql = "select * from Employee_Master where Section='" & Section.SelectedValue & "'"
-        '    If sqlselect(constr, strsql, "Abc") Then
-        '        GridView1.DataSource = ds.Tables("Abc")
-        '        GridView1.DataBind()
-        '    End If
-        'End If
+
 
 
     End Sub
@@ -58,7 +48,7 @@ Public Class WebForm21
         If Not IsPostBack Then
             'strsql = "select distinct Department from Employee_Master_Histry where EmployeeCode<>'HR'"
             strsql = "select distinct Department from Employee_Master_Histry1 where EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     department.DataSource = ds
                     department.DataTextField = "Department"
@@ -69,7 +59,7 @@ Public Class WebForm21
 
             'strsql = "select distinct Section from Employee_Master_Histry where EmployeeCode<>'HR'"
             strsql = "select distinct Section from Employee_Master_Histry1 where EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     Section.DataSource = ds
                     Section.DataTextField = "Section"
@@ -90,7 +80,7 @@ Public Class WebForm21
                 If empcode.Text <> "" Then TextStr.Add("EmployeeCode like '" & empcode.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str + "and EmployeeCode<>'HR'"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         department.DataSource = ds
                         department.DataTextField = "Department"
@@ -110,7 +100,7 @@ Public Class WebForm21
                 If empcode.Text <> "" Then TextStr.Add("EmployeeCode like '" & empcode.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str + "and EmployeeCode<>'HR'"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         Section.DataSource = ds
                         Section.DataTextField = "Section"

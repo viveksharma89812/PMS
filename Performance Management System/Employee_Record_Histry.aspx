@@ -15,6 +15,42 @@
             $('#<%=hfScrollPosition.ClientID%>').val(scrollValue);
         }               
     </script>
+    <%-- <script>
+    var logoutUser = false;
+    var timeoutHnd = null;
+    var logouTimeInterval = 6;// Sixty Second
+     function onuser_activite()
+     {
+        if (logoutUser)
+        {
+             ;
+        }
+        else
+        {
+             ResetLogOutTimer();
+        }
+      }
+     function OnTimeoutReached()
+     {
+            logoutUser = true;
+            alert("Your Was Session Expired");
+            window.location.href = "login.aspx";
+
+     }
+     function ResetLogOutTimer()
+     {
+            clearTimeout(timeoutHnd);
+            // set new timer
+            timeoutHnd = setTimeout('OnTimeoutReached();',logouTimeInterval);
+     }     
+</script>
+      <script>document.body.onclick = onuser_activite; timeoutHnd = setTimeout('OnTimeoutReached();',logouTimeInterval);  </script>
+            <%--Prevent back--%>
+<%--  <script type = "text/javascript" > 
+      function preventBack() { window.history.forward(); }
+      setTimeout("preventBack()", 0);
+      window.onunload = function () { null };
+</script>--%>
     <style>
          .stickyheader th{
         position:sticky;

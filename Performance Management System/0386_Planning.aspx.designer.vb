@@ -444,4 +444,13 @@ Partial Public Class _0386_Planning
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents insert As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''print control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents print As Global.System.Web.UI.WebControls.LinkButton
 End Class

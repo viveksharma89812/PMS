@@ -230,166 +230,58 @@ Partial Public Class _0364_Planning
     Protected WithEvents tb1 As Global.System.Web.UI.HtmlControls.HtmlTable
     
     '''<summary>
-    '''scor1 control.
+    '''score1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents scor1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents score1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''CustomValidator1 control.
+    '''score2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CustomValidator1 As Global.System.Web.UI.WebControls.CustomValidator
+    Protected WithEvents score2 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''CheckBoxList1 control.
+    '''score3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList1 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents score3 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''scor2 control.
+    '''score4 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents scor2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents score4 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''CustomValidator2 control.
+    '''score5 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CustomValidator2 As Global.System.Web.UI.WebControls.CustomValidator
+    Protected WithEvents score5 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''CheckBoxList2 control.
+    '''score6 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList2 As Global.System.Web.UI.WebControls.CheckBoxList
-    
-    '''<summary>
-    '''scor3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents scor3 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''CustomValidator3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CustomValidator3 As Global.System.Web.UI.WebControls.CustomValidator
-    
-    '''<summary>
-    '''CheckBoxList3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CheckBoxList3 As Global.System.Web.UI.WebControls.CheckBoxList
-    
-    '''<summary>
-    '''scor4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents scor4 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''CustomValidator4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CustomValidator4 As Global.System.Web.UI.WebControls.CustomValidator
-    
-    '''<summary>
-    '''CheckBoxList4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CheckBoxList4 As Global.System.Web.UI.WebControls.CheckBoxList
-    
-    '''<summary>
-    '''scor5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents scor5 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''CustomValidator5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CustomValidator5 As Global.System.Web.UI.WebControls.CustomValidator
-    
-    '''<summary>
-    '''CheckBoxList5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CheckBoxList5 As Global.System.Web.UI.WebControls.CheckBoxList
-    
-    '''<summary>
-    '''scor6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents scor6 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''CustomValidator6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CustomValidator6 As Global.System.Web.UI.WebControls.CustomValidator
-    
-    '''<summary>
-    '''CheckBoxList6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CheckBoxList6 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents score6 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''rema control.
@@ -419,31 +311,40 @@ Partial Public Class _0364_Planning
     Protected WithEvents totmarks As Global.System.Web.UI.HtmlControls.HtmlTableCell
     
     '''<summary>
-    '''deptsign control.
+    '''ch1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents deptsign As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ch1 As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''sectsign control.
+    '''ch2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents sectsign As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ch2 As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''empsign control.
+    '''ch3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents empsign As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents ch3 As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Time control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Time As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''insert control.
@@ -455,11 +356,20 @@ Partial Public Class _0364_Planning
     Protected WithEvents insert As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''print control.
+    '''update control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents print As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents update As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''show control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents show As Global.System.Web.UI.WebControls.Button
 End Class

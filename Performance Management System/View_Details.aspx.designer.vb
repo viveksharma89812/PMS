@@ -185,6 +185,15 @@ Partial Public Class WebForm5
     Protected WithEvents urlframe As Global.System.Web.UI.HtmlControls.HtmlIframe
     
     '''<summary>
+    '''txtSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSearch As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''GridView1 control.
     '''</summary>
     '''<remarks>
@@ -192,4 +201,13 @@ Partial Public Class WebForm5
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''outerimgdiv control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents outerimgdiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

@@ -18,6 +18,9 @@ Public Class WebForm29
     Dim tyear As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            If Session("access power") = "" Then
+                Response.Redirect("login.aspx")
+            End If
             If IsPostBack Then
                 result()
             End If

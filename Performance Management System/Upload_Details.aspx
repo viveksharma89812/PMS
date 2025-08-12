@@ -250,9 +250,13 @@ z-index: 10000;
          }
     });
 </script>
+     <meta charset="utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link href="Content/bootstrap.cosmo.min.css" rel="stylesheet" />  
+    <link href="Content/StyleSheet.css" rel="stylesheet" /> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
-<%--    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional"><Triggers><asp:PostBackTrigger ControlID="import" /><asp:PostBackTrigger ControlID="export" /><asp:PostBackTrigger ControlID="empcode" /><asp:PostBackTrigger ControlID="department" /><asp:PostBackTrigger ControlID="Section" /></Triggers><ContentTemplate>--%>
+
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"> 
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> 
     <script>
@@ -370,134 +374,10 @@ z-index: 10000;
                   </div>
            </div>
   </div>
-       <%-- <div class="container-fluid" >
-            <h2>Fill Employee Details</h2><hr />
-         
-
-            <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Employee Code
-                 <asp:TextBox ID="empcode" runat="server" AutoPostBack="True"  TabIndex="1" cssclass="form-control" placeholder="EmployeeCode"></asp:TextBox>
-                </div>  </div>
-               <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Employee Name
-                  <asp:TextBox ID="emplname" runat="server" TabIndex="2" AutoCompleteType="Enabled" placeholder="EmployeeName" CssClass="form-control"></asp:TextBox>
-                </div>
-                   </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">Designation
-                <asp:TextBox ID="desi" runat="server" cssclass="form-control" TabIndex="3"  placeholder="Designation"></asp:TextBox>
-                </div>
-                   </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Department
-                 <asp:DropDownList ID="Dept" runat="server" AutoPostBack="True" BackColor="White" ForeColor="Black" cssclass="form-control" TabIndex="4" >
-                    <asp:ListItem Selected="True">---Select---</asp:ListItem>
-                    <asp:ListItem>Administration</asp:ListItem>
-                    <asp:ListItem>Finance</asp:ListItem>
-                    <asp:ListItem>HR</asp:ListItem>
-                    <asp:ListItem>Institutional Sales</asp:ListItem>
-                    <asp:ListItem>IT</asp:ListItem>
-                    <asp:ListItem>Marketing</asp:ListItem>
-                    <asp:ListItem>Planning</asp:ListItem>
-                    <asp:ListItem>Production</asp:ListItem>
-                    <asp:ListItem>Service</asp:ListItem>
-                    <asp:ListItem>QA</asp:ListItem>
-                    <asp:ListItem>RD1</asp:ListItem>
-                    <asp:ListItem>RD2</asp:ListItem>
-                    <asp:ListItem>Retail Sales</asp:ListItem>
-                    <asp:ListItem>Civil</asp:ListItem>
-                    <asp:ListItem>EHS</asp:ListItem>
-                </asp:DropDownList>
-                </div>
-                   </div>
-          <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Section
-                  <asp:DropDownList ID="sect" runat="server" AppendDataBoundItems="True" AutoPostBack="True"  CssClass="form-control" TabIndex="5" >
-                    <asp:ListItem>---Select---</asp:ListItem>
-                </asp:DropDownList>
-                </div>
-                   </div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                DOJ
-                  <asp:TextBox ID="doj" runat="server" cssclass="form-control" TabIndex="6" placeholder="dd-mm-yyyy"  ></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                DOP
-                <asp:TextBox ID="dop" runat="server" cssclass="form-control" TabIndex="7"  placeholder="dd-mm-yyyy"  ></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                DOC
-                 <asp:TextBox ID="doc" runat="server"  CssClass="form-control" TabIndex="8"  placeholder="dd-mm-yyyy"  ></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                DOE
-                  <asp:TextBox ID="doe" runat="server"  CssClass="form-control" TabIndex="9"  placeholder="dd-mm-yyyy"  ></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Qualification
-                <asp:TextBox ID="qualification" runat="server" CssClass="form-control"  TabIndex="10"  placeholder="Qualification"></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">Previous Experience
-                <asp:TextBox ID="preexp" runat="server" CssClass="form-control"  TabIndex="11"  placeholder="Previous Experience"></asp:TextBox>
-                </div>
-                   </div>
-             <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">Reporting Person Name
-                 <asp:TextBox ID="reporpersonname" runat="server" CssClass="form-control"  TabIndex="12"  placeholder="Reporting PersonName"></asp:TextBox>
-                </div>
-                   </div>
-              <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-                Review Period
-            <asp:DropDownList ID="Review" runat="server" CssClass="form-control"  TabIndex="13" >
-                    <asp:ListItem>---Select---</asp:ListItem>
-                    <asp:ListItem>Training Period</asp:ListItem>
-                    <asp:ListItem>Probation Period</asp:ListItem>
-                    <asp:ListItem>Permanent Review Period</asp:ListItem>
-                    <asp:ListItem>FTE Period</asp:ListItem>
-                    <asp:ListItem>Contract Worker Period</asp:ListItem>
-                </asp:DropDownList></div></div>
-       
-          <div class="col-sm-2 col-md-2 col-lg-2">
-            <div class="form-group">
-
-        <br />
-                <asp:Button ID="submit" runat="server" CssClass="btn btn-primary"  TabIndex="14" Text="Submit" ValidationGroup="insert"  />
-           </div></div> </div>
-   
-<asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="auto-style43" ForeColor="Red" Width="256px" ValidationGroup="insert" Font-Size="Larger" ShowMessageBox="True" ShowSummary="False" Height="16px" />
-  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="empcode" Display="None" ErrorMessage="Please enter employeecode" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="emplname" Display="None" ErrorMessage="Please enter employee name" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="desi" Display="None" ErrorMessage="Please enter designation" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="Dept" Display="None" ErrorMessage="Please select department" ForeColor="Red" InitialValue="---Select---" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="doj" Display="None" ErrorMessage="Please select date of joining" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-   <%-- <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToCompare="doj" ControlToValidate="dop" ErrorMessage="Incorrect date of probation" ForeColor="Red" Operator="GreaterThanEqual" ValidationGroup="insert" Display="None"></asp:CompareValidator>
-    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="doj" ControlToValidate="doc" ErrorMessage="Incorrect date of confirm" ForeColor="Red" Operator="GreaterThan" ValidationGroup="insert" Display="None"></asp:CompareValidator>--%>
-    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="preexp" Display="None" ErrorMessage="Please enter previous experience" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="qualification" Display="None" ErrorMessage="Please enter qualification" ForeColor="Red" ValidationGroup="insert"></asp:RequiredFieldValidator>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="Review" Display="None" ErrorMessage="Please select Review period" ForeColor="Red" InitialValue="---Select---" ValidationGroup="insert"></asp:RequiredFieldValidator>
-
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="sect" Display="None" ErrorMessage="Please select section" ForeColor="Red" InitialValue="---Select---" ValidationGroup="insert"></asp:RequiredFieldValidator>--%>
-        <%--<asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="doj" ControlToValidate="doe" ErrorMessage="Incorrect date of extend" ForeColor="Red" Operator="GreaterThan" ValidationGroup="insert" Display="None"></asp:CompareValidator>--%>
-       
+    
         <div class="container-fluid">
             
-            <asp:GridView ID="GridView2" runat="server" Visible="false"></asp:GridView>
+            <asp:GridView ID="GridView2" runat="server" Visible="false" CssClass="table table-striped table-bordered table-hover"></asp:GridView>
         </div>
           <asp:HiddenField ID="hfScrollPosition" Value="0" runat="server" />
           <div id="dvScroll"  class="divcss" onscroll="setScrollPosition(this.scrollTop);" style=" overflow: auto;
@@ -723,14 +603,7 @@ z-index: 10000;
                       <asp:Label ID="Label17" runat="server" Text='<%# Bind("NoOfExtension") %>'></asp:Label>
                   </ItemTemplate>
               </asp:TemplateField>
-            <%--  <asp:TemplateField HeaderText="Left Date">
-                  <EditItemTemplate>
-                      <asp:TextBox ID="lftdate" runat="server" Text='<%# Bind("LeftDate") %>'></asp:TextBox>
-                  </EditItemTemplate>
-                  <ItemTemplate>
-                      <asp:Label ID="lft" runat="server" Text='<%# Bind("LeftDate") %>'></asp:Label>
-                  </ItemTemplate>
-              </asp:TemplateField>--%>
+
              <asp:TemplateField HeaderText="MRI Experience">
                   <EditItemTemplate>
                       <asp:TextBox ID="mriexp" runat="server" Text='<%# Bind("MRIExperience") %>'></asp:TextBox>
@@ -751,7 +624,7 @@ z-index: 10000;
                     <ItemTemplate>   
                          <asp:LinkButton ID="lnkBtnEdit" runat="server" Text="Edit" CssClass="btn-primary"
                             OnClick="Display"  ></asp:LinkButton>
-                      <%--  <asp:LinkButton ID="btn_Edit" runat="server" CommandName="Edit" CommandArgument='<%# Bind("EmployeeCode") %>'   Text="Edit"   EnableViewState="true" ViewStateMode="Inherit" CausesValidation="False"></asp:LinkButton>--%>
+               
                     </ItemTemplate>  
                     <EditItemTemplate>  
                         <asp:LinkButton ID="btn_Update" runat="server" Text="Update" CommandName="Update" CommandArgument='<%# Bind("EmployeeCode") %>'  EnableViewState="true" ViewStateMode="Inherit" CausesValidation="False"></asp:LinkButton>
@@ -767,9 +640,8 @@ z-index: 10000;
         </Columns>
         <EmptyDataRowStyle Font-Bold="True" Font-Size="Large" HorizontalAlign="Center" VerticalAlign="Middle" />
         <FooterStyle BackColor="White" ForeColor="#000066" />
-        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" CssClass="stickyheader" HorizontalAlign="Center" VerticalAlign="Middle"  />
-      <%--  <PagerSettings Position="TopAndBottom" />
-        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />--%>
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" CssClass="stickyheader" HorizontalAlign="Center" VerticalAlign="Middle"  />
+
         <PagerSettings Position="TopAndBottom" />
          <PagerSettings PageButtonCount="20" />
         <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" VerticalAlign="Middle"  CssClass="GridPager" />
@@ -788,18 +660,14 @@ z-index: 10000;
     <div class="modal-dialog">
        
         <!-- Modal content-->
-        <div class="modal-content" <%--style="background-color:lightsteelblue" --%>>
+        <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
                     </button>
                 <h4 class="modal-title" style="font:bold; font-size:large">
                     Employee Details</h4>
             </div>
-             <%-- <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional" ><Triggers>
-               <asp:PostBackTrigger ControlID="btnSave" /> 
-                 
-            </Triggers>
-                 <ContentTemplate>--%>
+           
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"> 
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> 
     <script>
@@ -884,17 +752,7 @@ z-index: 10000;
         });          
         });
     </script>
-             <%--  <script>
-        $(function () {
-            $('[id*=leftdate]').datepicker({
-                dateFormat: 'dd/mm/yy',
-                 changeMonth: true,
-                        changeYear: true,
-                
-                
-        });          
-        });
-    </script>--%>
+ 
                                   
             <div class="modal-body">  
                 
@@ -944,14 +802,7 @@ z-index: 10000;
                  
                          <asp:Label ID="Label15" runat="server" Text="Review Period"></asp:Label>
                     <asp:TextBox ID="reviewperioda" runat="server" CssClass="form-control"></asp:TextBox>
-                   <%--    <asp:DropDownList ID="reviewper1" runat="server" CssClass="form-control">
-                   
-                    <asp:ListItem>Training Period</asp:ListItem>
-                    <asp:ListItem>Probation Period</asp:ListItem>
-                    <asp:ListItem>Permanent Review Period</asp:ListItem>
-                    <asp:ListItem>FTE Period</asp:ListItem>
-                    <asp:ListItem>Contract Worker Period</asp:ListItem>
-                </asp:DropDownList>--%>
+               
                    
                            </div>
                     </div>    
@@ -969,12 +820,11 @@ z-index: 10000;
                     <asp:TextBox ID="mriexperience" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:Label ID="Label38" runat="server" Text="PMS Form Category"></asp:Label>
                         <asp:TextBox ID="PMS_Form_Category" runat="server" CssClass="form-control" ></asp:TextBox>
-                  <%--  Left Date
-                    <asp:TextBox ID="leftdate" runat="server"  CssClass="form-control"></asp:TextBox>--%>
+
                     </div>
                      </div>
             </div>
-          <%-- </ContentTemplate> </asp:UpdatePanel>--%>
+        
             <div class="modal-footer">
                 <asp:Button ID="btnSave" OnClick="btnSave_Click"  runat="server" Text="Update"  CssClass="btn btn-primary" Font-Bold="true" Font-Size="Large"  />
                 <button type="button" class="btn btn-primary" data-dismiss="modal" style="font:bold; font-size:large"   >
@@ -986,5 +836,5 @@ z-index: 10000;
 
               </div></div>
   
-    <br /><%--</ContentTemplate></asp:UpdatePanel>--%>
+    <br />
 </asp:Content>

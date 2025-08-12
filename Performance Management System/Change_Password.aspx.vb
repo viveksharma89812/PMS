@@ -6,6 +6,9 @@ Public Class WebForm39
     Inherits System.Web.UI.Page
     Dim strsql As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("access power") = "" Then
+            Response.Redirect("login.aspx")
+        End If
         If IsPostBack Then
             Dim pass As String = oldpass.Text
             oldpass.Attributes.Add("value", pass)
@@ -18,13 +21,13 @@ Public Class WebForm39
 
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        strsql = "select Password from Employee_Master where Password='" & oldpass.Text & "' and EmployeeCode='" & Session("emp code") & "'"
+        strsql = "select Password from Employee_Master1 where Password='" & oldpass.Text & "' and EmployeeCode='" & Session("emp code") & "'"
         If sqlselect(constr, strsql, "Abc") Then
             If ds.Tables("Abc").Rows.Count > 0 Then
                 If oldpass.Text = newpass.Text Then
                     Response.Write(" <script> alert('Old Password and New Password is same,Please enter different Password' );window.location = '" + Request.RawUrl + "';</script>")
                 Else
-                    strsql = "update Employee_Master set Password='" & newpass.Text & "' where EmployeeCode='" & Session("emp code") & "'"
+                    strsql = "update Employee_Master1 set Password='" & newpass.Text & "' where EmployeeCode='" & Session("emp code") & "'"
                     If sqlexe(constr, strsql) Then
                         'Label3.Visible = "true"
                         'Label3.Text = "Updated successfully"

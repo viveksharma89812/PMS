@@ -151,11 +151,6 @@
         <asp:Label ID="Label21" runat="server" ForeColor="Red" Text="Label" Visible="False"></asp:Label><br />
        <center>
       
-<%--            <center>
-           <asp:Button ID="insert" runat="server"  Text="Submit" ValidationGroup="insert" cssclass="btn btn-primary"/>
-                    
-                        <%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%>
-      <%--</center><br />--%>
             <script type="text/javascript">
     function ValidateCheckBoxList(sender, args) {
         var checkBoxList = document.getElementById("<%=CheckBoxList1.ClientID %>"); 
@@ -522,6 +517,7 @@
                         <%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%>
       </center><br />
         </asp:Panel>
+         
        </center>
       <br />
         </ContentTemplate></asp:UpdatePanel>

@@ -293,6 +293,11 @@
         .auto-style323 {
             font-style: normal;
         }
+        .auto-style324 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+            height: 26px;
+        }
         </style>
     <script type = "text/javascript">
         function PrintPanel() {
@@ -384,7 +389,7 @@
         }
         --%>
 <%--</script>--%>
-      
+ 
      </span>
             <asp:Panel ID="Panel1" runat="server" BackColor="#ffffff" BorderStyle="Solid" CssClass="auto-style183" Width="900px">
                 <table id="1" border="1" class="auto-style21" style="width:895px">
@@ -519,7 +524,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style284">Shift 班別</td>
+                                    <td class="auto-style324">Shift 班別</td>
                                     <td class="auto-style322">4<span class="auto-style289">. Work assigned by Leader 上級交代事項 <em>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </em></span></td>

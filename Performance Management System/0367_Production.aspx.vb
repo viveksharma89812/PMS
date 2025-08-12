@@ -18,9 +18,13 @@ Public Class WebForm30
     Dim tyear As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            If IsPostBack Then
-                Result()
+            If Session("access power") = "" Then
+                Response.Redirect("login.aspx")
             End If
+            If IsPostBack Then
+                result()
+            End If
+
 
             strsql = "select * from Employee_Master where EmployeeCode='" & Session("empl code") & "'"
             If sqlselect(constr, strsql, "Abc") Then

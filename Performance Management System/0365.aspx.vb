@@ -19,8 +19,11 @@ Public Class WebForm9
     Dim tyear As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            'If Session("access power") = "" Then
+            '    Response.Redirect("login.aspx")
+            'End If
             If IsPostBack Then
-                Result()
+                result()
             End If
 
             check()
@@ -182,8 +185,8 @@ Public Class WebForm9
                     CheckBoxList6.SelectedValue = sco6 / 3
                     CheckBoxList6.SelectedItem.Attributes.Add("onclick", "return false")
                     totmarks.InnerText = Convert.ToString(ds.Tables(0).Rows(0)("TotalMarks"))
-                        Dim stat As String = Convert.ToString(ds.Tables(0).Rows(0)("Status"))
-                        If stat = "Pass" Then
+                    Dim stat As String = Convert.ToString(ds.Tables(0).Rows(0)("Status"))
+                    If stat = "Pass" Then
                         pass.Checked = True
                         ext.Attributes.Add("onclick", "return false")
                         fl.Attributes.Add("onclick", "return false")
@@ -203,7 +206,7 @@ Public Class WebForm9
                     remark.ReadOnly = True
                     remark.BackColor = System.Drawing.SystemColors.Window
                 End If
-                End If
+            End If
         Catch ex As Exception
             Response.Write("<script language='javascript'>alert('" + Server.HtmlEncode(ex.Message) + "')</script>")
         End Try
@@ -262,27 +265,7 @@ Public Class WebForm9
     Public Overloads Overrides Sub VerifyRenderingInServerForm(ByVal control As Control)
         ' Verifies that the control is rendered
     End Sub
-    'Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    '    Try
-    '        Response.ContentType = "application/pdf"
-    '        Response.AddHeader("content-disposition", "attachment;filename=Panel.pdf")
-    '        Response.Cache.SetCacheability(HttpCacheability.NoCache)
-    '        Dim sw As New StringWriter()
-    '        Dim hw As New HtmlTextWriter(sw)
-    '        Panel1.RenderControl(hw)
-    '        Dim sr As New StringReader(sw.ToString())
-    '        Dim pdfDoc As New Document(PageSize.A3, 8.0F, 10.0F, 100.0F, 0.0F)
-    '        Dim htmlparser As New HTMLWorker(pdfDoc)
-    '        PdfWriter.GetInstance(pdfDoc, Response.OutputStream)
-    '        pdfDoc.Open()
-    '        htmlparser.Parse(sr)
-    '        pdfDoc.Close()
-    '        Response.Write(pdfDoc)
-    '        Response.End()
-    '    Catch ex As Exception
-    '        Response.Write("<script language='javascript'>alert('" + Server.HtmlEncode(ex.Message) + "')</script>")
-    '    End Try
-    'End Sub
+
 
     Protected Sub insert_Click(sender As Object, e As EventArgs) Handles insert.Click
 
@@ -345,7 +328,5 @@ Public Class WebForm9
         End If
     End Sub
 
-    'Protected Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
 
-    'End Sub
 End Class

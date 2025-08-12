@@ -1,0 +1,1123 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" EnableEventValidation="false" MasterPageFile="~/Site1.Master" CodeBehind="0386HCWO1.aspx.vb" Inherits="Performance_Management_System._0386HCWO1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style20 {
+            width: 100%;
+        }
+        .auto-style21 {
+            width: 100%;
+            height: 83px;
+        }
+         .auto-style24 {
+            width: 74px;
+        }
+        .auto-style31 {
+            height: 22px;
+        }
+        .auto-style68 {
+            margin-bottom: 0px;
+        }
+        table, th, td {
+            /*border: 1px solid black;*/
+            align-content: center;
+            text-align: center
+        }
+        .auto-style114 {
+            width: 650px;
+            font-style: normal;
+        }
+        .auto-style117 {
+            border: 1px solid #000000;
+            width: 145px;
+        }
+        .auto-style122 {
+            border: 1px solid #000000;
+        }
+        .auto-style129 {
+            width: 134px;
+            border: 1px solid #000000;
+        }
+        .auto-style130 {
+            width: 345px;
+            border: 1px solid #000000;
+            font-family: Calibri;
+        }
+        .auto-style131 {
+            width: 67px;
+        }
+        .auto-style132 {
+            width: 134px;
+            border: 1px solid #000000;
+            background-color: #D9E1F2;
+            font-family: Calibri;
+        }
+        .auto-style133 {
+            width: 345px;
+            border: 1px solid #000000;
+            background-color: #D9E1F2;
+            font-family: Calibri;
+        }
+        .auto-style134 {
+            border: 1px solid #000000;
+            background-color: #D9E1F2;
+            font-family: Calibri;
+        }
+        .auto-style138 {
+            width: 15px;
+            border: 1px solid #000000;
+        }
+        .auto-style165 {
+            font-size: small;
+            font-family: Calibri;
+            height: 21px;
+        }
+        .auto-style169 {
+            width: 899px;
+        }
+        .auto-style172 {
+            width: 405px;
+            height: 23px;
+        }
+        .auto-style173 {
+            height: 23px;
+            font-family: Calibri;
+        }
+        .auto-style175 {
+            width: 150px;
+            font-family: Calibri;
+        }
+        .auto-style178 {
+            width: 100px;
+        }
+        .auto-style180 {
+            width: 100px;
+            height: 69px;
+        }
+        .auto-style183 {
+            font-family: call;
+            font-style: normal;
+            font-size: small;
+        }
+        .auto-style184 {
+            font-family: call;
+            font-size: small;
+        }
+        .auto-style209 {
+            border: 1px dashed #000000;
+        }
+        .auto-style213 {
+            border: 1px dashed #000000;
+            font-size: small;
+            font-family: Calibri;
+        }
+        .auto-style226 {
+            border: 1px dashed #000000;
+            width: 1626px;
+        }
+        .auto-style227 {
+            border: 1px dashed #000000;
+            width: 150px;
+        }
+        .auto-style228 {
+            border: 1px dashed #000000;
+            width: 549px;
+        }
+        .auto-style231 {
+            border: 1px dashed #000000;
+            width: 100px;
+        }
+        .auto-style280 {
+            font-family: Calibri;
+        }
+        .auto-style281 {
+            width: 100px;
+            height: 69px;
+            font-family: Calibri;
+        }
+        .auto-style282 {
+            width: 405px;
+            height: 23px;
+            font-family: Calibri;
+        }
+        .auto-style283 {
+            width: 351px;
+            border: 1px solid #000000;
+            font-family: Calibri;
+        }
+        .auto-style284 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+        }
+        .auto-style285 {
+            border: 1px dashed #000000;
+            width: 549px;
+            font-family: Calibri;
+        }
+        .auto-style286 {
+            border: 1px dashed #000000;
+            font-family: Calibri;
+        }
+        .auto-style287 {
+            border: 1px dashed #000000;
+            width: 1626px;
+            font-family: Calibri;
+        }
+        .auto-style289 {
+            font-weight: normal;
+        }
+        .auto-style291 {
+            width: 407px;
+            border: 1px solid #000000;
+            font-family: Calibri;
+            font-weight: normal;
+        }
+        .auto-style292 {
+            font-family: call;
+        }
+        .auto-style293 {
+            width: 67px;
+            font-family: Calibri;
+        }
+        .auto-style297 {
+            border: 1px solid #000000;
+            height: 19px;
+        }
+        .auto-style298 {
+            border: 1px solid #000000;
+            width: 106px;
+        }
+        .auto-style299 {
+            font-size: small;
+        }
+        .auto-style301 {
+            border: 1px solid #000000;
+            width: 158px;
+        }
+        .auto-style302 {
+            border: 1px solid #000000;
+            width: 139px;
+        }
+        .auto-style303 {
+            border: 1px solid #000000;
+            text-align: left;
+        }
+        .auto-style304 {
+            width: 67px;
+            text-align: center;
+        }
+        .auto-style305 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+            background-color: #B4C6E7;
+        }
+        .auto-style307 {
+            border: 1px dashed #000000;
+            width: 100px;
+            height: 38px;
+        }
+        .auto-style308 {
+            border: 1px dashed #000000;
+            width: 150px;
+            height: 38px;
+        }
+        .auto-style312 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+            background-color: #8EA9DB;
+            height: 20px;
+        }
+        .auto-style314 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+            background-color: #FFD966;
+            height: 20px;
+        }
+        .auto-style315 {
+            border: 1px solid #000000;
+            background-color: #B4C6E7;
+        }
+        .auto-style316 {
+            border: 1px solid #000000;
+            width: 84px;
+        }
+        .auto-style317 {
+            border: 1px solid #000000;
+            width: 78px;
+        }
+        .auto-style318 {
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 19px;
+            width: 78px;
+        }
+        .auto-style319 {
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+        }
+        .auto-style323 {
+            font-style: normal;
+        }
+        .auto-style327 {
+            border: 1px solid #000000;
+            width: 122px;
+        }
+        .auto-style328 {
+            width: 159px;
+            border: 1px solid #000000;
+            background-color: #D9E1F2;
+            font-family: Calibri;
+        }
+        .auto-style331 {
+            width: 255px;
+            border: 1px solid #000000;
+        }
+        .auto-style335 {
+            border: 1px solid #000000;
+            font-family: Calibri;
+            width: 422px;
+        }
+        .auto-style336 {
+            width: 200px;
+            border: 1px solid #000000;
+            font-family: Calibri;
+        }
+        .auto-style337 {
+            width: 159px;
+            border: 1px solid #000000;
+        }
+        </style>
+     <script>
+function printDiv(divId) {
+    var printableContent = document.getElementById(divId).innerHTML;
+    var originalContent = document.body.innerHTML;
+
+    // Create a new window for printing
+    var printWindow = window.open('', '_blank');
+
+    printWindow.document.write('<html><head><title></title>');
+    printWindow.document.write('<style type="text/css">');
+    printWindow.document.write('@media print {');
+    printWindow.document.write('    body {');
+    printWindow.document.write('        font-family: Arial, sans-serif;');
+    printWindow.document.write('        color: #333; /* Text color */');
+    printWindow.document.write('        text-align: center; /* Center align text */');
+    // Add more CSS styles as needed
+    printWindow.document.write('    }');
+    printWindow.document.write('}');
+    printWindow.document.write('</style>');
+    printWindow.document.write('</head><body>');
+
+    // Write printable content into the new window
+    printWindow.document.write(printableContent);
+
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+
+    // Focus and print the new window
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+
+    // Restore original content on the main page
+    document.body.innerHTML = originalContent;
+}
+</script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server"><%--<Triggers><asp:PostBackTrigger ControlID="Button2" /></Triggers>--%><ContentTemplate>
+       <center>
+            <center>
+                
+                <span class="auto-style184"><%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%></span>
+      </center>
+           <script>
+               $(function () {
+                   var power = '<%= Session("access power") %>';
+                   if (power == 3) {
+                       var webcamWidth = $('#webcam').width();
+                       var webcamHeight = $('#webcam').height();
+
+                       Webcam.set({
+                           width: webcamWidth,
+                           height: webcamHeight,
+                           image_format: 'jpeg',
+                           jpeg_quality: 90
+                       });
+
+                       Webcam.attach('#webcam');
+
+                       $("#btnCapture").click(function () {
+                           Webcam.snap(function (data_uri) {
+                               var img = new Image();
+                               img.src = data_uri;
+                               img.onload = function () {
+                                   var canvas = document.createElement('canvas');
+                                   var ctx = canvas.getContext('2d');
+
+                                   canvas.width = img.width;
+                                   canvas.height = img.height + 30;
+
+                                   ctx.drawImage(img, 0, 0);
+
+                                   ctx.font = '20px Arial';
+                                   ctx.fillStyle = 'white';
+                                   ctx.textAlign = 'center';
+
+                                   var currentDate = new Date();
+                                   var dateTimeText = currentDate.toLocaleString();
+
+                                   ctx.fillText(dateTimeText, canvas.width / 2, canvas.height - 10);
+
+                                   var finalImage = canvas.toDataURL('image/jpeg');
+
+                                   $("#imgCapture")[0].src = finalImage;
+
+                               };
+                           });
+                       });
+
+                       $("#btnUpload").click(function () {
+                           var imageData = $("#imgCapture")[0].src;
+
+                           $.ajax({
+                               type: "POST",
+                               url: "Finance_Accounting_Payable_New.aspx/SaveCapturedImage",
+                               data: JSON.stringify({ data: imageData }),
+                               contentType: "application/json; charset=utf-8",
+                               dataType: "json",
+                               success: function (r) {
+                                   alert('Image saved successfully!');
+                                   chk3Display()
+                               },
+                               error: function (xhr, status, error) {
+                                   alert("There was an error uploading the image.");
+                               }
+                           });
+                       });
+                   }
+               });
+
+               function chk3Display() {
+                   $(".emps").css("display", "block");
+               }
+
+           </script>
+           <%-- <br class="auto-style184" />
+            <span class="auto-style184">
+            <script type="text/javascript">--%>
+   <%-- function ValidateCheckBoxList(sender, args) {
+        var checkBoxList = document.getElementById("<%=CheckBoxList1.ClientID %>"); 
+        var checkboxes = checkBoxList.getElementsByTagName("input");
+        var isValid = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        args.IsValid = isValid;
+        }
+         function ValidateCheckBoxList1(sender, args) {
+        var checkBoxList = document.getElementById("<%=CheckBoxList2.ClientID %>"); 
+        var checkboxes = checkBoxList.getElementsByTagName("input");
+        var isValid = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        args.IsValid = isValid;
+        }
+         function ValidateCheckBoxList2(sender, args) {
+        var checkBoxList = document.getElementById("<%=CheckBoxList3.ClientID %>"); 
+        var checkboxes = checkBoxList.getElementsByTagName("input");
+        var isValid = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        args.IsValid = isValid;
+        }
+         function ValidateCheckBoxList3(sender, args) {
+        var checkBoxList = document.getElementById("<%=CheckBoxList4.ClientID %>"); 
+        var checkboxes = checkBoxList.getElementsByTagName("input");
+        var isValid = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        args.IsValid = isValid;
+        }
+         function ValidateCheckBoxList4(sender, args) {
+        var checkBoxList = document.getElementById("<%=CheckBoxList5.ClientID %>"); 
+        var checkboxes = checkBoxList.getElementsByTagName("input");
+        var isValid = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        args.IsValid = isValid;
+        }
+        --%>
+<%--</script>--%>
+
+     </span>
+                        <!-- Webcam Container -->
+<div id="outerimgdiv" style="position:fixed;" runat="server">
+    <div class="camera-container">
+        <div id="webcam"></div>
+         <button id="btnCapture" type="button" class="btn-success form-control">Capture</button>
+    </div>
+    <br />
+    <div class="camera-container">
+        <img id="imgCapture" />
+        <button id="btnUpload" type="button" class="form-control btn-primary" >Upload</button>
+    </div>
+</div>
+        <!-- Webcam Container -->
+
+            <div id="printableContent">
+            <asp:Panel ID="Panel1" runat="server" BackColor="#ffffff" BorderStyle="Solid" CssClass="auto-style183" Width="900px">
+                <table id="1" border="1" class="auto-style21" style="width:897px;">
+                    <tr>
+                        <td class="auto-style31" style="font-size: large; font-style: oblique; font-weight:bold">
+                            <center>
+                                <table class="nav-justified">
+                                    <tr>
+                                        <td class="auto-style114">Performance Review Form For Variable Pay (Only for level 3)
+                                            
+                                            績效評核_可變薪酬評核表-僅適用於第三級作業職</td>
+                                        </em>
+                                        <td class="auto-style323">
+                                            <asp:CheckBox ID="supldr" runat="server" Font-Size="Medium" Text="Supervisior / Leader" AutoPostBack="True" Visible="False" />
+                                            &nbsp;<asp:CheckBox ID="op" runat="server" Font-Size="Medium" Text="OP" AutoPostBack="True" Checked="True" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </td>
+                    </tr>
+                    </em></em><em>
+                    <tr>
+                        <td class="auto-style31" style="font-weight:bold">
+                            <center class="auto-style68" style="background-color:#eea236 ">
+                                A. Employee Information 員工信息</center>
+                        </td>
+                    </tr>
+                    </em>
+                </table>
+                <em><em>
+                <tr>
+                    <td class="auto-style24">
+                    </td>
+                </tr>
+             
+                </em></em>
+                <table id="2" class="auto-style20"   style="width:100%; border-collapse: collapse; text-align:center">
+                    <tr>
+                        <td class="auto-style280">
+                            <table class="nav-justified" style="width:100%; border-collapse: collapse; text-align:center">
+                                <tr>
+                                    <td class="auto-style122">
+                                        <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                            <tr>
+                                                <td class="auto-style302">Employee Name</td>
+                                                <td class="auto-style301">
+                                                    <asp:Label ID="empname" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                                <td class="auto-style302">Employee Code</td>
+                                                <em>
+                                                <td class="auto-style301">
+                                                    <asp:Label ID="empcode" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                                <td class="auto-style302">Desgnation</td>
+                                                <td class="auto-style122">
+                                                    <asp:Label ID="desc" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                                </em>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style302">Dept./ Section</td>
+                                                <td class="auto-style301">
+                                                    <asp:Label ID="deptsect" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                                <td class="auto-style302">DOJ</td>
+                                                <td class="auto-style301">
+                                                    <asp:Label ID="doj" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                                <td class="auto-style302">Reporting To</td>
+                                                <td class="auto-style122">
+                                                    <asp:Label ID="repto" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style302">&nbsp;&nbsp; </td>
+                                                <td class="auto-style122" colspan="2">
+                                                    <asp:CheckBox ID="trai" runat="server" CssClass="auto-style280" Text="Training" AutoPostBack="True" Enabled="False" />
+                                                    &nbsp;<asp:CheckBox ID="prob" runat="server" CssClass="auto-style280" Text="Probation" AutoPostBack="True" Enabled="False" />
+                                                    &nbsp;<asp:CheckBox ID="conf" runat="server" CssClass="auto-style280" Text="Confirm" AutoPostBack="True" Enabled="False" />
+                                                </td>
+                                                <td class="auto-style122" colspan="3">Year : <em>
+                                                    <asp:Label ID="revmonth" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                                    &nbsp;
+                                                    </em>
+                                                    <asp:CheckBox ID="month" runat="server" CssClass="auto-style280" Text="Monthly" AutoPostBack="True" Checked="True" />
+                                                    <em>&nbsp;</em><asp:CheckBox ID="q1" runat="server" CssClass="auto-style280" Text="Q1" AutoPostBack="True" Visible="False" />
+                                                    <em>&nbsp;</em><asp:CheckBox ID="q2" runat="server" CssClass="auto-style280" Text="Q2" AutoPostBack="True" Visible="False" />
+                                                    <em>&nbsp;</em><asp:CheckBox ID="q3" runat="server" CssClass="auto-style280" Text="Q3" AutoPostBack="True" Visible="False" />
+                                                    <em>&nbsp;</em><asp:CheckBox ID="q4" runat="server" CssClass="auto-style280" Text="Q4" AutoPostBack="True" Visible="False" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style284"><strong>Assessment Parameters</strong></td>
+                    </tr>
+                    <em>
+                    <tr>
+                        <td class="auto-style280">
+                            <em>
+                            <table class="nav-justified"  border ="1" style="width:100%; border-collapse: collapse; text-align:center">
+                                <tr style="background-color: #D9E1F2; text-align:center">
+                                    <td class="auto-style134" colspan="2"><strong>B. Fixed固定的</strong></td>
+                                    <td class="auto-style328"><strong>76%</strong></td>
+                                    <td class="auto-style133" colspan="2"><strong>C. Variable 可變的 </strong></td>
+                                    <td class="auto-style132"><strong>20%</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style284" rowspan="2">1. Attendance 考勤</td>
+                                    <td class="auto-style335">Personal 個人的</td>
+                                    <td class="auto-style337">
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">5%</td>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score1" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="1" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="auto-style130" rowspan="3">4. Work Attitude 工作態度</td>
+                                    <td class="auto-style336">Communication 溝通</td>
+                                    <td class="auto-style129">
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">4%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score7" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="7" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style335">Absentism Control 曠工控制</td>
+                                    <td class="auto-style337">
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">15%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score2" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="2" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="auto-style336">Behavior 行為</td>
+                                    <td class="auto-style129"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">3%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score8" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="8" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style284" rowspan="3">2.Work rate achievement</td>
+                                    <td class="auto-style335">Manpower Supply Achievement Rate 人力供應達成率</td>
+                                    <td class="auto-style337"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">25%</td>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score3" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="3" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                    <td class="auto-style336">Reporting 報告</td>
+                                    <td class="auto-style129"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">3%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score9" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="9" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style335">Grievance&#39;s Handling (Discipline/Shift/OT) 申訴處理（紀律/輪班/加班）</td>
+                                    <td class="auto-style337"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">12%</td>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score4" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="4" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                    <td class="auto-style130" colspan="2">5. Work assigned by Leader 領導分配的工作</td>
+                                    <td class="auto-style129"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">5%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score10" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="10" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style335">Effective Resources (Attrition Rate/Effective Manpower ) 有效資源（吸引率/有效人力）</td>
+                                    <td class="auto-style337"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">12%</td>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score5" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="5" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                    <td class="auto-style130" colspan="2" rowspan="2">6.Inititave approach / Improvement proposals 主動方法/改進建議</td>
+                                    <td class="auto-style129" rowspan="2"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">5%</span></td>
+                                                <td class="auto-style131">
+                                                    <asp:TextBox ID="score11" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="11" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style284" colspan="2">3. Legal Compliances 法律合規</td>
+                                    <td class="auto-style337"><em>
+                                        <table class="nav-justified">
+                                            <tr>
+                                                <td class="auto-style293">7%</td>
+                                                <td class="auto-style304">
+                                                    <asp:TextBox ID="score6" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="6" Width="70px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </em></td>
+                                </tr>
+                            </table>
+                            </em>
+                        </td>
+                    </tr>
+                    </em>
+                </table>
+                <em><em><em></td>
+                </em>
+                </tr>
+                <em></em><em></em></em></em></em>
+                <tr>
+                    <td class="auto-style280">
+                        <table class="nav-justified"  border ="1" style="width:100%; border-collapse: collapse; text-align:center">
+                            <tr>
+                                <td class="auto-style312" colspan="2"  style="background-color: #8EA9DB;text-align:center"><strong>D. Leaders Review 領導者</strong></td>
+                                <td class="auto-style314"  style="background-color: #FFD966; text-align:center">4<strong>%</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style291">
+                                    1.Leader</td>
+                                <td class="auto-style138">
+                                    <asp:TextBox ID="ldr" runat="server" CssClass="auto-style165" Width="244px" AutoPostBack="True" style="text-align:center" TabIndex="15"></asp:TextBox>
+                                </td>
+                                <td class="auto-style122">
+                                    <table class="nav-justified">
+                                        <tr>
+                                            <td class="auto-style327">2<em>%</span></em></td>
+                                            <td class="auto-style303">
+                                                <asp:TextBox ID="score12" runat="server" AutoPostBack="True" CssClass="auto-style165" style="text-align:center" TabIndex="12" Width="122px"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style291">2. Section Head</td>
+                                <td class="auto-style138">
+                                    <asp:TextBox ID="shead" runat="server" CssClass="auto-style165" Width="244px" AutoPostBack="True" style="text-align:center" TabIndex="16"></asp:TextBox>
+                                </td>
+                                <td class="auto-style122">
+                                    <table class="nav-justified">
+                                        <tr>
+                                            <td class="auto-style327">2<em>%</span></em></td>
+                                            <td class="auto-style303">
+                                                <asp:TextBox ID="score13" runat="server" CssClass="auto-style165" Width="122px" AutoPostBack="True" style="text-align:center" TabIndex="13"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style291">3. Department Head</td>
+                                <td class="auto-style138">
+                                    <asp:TextBox ID="dhead" runat="server" CssClass="auto-style165" Width="244px" AutoPostBack="True" style="text-align:center" TabIndex="17"></asp:TextBox>
+                                </td>
+                                <td class="auto-style122">
+                                    <asp:TextBox ID="score14" runat="server" CssClass="auto-style165" Width="244px" style="text-align:center" AutoPostBack="True" TabIndex="14" ></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="auto-style292"></span>
+                    </td>
+                </tr>
+                </table>
+                </em></em>
+                <table class="nav-justified"  border="1" style="width:100%; border-collapse: collapse; text-align:center; ">
+                    <tr>
+                        <td class="auto-style284" colspan="2">
+                            <table class="nav-justified"  border="1" style="width:100%; border-collapse: collapse; text-align:center;">
+                                <tr style="background-color: #D9E1F2; text-align:center">
+                                    <td class="auto-style315" colspan="5"><strong>Criteria of after Monthly /Quarterly /Yearly performance 月/季/年業績後標準</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style122" rowspan="2">Performance Evaluation on base of&nbsp; <span class="auto-style289">
+                                        <asp:Label ID="Label30" runat="server" CssClass="auto-style280" Text="Label"></asp:Label>
+                                        </span></td>
+                                    <td class="auto-style298"><strong>Status of Review Period</strong></td>
+                                    <td class="auto-style316"><strong>
+                                        <asp:CheckBox ID="pass" runat="server" CssClass="auto-style280" Text="Pass" AutoPostBack="True" />
+                                        </strong></td>
+                                    <td class="auto-style317">Total Score</td>
+                                    <td class="auto-style122"><strong>
+                                        <asp:CheckBox ID="extend" runat="server" CssClass="auto-style280" Text="Extend" AutoPostBack="True" />
+                                        </strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style122" colspan="2">100
+                                        <asp:Image ID="Image8" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634718713.jpg" Width="160px" />
+                                    </td>
+                                    <td class="auto-style317">76</td>
+                                    <td class="auto-style122">
+                                        <asp:Image ID="Image9" runat="server" Height="20px" ImageUrl="~/Images/messageImage_1662634733964.jpg" Width="160px" />
+                                        &nbsp;0</td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style297">Coefficient 係數</td>
+                                    <td class="auto-style122" colspan="2" rowspan="3">
+                                        <table class="nav-justified" border ="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                            <tr>
+                                                <td class="auto-style319">1.3</td>
+                                                <td class="auto-style319">1.2</td>
+                                                <td class="auto-style319">1.1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style122">96-100</td>
+                                                <td class="auto-style122">86-95</td>
+                                                <td class="auto-style122">77-85</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style319">1000</td>
+                                                <td class="auto-style319">900</td>
+                                                <td class="auto-style319">700</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="auto-style318">1</td>
+                                    <td class="auto-style122" rowspan="3">
+                                        <table class="nav-justified"   border ="1" style="width:100%; border-collapse: collapse; text-align:center">
+                                            <tr>
+                                                <td class="auto-style122">0.9</td>
+                                                <td class="auto-style122">0.8</td>
+                                                <td class="auto-style122">0.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style122">75-67</td>
+                                                <td class="auto-style122">66-56</td>
+                                                <td class="auto-style122">&gt;56</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style122">400</td>
+                                                <td class="auto-style122">300</td>
+                                                <td class="auto-style122">200</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style297">PMS Score PMS分數</td>
+                                    <td class="auto-style318">76</td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style297">Variable allowance +Semi grade 可變津贴+半級</td>
+                                    <td class="auto-style318">450</td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style122">Final amount (+/-) 最终金额 (+/-)&nbsp; </td>
+                                    <td class="auto-style122" colspan="4">
+                                        <asp:TextBox ID="famnt" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri;text-align:center; font-size: small" Width="150px" AutoPostBack="True"></asp:TextBox>
+                                        <asp:CheckBox ID="plus" runat="server" AutoPostBack="True" Font-Bold="True" Font-Size="Small" Height="24px" Text="Increase" Width="65px" />
+                                        <asp:TextBox ID="amnt2" runat="server" Width="32px" AutoPostBack="True" OnTextChanged="amnt2_TextChanged" ReadOnly="True"></asp:TextBox>
+                                        <asp:CheckBox ID="Sub1" runat="server" AutoPostBack="True" Font-Bold="True" Font-Size="Small" Height="24px" Text=" Decrease" />
+                                        <asp:TextBox ID="famnt1" runat="server" AutoPostBack="True" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px"></asp:TextBox>
+                                        &nbsp;&nbsp; &nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #D9E1F2; text-align:center">
+                        <td class="auto-style305" colspan="2"><span class="auto-style289"><strong>If when you fail in Review Month 如果你在 Review Month 中失敗了</strong></span></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style122" colspan="2">
+                            <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                <tr>
+                                    <td class="auto-style285"><strong>Evaluate By<br /> &nbsp;評估依據</strong></td>
+                                    <td class="auto-style287"><strong>Salary Effect of Monthly base 月基工資效應</strong></td>
+                                    <td class="auto-style227"><strong>Remarks /Comment<br class="auto-style299" />&nbsp;備註/評論</strong></td>
+                                    <em>
+                                    <td class="auto-style209"><span class="auto-style165"><strong>Employee Signature </strong></span><em><strong>
+                                        <br class="auto-style213" />
+                                        </strong></em><span class="auto-style165"><strong>員工簽名</strong></span></td>
+                                    </em>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style228"><span class="auto-style165">By Own Self (Employee)</span><em><br class="auto-style213" /><span class="auto-style165">&nbsp;</span></em><span class="auto-style165">自己（員工）</span></td>
+                                    <td class="auto-style226" rowspan="4">
+                                        <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                            <tr>
+                                                <td class="auto-style307">
+                                                    <asp:CheckBox ID="empn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <em>
+                                                <td class="auto-style308"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
+                                                <td class="auto-style307">
+                                                    <asp:CheckBox ID="empd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style308"><span class="auto-style280">Salary decrease (Deduct) </span><em>
+                                                    <br class="auto-style286" />
+                                                    </em><span class="auto-style280">減薪（扣除）</span></td>
+                                                </em>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="ldrn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="ldrd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
+                                                    <br class="auto-style286" />
+                                                    </em><span class="auto-style280">減薪（扣除）</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="sheadn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /><span class="auto-style280">&nbsp;</span></em><span class="auto-style280">與（不扣除）相同</span></td>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="sheadd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
+                                                    <br class="auto-style286" />
+                                                    </em><span class="auto-style280">減薪（扣除）</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="dheadn" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Same as (No deduct)</span><em><br class="auto-style286" /></em><span class="auto-style280">&nbsp;與（不扣除）相同</span></td>
+                                                <td class="auto-style231">
+                                                    <asp:CheckBox ID="dheadd" runat="server" CssClass="auto-style165" AutoPostBack="True" />
+                                                </td>
+                                                <td class="auto-style227"><span class="auto-style280">Salary decrease (Deduct) </span><em>
+                                                    <br class="auto-style286" />
+                                                    </em><span class="auto-style280">減薪（扣除）</span><em></span></em></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="auto-style227">
+                                        <asp:TextBox ID="remark1" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" Font-Overline="True" TextMode="MultiLine"></asp:TextBox>
+                                    </td>
+                                    <td class="auto-style209"><span class="auto-style289">
+                                        <asp:CheckBox ID="empsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        </span></td>
+                                </tr>
+                                <em>
+                                <tr>
+                                    <td class="auto-style285">By Leader<br /> &nbsp;主管</span><em></em></td>
+                                    <td class="auto-style227">
+                                        <asp:TextBox ID="remark2" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
+                                    </td>
+                                    <td class="auto-style209"><span class="auto-style289">
+                                        <asp:CheckBox ID="ldrsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        </span></td>
+                                </tr>
+                                <em>
+                                <tr>
+                                    <td class="auto-style285">By Section Head
+                                        <br />
+                                        課長</span><em></em></td>
+                                    <td class="auto-style227">
+                                        <asp:TextBox ID="remark3" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
+                                    </td>
+                                    <td class="auto-style209"><span class="auto-style289">
+                                        <asp:CheckBox ID="sheadsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        </span></td>
+                                </tr>
+                                <em>
+                                <tr>
+                                    <td class="auto-style285">By Dept. Head
+                                        <br />
+                                        部門經理</span><em></em></td>
+                                    <td class="auto-style227">
+                                        <asp:TextBox ID="remark4" runat="server" CssClass="auto-style214" Height="24px" style="font-family: Calibri; font-size: small" Width="150px" TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
+                                    </td>
+                                    <td class="auto-style209"><span class="auto-style289">
+                                        <asp:CheckBox ID="dheadsign" runat="server" AutoPostBack="true" CssClass="auto-style214" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" style="font-size: small; font-family: Calibri" />
+                                        </span></td>
+                                </tr>
+                                </em></em></em>
+                            </table>
+                        </td>
+                    </tr>
+                    <em>
+                    <tr style="background-color: #D9E1F2; text-align:center">
+                        <td class="auto-style305" colspan="2"><strong>The final decision is taken by Department Head for deduction for salary 扣除工資的最終決定由部門負責人做出</strong></td>
+                    </tr>
+                    <tr  border ="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                        <td class="auto-style283">Final Salary decision 薪酬</td>
+                        <td class="auto-style122">
+                            <table class="nav-justified" border="1"  style="width:100%; border-collapse: collapse; text-align:center">
+                                <tr>
+                                    <td class="auto-style117"><span class="auto-style280">Same as </span><em>
+                                        <asp:CheckBox ID="sameas" runat="server" CssClass="auto-style280" AutoPostBack="True" onclick="if(!confirm('Are you sure salary will be Same as?'))return false;" />
+                                        </em><span class="auto-style280">一樣 </span></td>
+                                    <td class="auto-style117"><span class="auto-style280">Salary Increase </span><em>
+                                        <asp:CheckBox ID="sincrease" runat="server" CssClass="auto-style280" AutoPostBack="True" onclick="if(!confirm('Are you sure salary will be Increase?'))return false;" />
+                                        </em><span class="auto-style280">漲薪 </span></td>
+                                    <td class="auto-style117"><span class="auto-style280">Salary decrease </span><em>
+                                        <asp:CheckBox ID="sdecrease" runat="server" CssClass="auto-style280" AutoPostBack="True"  onclick="if(!confirm('Are you sure salary will be Decrease?'))return false;" />
+                                        </em><span class="auto-style280">減薪</span></td>
+                                    <td class="auto-style122"><span class="auto-style280">Other： </span><em>
+                                        <br class="auto-style280" />
+                                        </em><span class="auto-style280">其他：</span><em></span><em></em></em></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </em>
+                </table>
+                </td>
+                </tr>
+                </table>
+                </em></em></em></em>
+                <table  border="1" class="auto-style169"  style="width:100%; border-collapse: collapse; text-align:center">
+                    <tr>
+                        <td class="auto-style282" style="background-color:#eea236"><strong>Remarks 評論</strong></td>
+                        <td class="auto-style175" rowspan="2" style="background-color:#eea236"><strong>Total Score<br /> &nbsp;總得分<br /> &nbsp;100%</strong></td>
+                        <td class="auto-style173" colspan="3" style="background-color:#eea236"><strong>Approvals 批准</strong></td>
+                    </tr>
+                    <em>
+                    <tr>
+                        <td class="auto-style172" rowspan="3" style="text-align:left; font-size:small"><span class="auto-style280">Performance status definition :考核結果說明 </span>
+                            <br class="auto-style280" />
+                            <span class="auto-style280">1.Pass: Score is 76 or more than 76 every time </span>
+                            <br class="auto-style280" />
+                            <span class="auto-style280">適任: 分數高於76分 </span>
+                            <br class="auto-style280" />
+                            <span class="auto-style280">2.Extend : Score is 75 or below 75, turn to extend period(PIP), employee has three months to improve his/her performance.(CW/FT is Not Included in Extend Process; They are directly eligible for fail criteria ) </span>
+                            <br class="auto-style280" />
+                            <span class="auto-style280">延長:分數低於75分，進入績效改善階段，共三個月之改善期間。（CW/FT 不包括在扩展过程中；它们直接符合失败标准）</span></td>
+                        <td class="auto-style180"><span class="auto-style280"><strong>Department Head </strong> </span>
+                            <strong>
+                            <br class="auto-style280" />
+                            </strong>
+                            <span class="auto-style280"><strong>部門主管</strong></span></td>
+                        <td class="auto-style281"><strong>Section Head<br /> &nbsp;課長</strong></td>
+                        <td class="auto-style180"><span class="auto-style280"><strong>Employee Signature</strong></span><strong><br class="auto-style280" /> </strong> <span class="auto-style280"><strong>員工簽名</strong></span></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style175" style="font-size:small">
+                            <asp:Label ID="totmarks" runat="server" Text="marks"></asp:Label>
+                        </td>
+                        <td class="auto-style178">
+                            <asp:CheckBox ID="ch1" runat="server" CssClass="auto-style280" AutoPostBack="True" />
+                        </td>
+                        <td class="auto-style178">
+                            <asp:CheckBox ID="ch2" runat="server" CssClass="auto-style280" AutoPostBack="True" />
+                        </td>
+                        <td class="auto-style178">
+                            <label id="lblEmpsign" runat="server"></label>
+<label id="lblEmpDate" runat="server"></label>
+                            <asp:CheckBox ID="ch3" runat="server" AutoPostBack="true" CssClass="auto-style280 emps" style="display:none" onclick="if(!confirm('Are you sure you want to Accept?'))return false;" />
+                        </td>
+                    </tr>
+                    </em>
+                    <tr>
+                        <td class="auto-style280" colspan="4" style="font-size:small">
+                            <asp:Label ID="Time" runat="server" Text="Label"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+              
+            </asp:Panel>
+                  <!-- This code for footer title -->
+                <div style="display: flex; width:900px; justify-content: space-between; align-items: flex-end; text-align: center; margin-top:7px;">
+    <div style="text-align: left;">
+        Retention Period: Keep until <br />
+        the employee's relieving <br />
+        period is completed <br />
+        label
+    </div>
+    <div style="text-align: center;">MAXXIS RUBBER INDIA PVT. LTD.</div>
+    <div style="text-align: right;">A4/A3 No. 0399-1</div>
+</div>
+                <!-- This code for footer title  end-->
+                </div><br />
+             <asp:Button ID="insert" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Submit" ValidationGroup="insert" />
+                <em><em></td>
+                </tr>
+                </em></em></em>
+                &nbsp;<span class="auto-style184"><asp:Button ID="update" runat="server" cssclass="btn btn-primary" OnClick="update_Click" style="font-family: call; font-size: small;" Text="Update" ValidationGroup="insert" />
+                &nbsp;<asp:Button ID="show" runat="server" cssclass="btn btn-primary" style="font-family: call; font-size: small;" Text="Show" ValidationGroup="insert" />
+                </span>
+            <asp:LinkButton runat="server" id="print" cssclass="btn btn-warning" OnClientClick = "printDiv('printableContent')"><i class="fa fa-print"></i> Print</asp:LinkButton>
+       </center>
+        <br/>
+        </ContentTemplate></asp:UpdatePanel>
+</asp:Content>
+
+
+
+
+
+

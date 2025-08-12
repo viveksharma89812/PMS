@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WebForm4
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''UpdatePanel1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
-    
+
     '''<summary>
     '''FileUpload1 control.
     '''</summary>
@@ -39,7 +39,16 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
-    
+
+    '''<summary>
+    '''linechecked control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents linechecked As Global.System.Web.UI.WebControls.CheckBox
+
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''send control.
     '''</summary>
@@ -57,7 +66,34 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents send As Global.System.Web.UI.WebControls.LinkButton
-    
+
+    '''<summary>
+    '''FileUpload2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload2 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''ReSalesImportbtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ReSalesImportbtn As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''DownloadSampleBtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DownloadSampleBtn As Global.System.Web.UI.WebControls.Button
+
     '''<summary>
     '''RequiredFieldValidator1 control.
     '''</summary>
@@ -66,7 +102,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''ValidationSummary1 control.
     '''</summary>
@@ -75,7 +111,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
-    
+
     '''<summary>
     '''hfScrollPosition control.
     '''</summary>
@@ -84,7 +120,7 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hfScrollPosition As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -93,4 +129,22 @@ Partial Public Class WebForm4
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''reopenBtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents reopenBtn As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
 End Class

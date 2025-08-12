@@ -228,6 +228,61 @@
         }
         
 </script>
+           <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
         <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid"  Width="900px" BackColor="#ffffff">
             
             <table id="1" border="1" class="auto-style21" style="width:895px">
@@ -530,6 +585,8 @@
                         <%--<asp:Button ID="Button2" runat="server" CssClass="auto-style102" Height="43px" Text="Export To PDF" />--%>
       </center><br />
         </asp:Panel>
+           <asp:LinkButton runat="server" id="print" cssclass="btn btn-warning" OnClientClick = "return PrintPanel();"><i class="fa fa-print"></i> Print</asp:LinkButton>
+
        </center>
        
        

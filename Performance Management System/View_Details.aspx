@@ -20,13 +20,45 @@
             $('[id*=myModal]').modal('show');
         }  
 </script>
+<%--       <script type="text/javascript">
+            function Search_Gridview(strKey) {
+                var strData = strKey.value.toLowerCase().split(" ");
+                var tblData = document.getElementById("<%=GridView2.ClientID %>");
+                var rowData;
+                for (var i = 1; i < tblData.rows.length; i++) {
+                    rowData = tblData.rows[i].innerHTML;
+                    var styleDisplay = 'none';
+                    for (var j = 0; j < strData.length; j++) {
+                        if (rowData.toLowerCase().indexOf(strData[j]) >= 0)
+                            styleDisplay = '';
+                        else {
+                            styleDisplay = 'none';
+                          
+                            break;
+                        }
+                    }
+                    tblData.rows[i].style.display = styleDisplay;
+                }
+            }   
+        </script>--%>
+       <meta charset="utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link href="Content/bootstrap.cosmo.min.css" rel="stylesheet" />  
+    <link href="Content/StyleSheet.css" rel="stylesheet" />  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+
+
+
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><Triggers> <asp:PostBackTrigger ControlID="revform" /> </Triggers> <ContentTemplate>
-    
-    <%--   <div class="container-fluid" style=" border-style:groove"><br />--%>
-        <%--<div class="col-sm-6 col-md-6 col-lg-6" style="background-color:lightpink; ">--%>
+   
+
+
+
+
             <div class="modal fade" id="myModal" role="dialog">
                    
     <div class="modal-dialog" >
@@ -38,6 +70,8 @@
                     &times;</button>
                 <h4 class="modal-title" style="font:bold; font-size:large">
                    Your Details</h4>
+
+                   
             </div>
              <div class="modal-body">  
                 
@@ -75,9 +109,7 @@
                       <asp:Label ID="review" runat="server" Text="Label"  CssClass="form-control"></asp:Label>
                         </div>
                     </div>
-           
           </div>
-           
             <div class="modal-footer">
                <%-- <asp:Button ID="btnSave" OnClick="btnSave_Click"  runat="server" Text="Update"  CssClass="btn btn-primary" Font-Bold="true" Font-Size="Large"  />--%>
                 <button type="button" class="btn btn-primary" data-dismiss="modal" style="font:bold; font-size:large"   >
@@ -87,7 +119,6 @@
             
     </div>
 </div>
-          <%--<div class="col-sm-6 col-md-6 col-lg-6" style="background-color:lightgray;">--%>
         <div class="container">
               <h2>Your Documents</h2><hr />
              <script type="text/javascript">
@@ -119,8 +150,7 @@
                     <div class="modal-body">
                         
 
-                         <iframe id="urlframe"  style="width:100%; height:550px"  runat="server" >
-    </iframe>                                               
+                         <iframe id="urlframe"  style="width:100%; height:550px"  runat="server" ></iframe>                                               
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
@@ -129,12 +159,17 @@
                 </div>
             </div>
         </div> 
+
+             <table>
+             <tr>
+                 <td><h2> Search :</h2></td>
+                 <td> &nbsp;&nbsp;<asp:TextBox ID="txtSearch" runat="server" Font-Size="20px" onkeyup="Search_Gridview(this)"  placeholder="Search by any Columns...."></asp:TextBox>       
+             </td>
+          </table>
+             <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  EmptyDataText="No record found" ShowHeaderWhenEmpty="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
          <Columns>
-           <%-- <asp:BoundField DataField="FileName" HeaderText="File" >
-             <HeaderStyle HorizontalAlign="Center" />
-             <ItemStyle HorizontalAlign="Center" />
-             </asp:BoundField>--%>
+
              <asp:TemplateField HeaderText="Employee Code">
                  <EditItemTemplate>
                      <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("EmployeeCode") %>'></asp:TextBox>
@@ -152,27 +187,12 @@
             <asp:TemplateField HeaderText="Document File">
                   <ItemTemplate>
                     <asp:LinkButton ID="lnk" runat="server"  CommandName="download"   CommandArgument=<%# Eval("fileName") %> Text='<%# Bind("fileName") %>'></asp:LinkButton>
-                      <%--<asp:HyperLink ID="fname" runat="server" xmlns:asp="#unknown"  NavigateUrl='<%# "~/Images/" + Eval("fileName") %>' Text='<%# Bind("fileName") %>' Target="_blank"></asp:HyperLink>--%>
              
                     </ItemTemplate>
                 <ItemStyle HorizontalAlign="Center" Width="300px" />
                 <HeaderStyle HorizontalAlign="Center" />
              </asp:TemplateField>
-           <%--  <asp:TemplateField HeaderText="Review Form">
-                 
-                 <ItemTemplate>
-                      <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
-                                    <Triggers>
-                                        <asp:PostBackTrigger ControlID="revform" />
-                                    </Triggers>
-                                    <ContentTemplate>
-                                        
-                                        
-                 </ContentTemplate></asp:UpdatePanel>
-                                        </ItemTemplate>
-                  <ItemStyle HorizontalAlign="Center" Width="150px" />
-                <HeaderStyle HorizontalAlign="Center" />
-             </asp:TemplateField>--%>
+         
         </Columns>
          <FooterStyle BackColor="White" ForeColor="#000066" />
          <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -184,13 +204,139 @@
          <SortedDescendingCellStyle BackColor="#CAC9C9" />
          <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
-            
-         </div>  </div>
-        
-              
-     
-                                             
-               <br /><br />
+
+
+<div style="width: 800px; align-content: center;">
+
+            <!-- Webcam Container -->
+<div id="outerimgdiv" style="position:fixed;" runat="server">
+     <div style="display: flex; gap: 20px;">
+    <div class="camera-container">
+        <div id="webcam"></div>
+         <button id="btnCapture" type="button" class="btn-success form-control">Capture</button>
+    </div>
+    <br />
+    <div class="camera-container">
+        <img id="imgCapture" />
+        <button id="btnUpload" type="button" class="form-control btn-primary" >Upload</button>
+    </div>
+</div>
+</div>
+        <!-- Webcam Container -->
+
+
+<script>
+        $(function () {
+
+            var power = '<%= Session("access powersss") %>';
+           
+         if (power == "ok") {
+
+             var webcamWidth = $('#webcam').width();
+             var webcamHeight = $('#webcam').height();
+
+             Webcam.set({
+                 width: webcamWidth,
+                 height: webcamHeight,
+                 image_format: 'jpeg',
+                 jpeg_quality: 90
+             });
+
+             Webcam.attach('#webcam');
+
+             $("#btnCapture").click(function () {
+                 Webcam.snap(function (data_uri) {
+                     var img = new Image();
+                     img.src = data_uri;
+                     img.onload = function () {
+                         var canvas = document.createElement('canvas');
+                         var ctx = canvas.getContext('2d');
+
+                         canvas.width = img.width;
+                         canvas.height = img.height + 30;
+
+                         ctx.drawImage(img, 0, 0);
+
+                         ctx.font = '20px Arial';
+                         ctx.fillStyle = 'white';
+                         ctx.textAlign = 'center';
+
+                         var currentDate = new Date();
+                         var dateTimeText = currentDate.toLocaleString();
+
+                         ctx.fillText(dateTimeText, canvas.width / 2, canvas.height - 10);
+
+                         var finalImage = canvas.toDataURL('image/jpeg');
+
+                         $("#imgCapture")[0].src = finalImage;
+
+                     };
+                 });
+             });
+
+             $("#btnUpload").click(function () {
+                 var imageData = $("#imgCapture")[0].src;
+
+                 $.ajax({
+                     type: "POST",
+                     url: "View_Details.aspx/SaveCapturedImage",
+                     data: JSON.stringify({ data: imageData }),
+                     contentType: "application/json; charset=utf-8",
+                     dataType: "json",
+                     success: function (r) {
+                         alert('Image saved successfully!');
+                         chk3Display()
+                     },
+                     error: function (xhr, status, error) {
+                         alert("There was an error uploading the image.");
+                     }
+                 });
+             });
+         }
+         
+     });
+
+     function chk3Display() {
+         $(".emps").css("display", "block");
+     }
+
+    
+   
+ </script>
+   
+
+<%--<asp:GridView ID="GridView2" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" OnRowCommand="GridView2_RowCommand">
+    <Columns>
+       <%-- <asp:TemplateField HeaderText="Name" ItemStyle-Width="150">
+            <ItemTemplate>
+                <asp:TextBox ID="txtName" runat="server" Text='<%# Eval("Name") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>--%>
+        <%-- <asp:BoundField DataField="EmployeeCode" ItemStyle-HorizontalAlign="center" HeaderText="EmployeeCode" ItemStyle-Width="200px" />
+         <asp:BoundField DataField="EmployeeName"  ItemStyle-HorizontalAlign="center" HeaderText="EmployeeName" ItemStyle-Width="200px" />
+         <asp:BoundField DataField="ReviewMonth"  ItemStyle-HorizontalAlign="center" HeaderText="ReviewMonth" ItemStyle-Width="200px" />
+        <asp:BoundField DataField="Form_ID"  ItemStyle-HorizontalAlign="center" HeaderText="Form_ID" ItemStyle-Width="200px" />
+        <asp:TemplateField >
+            <ItemTemplate>
+               <center> <asp:Button Text="Open" runat="server" CommandName="Select" CommandArgument="<%# Container.DataItemIndex %>" /></center>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+    <FooterStyle BackColor="White" ForeColor="#000066" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+            <RowStyle ForeColor="#000066" />
+            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#00547E" />
+</asp:GridView>--%>
+
+
+</div>
+</div></div>        
+<br /><br />
         
    </ContentTemplate></asp:UpdatePanel>
 </asp:Content>

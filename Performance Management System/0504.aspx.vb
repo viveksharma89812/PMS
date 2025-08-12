@@ -15,6 +15,9 @@ Public Class WebForm12
     Dim strsql As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            If Session("access power") = "" Then
+                Response.Redirect("login.aspx")
+            End If
             'check()
             strsql = "select * from Employee_Master1 where EmployeeCode='" & Session("emp code") & "'"
             If sqlselect(constr, strsql, "Abc") Then

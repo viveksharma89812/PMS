@@ -25,17 +25,7 @@ Public Class WebForm6
             empid.Focus()
         End If
     End Sub
-    'Protected Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
-    '    If e.CommandName = "Download" Then
-    '        Response.Clear()
-    '        Response.ClearHeaders()
-    '        Response.ClearContent()
-    '        Response.ContentType = "Application /.xls"
-    '        Response.AddHeader("content-disposition", "inline; filename=" + e.CommandArgument)
-    '        Response.WriteFile("~/Images/" + e.CommandArgument)
-    '        Response.End()
-    '    End If
-    'End Sub
+
 
     Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GridView1.RowDeleting
         Try
@@ -80,14 +70,14 @@ Public Class WebForm6
             Dim str As String = String.Join(" and ", TextStr.ToArray())
 
             strsql = strsql + " " + "where" + " " + str
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 GridView1.DataSource = ds
                 GridView1.DataBind()
             End If
 
             If emplid.Text = "" And department.SelectedValue = "All" And Section.SelectedValue = "All" Then
                 strsql = "select a.Department,a.Section,b.* from Employee_Master a join FileUpload b on a.EmployeeCode=b.EmployeeCode"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     GridView1.DataSource = ds
                     GridView1.DataBind()
                 End If
@@ -102,7 +92,7 @@ Public Class WebForm6
     Private Sub filter()
         If Not IsPostBack Then
             strsql = "select distinct a.Department  from Employee_Master a join FileUpload b on a.EmployeeCode=b.EmployeeCode"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     department.DataSource = ds
                     department.DataTextField = "Department"
@@ -112,7 +102,7 @@ Public Class WebForm6
             End If
 
             strsql = "select distinct a.Section from Employee_Master a join FileUpload b on a.EmployeeCode=b.EmployeeCode"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     Section.DataSource = ds
                     Section.DataTextField = "Section"
@@ -132,7 +122,7 @@ Public Class WebForm6
                 If emplid.Text <> "" Then TextStr.Add("b.EmployeeCode like '" & emplid.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         department.DataSource = ds
                         department.DataTextField = "Department"
@@ -151,7 +141,7 @@ Public Class WebForm6
                 If emplid.Text <> "" Then TextStr.Add("b.EmployeeCode like '" & emplid.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         Section.DataSource = ds
                         Section.DataTextField = "Section"
@@ -195,21 +185,10 @@ Public Class WebForm6
         empname.Text = ""
     End Sub
 
-    'Protected Sub empname_TextChanged(sender As Object, e As EventArgs) Handles empname.TextChanged
-    '    strsql = "select EmployeeName,EmployeeCode from Employee_Master where EmployeeName='" & empname.Text & "'"
-    '    If sqlselect(constr, strsql, "Abc") Then
-    '        If ds.Tables("Abc").Rows.Count > 0 Then
-    '        Else
-    '            Response.Write(" <script> alert('EmployeeName is not correct' );window.location = '" + Request.RawUrl + "';</script>")
-    '        End If
-    '    End If
-
-    'End Sub
-
     Protected Sub empid_TextChanged(sender As Object, e As EventArgs) Handles empid.TextChanged
         Try
             strsql = "select EmployeeCode,EmployeeName from Employee_Master where EmployeeCode='" & empid.Text & "'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     Dim emplid As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeCode"))
                     Dim emplname As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))
@@ -235,7 +214,7 @@ Public Class WebForm6
             'dat.Text = TryCast(row.FindControl("Label5"), Label).Text
 
             strsql = "select * from FileUpload where EmployeeCode='" & emplcode.Text & "' and FileName='" & flname.Text & "'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     emplnm.Text = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))
                     'flname.Text = CType(GridView1.Rows(rowIndex).FindControl("HyperLink1"), HyperLink).Text
@@ -256,17 +235,7 @@ Public Class WebForm6
 
     Protected Sub btnSave_Click(sender As Object, e As EventArgs)
         Try
-            'strsql = "Select * from Employee_Master where EmployeeCode='" & emplcode.Text & "'"
-            'If sqlselect(constr, strsql, "Abc") Then
-            '    If ds.Tables("Abc").Rows.Count > 0 Then
-            '        strsql = "insert into Employee_Master_Histry select EmployeeCode,EmployeeName,Designation,Department,Section,DOJ,DOP,DOC,DOE,Qualification,PreviousExperience,ReportingPersonName,Review_Period from Employee_Master where EmployeeCode='" & emplcode.Text & "'"
-            '        If sqlselect(constr, strsql, "Abc") Then
-            '            If ds.Tables("Abc").Rows.Count > 0 Then
-            '                ' Response.Write(" <script> alert('Updated successfully' );window.location = '" + Request.RawUrl + "';</script>")
-            '            End If
-            '        End If
-            '    End If
-            'End If
+
 
             If docfile.HasFile Then
                 FileName = Path.GetFileName(docfile.PostedFile.FileName)
@@ -281,7 +250,7 @@ Public Class WebForm6
             dt2.ToString("MM-dd-yyyy hh:mm:ss tt")
             Dim aid As String = ""
             strsql = "select * from FileUpload where EmployeeCode='" & emplcode.Text & "' and FileName='" & flname.Text & "'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     aid = Convert.ToInt16(ds.Tables(0).Rows(0)("id"))
                 End If

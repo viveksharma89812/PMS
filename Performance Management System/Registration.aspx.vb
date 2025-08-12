@@ -6,6 +6,7 @@ Public Class WebForm1
     Inherits System.Web.UI.Page
     Dim strsql As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
         'Label9.Text = ""
         If IsPostBack Then
             Dim password As String = pass.Text
@@ -16,7 +17,7 @@ Public Class WebForm1
 
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        strsql = "select EmployeeName,EmployeeCode,Department,Section,Reg from Employee_Master where EmployeeCode='" & empcode.Text & "'"
+        strsql = "select EmployeeName,EmployeeCode,Department,Section,Reg from Employee_Master1 where EmployeeCode='" & empcode.Text & "'"
         If sqlselect(constr, strsql, "Abc") Then
             If ds.Tables("Abc").Rows.Count > 0 Then
                 Dim name As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))
@@ -70,7 +71,7 @@ Public Class WebForm1
         End If
     End Sub
     Private Sub insert()
-        strsql = "Update Employee_Master set Password='" & pass.Text & "',Reg='True' where EmployeeCode='" & empcode.Text & "' "
+        strsql = "Update Employee_Master1 set Password='" & pass.Text & "',Reg='True' where EmployeeCode='" & empcode.Text & "' "
         If Session("reg") = "False" Then
             If sqlexe(constr, strsql) Then
                 'Label9.Visible = "true"
@@ -86,7 +87,7 @@ Public Class WebForm1
     End Sub
 
     Protected Sub empcode_TextChanged(sender As Object, e As EventArgs) Handles empcode.TextChanged
-        strsql = "select EmployeeName,Department,Section from Employee_Master where EmployeeCode='" & empcode.Text & "'"
+        strsql = "select EmployeeName,Department,Section from Employee_Master1 where EmployeeCode='" & empcode.Text & "'"
         If sqlselect(constr, strsql, "Abc") Then
             If ds.Tables("Abc").Rows.Count > 0 Then
                 Dim name As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))

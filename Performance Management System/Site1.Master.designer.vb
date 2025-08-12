@@ -59,6 +59,15 @@ Partial Public Class Site1
     Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''A5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents A5 As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''a4 control.
     '''</summary>
     '''<remarks>
@@ -140,13 +149,22 @@ Partial Public Class Site1
     Protected WithEvents h1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
-    '''Label1 control.
+    '''summary control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents summary As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
+    '''Plog control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Plog As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
     '''B1 control.
@@ -156,24 +174,6 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents B1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
-    '''<summary>
-    '''empdtl control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents empdtl As Global.System.Web.UI.HtmlControls.HtmlAnchor
-
-    '''<summary>
-    '''usr control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents usr As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''lnk control.
@@ -210,6 +210,15 @@ Partial Public Class Site1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ContentPlaceHolder1 control.

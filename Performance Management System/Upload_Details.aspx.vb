@@ -29,102 +29,17 @@ Public Class WebForm3
     Dim errorms As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Label2.Text = ""
+        If Session("access power") = "" Then
+            Response.Redirect("login.aspx")
+        End If
 
-        ' ScriptManager.GetCurrent(Me).RegisterPostBackControl(Me.GridView1)
-        'If Not IsPostBack Then
-        '    Session("CheckRefresh") = Server.UrlDecode(System.DateTime.Now.ToString())
-        'End If
 
         fill()
         filter()
-        'If Not IsPostBack Then
-        '    empcode.Focus()
-        'End If
 
-        'If Page.IsPostBack Then
-        '    Dim wcICausedPostBack As WebControl = CType(GetControlThatCausedPostBack(TryCast(sender, Page)), WebControl)
-        '    Dim indx As Integer = wcICausedPostBack.TabIndex
-        '    Dim ctrl =
-        '     From control In wcICausedPostBack.Parent.Controls.OfType(Of WebControl)()
-        '     Where control.TabIndex > indx
-        '     Select control
-        '    ctrl.DefaultIfEmpty(wcICausedPostBack).First().Focus()
-        'End If
     End Sub
 
-    'Protected Function GetControlThatCausedPostBack(ByVal page As Page) As Control
-    '    Dim control As Control = Nothing
 
-    '    Dim ctrlname As String = page.Request.Params.Get("__EVENTTARGET")
-    '    If ctrlname IsNot Nothing AndAlso ctrlname <> String.Empty Then
-    '        control = page.FindControl(ctrlname)
-    '    Else
-    '        For Each ctl As String In page.Request.Form
-    '            Dim c As Control = page.FindControl(ctl)
-    '            If TypeOf c Is System.Web.UI.WebControls.Button OrElse TypeOf c Is System.Web.UI.WebControls.ImageButton Then
-    '                control = c
-    '                Exit For
-    '            End If
-    '        Next ctl
-    '    End If
-    '    Return control
-
-    'End Function
-    'Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles submit.Click
-    '    Try
-    '        Dim str As String = desi.Text
-    '        If str = "GM" Or str = "AVP" Then
-    '            str = "2"
-    '        Else
-    '            str = "3"
-    '        End If
-    '        Dim doja As String = Convert.ToDateTime(doj.Text).ToString("dd-MM-yyyy")
-    '        Dim dopa As String
-    '        Dim doca As String
-    '        Dim doea As String
-    '        If dop.Text <> "" Then
-    '            dopa = Convert.ToDateTime(dop.Text).ToString("dd-MM-yyyy")
-    '        Else
-    '            dopa = dop.Text
-    '        End If
-    '        If doc.Text <> "" Then
-    '            doca = Convert.ToDateTime(doc.Text).ToString("dd-MM-yyyy")
-    '        Else
-    '            doca = doc.Text
-    '        End If
-    '        If doe.Text <> "" Then
-    '            doea = Convert.ToDateTime(doe.Text).ToString("dd-MM-yyyy")
-    '        Else
-    '            doea = doe.Text
-    '        End If
-    '        strsql = "Insert into Employee_Master(EmployeeCode,EmployeeName,Designation,Department,Section,DOJ,DOP,DOC,DOE,Qualification,PreviousExperience,ReportingPersonName,Review_Period,Reg,Access_Power) values('" & empcode.Text & "','" & emplname.Text & "','" & desi.Text & "','" & Dept.SelectedValue & "','" & sect.SelectedValue & "','" & doja & "','" & dopa & "','" & doca & "','" & doea & "','" & qualification.Text & "','" & preexp.Text & "','" & reporpersonname.Text & "','" & Review.SelectedValue & "','" & False & "','" & str & "')"
-    '        If sqlexe(constr, strsql) Then
-    '            clear()
-    '            Label2.Visible = "true"
-    '            Label2.Text = "Inserted Successfully"
-    '            fill()
-    '        End If
-    '    Catch ex As Exception
-    '        ' Dim st As New StackTrace(True)
-    '        ' st = New StackTrace(ex, True)
-    '        Response.Write("<script language='javascript'>alert('" + Server.HtmlEncode(ex.Message) + "')</script>")
-    '    End Try
-    'End Sub
-    'Private Sub clear()
-    '    empcode.Text = ""
-    '    emplname.Text = ""
-    '    desi.Text = ""
-    '    Dept.SelectedValue = "---Select---"
-    '    sect.SelectedValue = "---Select---"
-    '    doj.Text = ""
-    '    doc.Text = ""
-    '    doe.Text = ""
-    '    dop.Text = ""
-    '    qualification.Text = ""
-    '    preexp.Text = ""
-    '    reporpersonname.Text = ""
-    '    Review.SelectedValue = "---Select---"
-    'End Sub
     Private Sub fill()
 
         'strsql = "select * from Employee_Master"
@@ -136,38 +51,25 @@ Public Class WebForm3
         Dim str As String = String.Join(" and ", TextStr.ToArray())
 
         strsql = strsql + " " + "where" + " " + str + "and EmployeeCode<>'HR'"
-        If sqlselect(constr, strsql, "Abc") Then
+        If sqlselectmaster(constr, strsql, "Abc") Then
             GridView1.DataSource = ds
             GridView1.DataBind()
         End If
         If department.SelectedValue = "All" And Section.SelectedValue = "All" And empcode.Text = "" Then
             'strsql = "Select * from Employee_Master where EmployeeCode<>'HR'"
             strsql = "Select * from Employee_Master1 where EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 GridView1.DataSource = ds
                 GridView1.DataBind()
             End If
         End If
-        'If department.SelectedValue <> "All" Then
-        '    strsql = "select * from Employee_Master where Department='" & department.SelectedValue & "'"
-        '    If sqlselect(constr, strsql, "Abc") Then
-        '        GridView1.DataSource = ds.Tables("Abc")
-        '        GridView1.DataBind()
-        '    End If
-        'End If
-        'If Section.SelectedValue <> "All" And department.SelectedValue <> "All" Then
-        '    strsql = "select * from Employee_Master where Section='" & Section.SelectedValue & "'"
-        '    If sqlselect(constr, strsql, "Abc") Then
-        '        GridView1.DataSource = ds.Tables("Abc")
-        '        GridView1.DataBind()
-        '    End If
-        'End If
+
     End Sub
     Private Sub filter()
         If Not IsPostBack Then
             'strsql = "select distinct Department from Employee_Master where EmployeeCode<>'HR'"
             strsql = "select distinct Department from Employee_Master1 where EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     department.DataSource = ds
                     department.DataTextField = "Department"
@@ -178,7 +80,7 @@ Public Class WebForm3
 
             'strsql = "select distinct Section from Employee_Master where EmployeeCode<>'HR'"
             strsql = "select distinct Section from Employee_Master1 where EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
                     Section.DataSource = ds
                     Section.DataTextField = "Section"
@@ -199,7 +101,7 @@ Public Class WebForm3
                 If empcode.Text <> "" Then TextStr.Add("EmployeeCode like '" & empcode.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str + "and EmployeeCode<>'HR'"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         department.DataSource = ds
                         department.DataTextField = "Department"
@@ -219,7 +121,7 @@ Public Class WebForm3
                 If empcode.Text <> "" Then TextStr.Add("EmployeeCode like '" & empcode.Text & "'+'%'")
                 Dim Str As String = String.Join(" and ", TextStr.ToArray())
                 strsql = strsql + " " + "where" + " " + Str + "and EmployeeCode<>'HR'"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         Section.DataSource = ds
                         Section.DataTextField = "Section"
@@ -259,47 +161,7 @@ Public Class WebForm3
     End Sub
 
 
-    'Protected Sub Dept_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Dept.SelectedIndexChanged
-    '    sect.Items.Clear()
-    '    sect.Items.Add("---Select---")
-    '    strsql = "select d.dept_id,s.section_name from Department d INNER JOIN Section1 s  ON d.dept_id=s.dept_id where d.dept_name='" & Dept.SelectedValue & "'"
-    '    If sqlselect(constr, strsql, "Abc") Then
-    '        If ds.Tables("Abc").Rows.Count > 0 Then
-    '            sect.DataSource = ds
-    '            sect.DataTextField = "section_name"
-    '            sect.DataValueField = "section_name"
-    '            sect.DataBind()
-    '        End If
-    '    End If
-    '    Dept.Focus()
-    'End Sub
 
-    'Protected Sub empcode_TextChanged(sender As Object, e As EventArgs) Handles empcode.TextChanged
-    '    strsql = "select * from Employee_Master where EmployeeCode='" & empcode.Text & "'"
-    '    If sqlselect(constr, strsql, "Abc") Then
-    '        If ds.Tables("Abc").Rows.Count > 0 Then
-    '            Dim empid As String = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeCode"))
-    '            Session("emp id ") = empid
-    '            Label2.Visible = "true"
-    '            Label2.Text = "" + empid + ", " + "already inserted this record"
-    '        End If
-    '    End If
-    '    empcode.Focus()
-    'End Sub
-
-
-    'Protected Sub deptb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles deptb.SelectedIndexChanged
-    '    sectb.Items.Clear()
-    '    strsql = "select d.dept_id,s.section_name from Department d INNER JOIN Section1 s  ON d.dept_id=s.dept_id where d.dept_name='" & deptb.SelectedValue & "' and EmployeeCode<>'HR'"
-    '    If sqlselect(constr, strsql, "Abc") Then
-    '        If ds.Tables("Abc").Rows.Count > 0 Then
-    '            sectb.DataSource = ds
-    '            sectb.DataTextField = "section_name"
-    '            sectb.DataValueField = "section_name"
-    '            sectb.DataBind()
-    '        End If
-    '    End If
-    'End Sub
     Protected Sub Display(sender As Object, e As EventArgs)
         Try
             Dim rowIndex As Integer = Convert.ToInt32(TryCast(TryCast(sender, LinkButton).NamingContainer, GridViewRow).RowIndex)
@@ -307,7 +169,7 @@ Public Class WebForm3
             emplcode.Text = TryCast(row.FindControl("Label1"), Label).Text
             'strsql = "select * from Employee_Master where EmployeeCode='" & emplcode.Text & "' and EmployeeCode<>'HR'"
             strsql = "select * from Employee_Master1 where EmployeeCode='" & emplcode.Text & "' and EmployeeCode<>'HR'"
-            If sqlselect(constr, strsql, "Abc") Then
+            If sqlselectmaster(constr, strsql, "Abc") Then
                 If ds.Tables("Abc").Rows.Count > 0 Then
 
                     emplnm.Text = Convert.ToString(ds.Tables(0).Rows(0)("EmployeeName"))
@@ -336,16 +198,7 @@ Public Class WebForm3
                     'leftdate.Text = Convert.ToString(ds.Tables(0).Rows(0)("LeftDate"))
                 End If
             End If
-            'sectb.Items.Clear()
-            'strsql = "select d.dept_id,s.section_name from Department d INNER JOIN Section1 s  ON d.dept_id=s.dept_id where d.dept_name='" & deptb.SelectedValue & "'"
-            'If sqlselect(constr, strsql, "Abc") Then
-            '    If ds.Tables("Abc").Rows.Count > 0 Then
-            '        sectb.DataSource = ds
-            '        sectb.DataTextField = "section_name"
-            '        sectb.DataValueField = "section_name"
-            '        sectb.DataBind()
-            '    End If
-            'End If
+
             Page.ClientScript.RegisterStartupScript(Me.GetType(), "Pop", "openModal();", True)
             'ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Pop", "openModal();", True)
         Catch ex As Exception
@@ -357,17 +210,6 @@ Public Class WebForm3
     Protected Sub btnSave_Click(sender As Object, e As EventArgs)
         'strsql = "Select * from Employee_Master where EmployeeCode='" & emplcode.Text & "'"
         strsql = "Select * from Employee_Master1 where EmployeeCode='" & emplcode.Text & "'"
-        If sqlselect(constr, strsql, "Abc") Then
-            If ds.Tables("Abc").Rows.Count > 0 Then
-                strsql = "insert into Employee_Master_Histry1 select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOT,DOP,DOC,Contract_Renew,Contract_Expire,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,PMS_Form_Category from Employee_Master where EmployeeCode='" & emplcode.Text & "'"
-                'strsql = "insert into Employee_Master_Histry1 select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOP,DOC,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,LeftDate from Employee_Master where EmployeeCode='" & emplcode.Text & "'"
-                If sqlselect(constr, strsql, "Abc") Then
-                    If ds.Tables("Abc").Rows.Count > 0 Then
-                        ' Response.Write(" <script> alert('Updated successfully' );window.location = '" + Request.RawUrl + "';</script>")
-                    End If
-                End If
-            End If
-        End If
 
         If doja.Text <> "" And doja.Text <> "-" Then
             doja.Text = Convert.ToDateTime(doja.Text).ToString("dd/MM/yyyy")
@@ -387,11 +229,11 @@ Public Class WebForm3
         If Contract_Expire.Text <> "" And Contract_Expire.Text <> "-" Then
             Contract_Expire.Text = Convert.ToDateTime(Contract_Expire.Text).ToString("dd/MM/yyyy")
         End If
-        If doea.Text <> "" and doea.Text <> "-" Then
+        If doea.Text <> "" And doea.Text <> "-" Then
             doea.Text = Convert.ToDateTime(doea.Text).ToString("dd/MM/yyyy")
         End If
 
-        If incredate.Text <> "" and doea.Text <> "-" Then
+        If incredate.Text <> "" And doea.Text <> "-" Then
             incredate.Text = Convert.ToDateTime(incredate.Text).ToString("dd/MM/yyyy")
         End If
         'strsql = "UPDATE Employee_Master Set EmployeeCode='" & emplcode.Text & "', EmployeeName=N'" & emplnm.Text & "', Designation=N'" & designation.Text & "',Grade='" & grad.Text & "',Department=N'" & depta.Text & "',Section=N'" & secta.Text & "',DOJ='" & doja.Text & "',DOP='" & dopa.Text & "',DOC='" & doca.Text & "',DOE='" & doea.Text & "',Qualification=N'" & qualific.Text & "',ReportingPersonName=N'" & reportingperson.Text & "',Review_Period='" & reviewperioda.Text & "',IncrementDetail='" & incredetail.Text & "',PercentOfGet='" & perget.Text & "',Increment_EffectiveDate='" & incredate.Text & "',NoOfExtension='" & noofextend.Text & "',MRIExperience=N'" & mriexperience.Text & "',LeftDate='" & leftdate.Text & "'  WHERE EmployeeCode='" & emplcode.Text & "' "
@@ -508,9 +350,6 @@ Public Class WebForm3
 
 
 
-    'Protected Sub sect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sect.SelectedIndexChanged
-    '    sect.Focus()
-    'End Sub
 
     Protected Sub dispall_Click(sender As Object, e As EventArgs) Handles dispall.Click
         Response.Redirect(Request.RawUrl)
@@ -537,35 +376,6 @@ Public Class WebForm3
                 Dim FileExtension = System.IO.Path.GetExtension(uploadfile.PostedFile.FileName)
                 If FileExtension = ".xlsx" Then
                     uploadfile.SaveAs(filePath)
-
-                    'Dim dt As DataTable = New DataTable()
-                    'Using spreadSheetDocument As SpreadsheetDocument = GetDoc(filePath)
-                    '    Dim WorkbookPart As WorkbookPart = spreadSheetDocument.WorkbookPart
-                    '    Dim sheets As IEnumerable(Of Sheet) = spreadSheetDocument.WorkbookPart.Workbook.GetFirstChild(Of Sheet)().Elements(Of Sheet)()
-                    '    Dim relationshipId As String = sheets.First().Id.Value
-                    '    Dim worksheetPart As WorksheetPart = spreadSheetDocument.WorkbookPart.GetPartById(relationshipId)
-                    '    Dim workSheet As Worksheet = worksheetPart.Worksheet
-                    '    Dim sheetData As SheetData = workSheet.GetFirstChild(Of Sheet)().Descendants(Of Sheet)
-                    '    Dim rows As IEnumerable(Of Row) = sheetData.Descendants(Of Row)()
-
-                    '    For Each cell As Cell In rows.ElementAt(0)
-                    '        dt.Columns.Add(GetCellValue(spreadSheetDocument, cell))
-                    '    Next
-
-                    '    For Each row As Row In rows
-                    '        Dim temprow As DataRow = dt.NewRow()
-                    '        For i As Integer = 0 To row.Descendants(Of Cell).Count
-                    '            temprow(i) = GetCellValue(spreadSheetDocument, row.Descendants(Of Cell)().ElementAt(i - 1))
-                    '        Next
-                    '        dt.Rows.Add(temprow)
-                    '    Next
-                    '    dt.Rows.RemoveAt(0)
-
-
-
-                    'End Using
-
-
 
                     Using doc As SpreadsheetDocument = GetDoc(filePath)
                         'Read the first Sheet from Excel file.
@@ -647,26 +457,48 @@ Public Class WebForm3
                 Dim code As String = gvrow.Cells(1).Text
                 Dim dept As String = WebUtility.HtmlDecode(gvrow.Cells(2).Text)
                 Dim sect As String = WebUtility.HtmlDecode(gvrow.Cells(3).Text)
+                sect = sect.Replace("&amp;", "&")
                 Dim desig As String = WebUtility.HtmlDecode(gvrow.Cells(4).Text)
                 Dim grade As String = gvrow.Cells(5).Text
                 Dim name As String = gvrow.Cells(6).Text
+
                 Dim doj As String = gvrow.Cells(7).Text
+                doj = doj.Replace("&nbsp;", "")
                 Dim dot As String = gvrow.Cells(8).Text
+                dot = dot.Replace("&nbsp;", "")
                 Dim dop As String = gvrow.Cells(9).Text
+                dop = dop.Replace("&nbsp;", "")
                 Dim doc As String = gvrow.Cells(10).Text
+                doc = doc.Replace("&nbsp;", "")
+
                 Dim Contract_Renew As String = gvrow.Cells(11).Text
+                Contract_Renew = Contract_Renew.Replace("&nbsp;", "") ' adding new replace function here..
                 Dim Contract_Expire As String = gvrow.Cells(12).Text
+                Contract_Expire = Contract_Expire.Replace("&nbsp;", "") ' adding new replace function here..
+
                 Dim doe As String = gvrow.Cells(13).Text
+                doe = doe.Replace("&nbsp;", "")
                 Dim review As String = gvrow.Cells(14).Text
+                review = review.Replace("&nbsp;", "")
                 Dim quali As String = WebUtility.HtmlDecode(gvrow.Cells(15).Text)
+                quali = quali.Replace("&nbsp;", "")
                 Dim preexp As String = gvrow.Cells(16).Text
+                preexp = preexp.Replace("&nbsp;", "")
                 Dim mriexp As String = gvrow.Cells(17).Text
+                mriexp = mriexp.Replace("&nbsp;", "")
                 Dim reppername As String = gvrow.Cells(18).Text
+                reppername = reppername.Replace("&nbsp;", "")
                 Dim incredetail As String = gvrow.Cells(19).Text
+                incredetail = incredetail.Replace("&nbsp;", "")
                 Dim percentofget As String = gvrow.Cells(20).Text
+                percentofget = percentofget.Replace("&nbsp;", "")
                 Dim incrementdate As String = gvrow.Cells(21).Text
+                incrementdate = incrementdate.Replace("&nbsp;", "")
                 Dim noextend As String = gvrow.Cells(22).Text
+                noextend = noextend.Replace("&nbsp;", "")
                 Dim PMS_Form_Category As String = gvrow.Cells(23).Text
+                PMS_Form_Category = PMS_Form_Category.Replace("&amp;", "&")
+
                 ' Dim leftdt As String = gvrow.Cells(20).Text
                 Dim reg As String = False
                 Dim str As String = desig
@@ -681,78 +513,16 @@ Public Class WebForm3
                 Else
                     empgrad = "3"
                 End If
-                'If incrementdate <> "-" Then
-                '    incrementdate = Convert.ToDateTime(incrementdate).ToString("dd-MM-yyyy")
-                'End If
-                'If doj <> "-" Then
-                '    doj = Convert.ToDateTime(doj).ToString("dd-MM-yyyy")
-                'End If
-                'If dop <> "-" Then
-                '    dop = Convert.ToDateTime(dop).ToString("dd-MM-yyyy")
-                'End If
-                'If doc <> "-" Then
-                '    doc = Convert.ToDateTime(doc).ToString("dd-MM-yyyy")
-                'End If
-                'If doe <> "-" Then
-                '    doe = Convert.ToDateTime(doe).ToString("dd-MM-yyyy")
-                'End If
-                'If leftdt <> "-" Then
-                '    leftdt = Convert.ToDateTime(leftdt).ToString("dd-MM-yyyy")
-                'End If
-
-
-                'If gvrow.Cells(6).Text = "-" Then
-                '    doj = ""
-                'End If
-                'If gvrow.Cells(7).Text = "-" Then
-                '    dop = ""
-                'End If
-                'If gvrow.Cells(8).Text = "-" Then
-                '    doc = ""
-                'End If
-                'If gvrow.Cells(9).Text = "-" Then
-                '    doe = ""
-                'End If
-                'If gvrow.Cells(11).Text = "-" Then
-                '    quali = ""
-                'End If
-                'If gvrow.Cells(12).Text = "-" Then
-                '    preexp = ""
-                'End If
-                'If gvrow.Cells(13).Text = "-" Then
-                '    mriexp = ""
-                'End If
-                'If gvrow.Cells(14).Text = "-" Then
-                '    reppername = ""
-                'End If
-                'If gvrow.Cells(10).Text = "-" Then
-                '    review = ""
-                'End If
-                'If gvrow.Cells(15).Text = "-" Then
-                '    incredetail = ""
-                'End If
-                'If gvrow.Cells(16).Text = "-" Then
-                '    percentofget = ""
-                'End If
-                'If gvrow.Cells(17).Text = "-" Then
-                '    incrementdate = ""
-                'End If
-                'If gvrow.Cells(18).Text = "-" Then
-                '    noextend = ""
-                'End If
-                'If gvrow.Cells(19).Text = "-" Then
-                '    leftdt = ""
-                'End If
 
 
                 'strsql = "select EmployeeCode from Employee_Master where EmployeeCode='" & code & "'"
                 strsql = "select EmployeeCode from Employee_Master1 where EmployeeCode='" & code & "'"
-                If sqlselect(constr, strsql, "Abc") Then
+                If sqlselectmaster(constr, strsql, "Abc") Then
                     If ds.Tables("Abc").Rows.Count > 0 Then
                         Dim empcode As String = Convert.ToString(ds.Tables("Abc").Rows(0)("EmployeeCode"))
                         If empcode = code Then
-                            'strsql = "insert into Employee_Master_Histry select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOP,DOC,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,LeftDate from Employee_Master where EmployeeCode='" & empcode & "'"
-                            strsql = "insert into Employee_Master_Histry1 select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOP,DOT,DOC,Contract_Renew,Contract_Expire,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,PMS_Form_Category from Employee_Master1 where EmployeeCode='" & empcode & "'"
+                            strsql = "insert into Employee_Master select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOP,DOC,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,LeftDate from Employee_Master1 where EmployeeCode='" & empcode & "'"
+                            'strsql = "insert into Employee_Master_Histry1 select Category,EmployeeCode,Department,Section,Designation,Grade,EmployeeName,DOJ,DOP,DOT,DOC,Contract_Renew,Contract_Expire,DOE,Review_Period,Qualification,PreviousExperience,MRIExperience,ReportingPersonName,IncrementDetail,PercentOfGet,Increment_EffectiveDate,NoOfExtension,PMS_Form_Category from Employee_Master1 where EmployeeCode='" & empcode & "'"
                             If sqlselect(constr, strsql, "Abc") Then
                                 If ds.Tables("Abc").Rows.Count > 0 Then
                                     ' Response.Write(" <script> alert('Updated successfully' );window.location = '" + Request.RawUrl + "';</script>")
@@ -760,7 +530,7 @@ Public Class WebForm3
                             End If
 
                             'strsql = "Update Employee_Master set Category='" & category & "',EmployeeName='" & name & "',Designation='" & desig & "',Grade='" & grade & "',Department='" & dept & "',Section='" & sect & "',DOJ='" & doj & "',DOP='" & dop & "',DOC='" & doc & "',DOE='" & doe & "',Qualification='" & quali & "',PreviousExperience='" & preexp & "',ReportingPersonName='" & reppername & "',Review_Period='" & review & "',IncrementDetail='" & incredetail & "',PercentOfGet='" & percentofget & "',Increment_EffectiveDate='" & incrementdate & "',NoOfExtension='" & noextend & "',LeftDate='" & leftdt & "',MRIExperience='" & mriexp & "',Access_Power='" & empgrad & "'  where EmployeeCode='" & empcode & "'"
-                            strsql = "Update Employee_Master1 set Category='" & category & "',EmployeeName='" & name & "',Designation='" & desig & "',Grade='" & grade & "',Department='" & dept & "',Section='" & sect & "',DOJ='" & doj & "',DOT = '" & dot & "',DOP='" & dop & "',DOC='" & doc & "',Contract_Renew = '" & Contract_Renew & "',Contract_Expire = '" & Contract_Expire & "',DOE='" & doe & "',Qualification='" & quali & "',PreviousExperience='" & preexp & "',ReportingPersonName='" & reppername & "',Review_Period='" & review & "',IncrementDetail='" & incredetail & "',PercentOfGet='" & percentofget & "',Increment_EffectiveDate='" & incrementdate & "',NoOfExtension='" & noextend & "',MRIExperience='" & mriexp & "',PMS_Form_Category='" & PMS_Form_Category & "',Access_Power='" & empgrad & "'  where EmployeeCode='" & empcode & "'"
+                            strsql = "Update Employee_Master1 set Category='" & category.Trim & "',EmployeeName='" & name.Trim & "',Designation='" & desig.Trim & "',Grade='" & grade & "',Department='" & dept.Trim & "',Section='" & sect.Trim & "',DOJ='" & doj & "',DOT = '" & dot & "',DOP='" & dop & "',DOC='" & doc & "',Contract_Renew = '" & Contract_Renew & "',Contract_Expire = '" & Contract_Expire & "',DOE='" & doe & "',Qualification='" & quali & "',PreviousExperience='" & preexp & "',ReportingPersonName='" & reppername & "',Review_Period='" & review & "',IncrementDetail='" & incredetail & "',PercentOfGet='" & percentofget & "',Increment_EffectiveDate='" & incrementdate & "',NoOfExtension='" & noextend & "',MRIExperience='" & mriexp & "',PMS_Form_Category='" & PMS_Form_Category.Trim & "',Access_Power='" & empgrad & "'  where EmployeeCode='" & empcode & "'"
                             If sqlexe(constr, strsql) Then
 
                             End If
@@ -782,33 +552,7 @@ Public Class WebForm3
                 Dim sqlBulk As New SqlBulkCopy(constr)
                 ' Dim str As String = "[dbo]" + "." + "[" + "application1" + "]"
                 sqlBulk.DestinationTableName = "Employee_Master1"
-                'sqlBulk.ColumnMappings.Add("Category", "Category")
-                'sqlBulk.ColumnMappings.Add("Employee Code", "EmployeeCode")
-                'sqlBulk.ColumnMappings.Add("Department", "Department")
-                'sqlBulk.ColumnMappings.Add("DOJ", "DOJ")
-                'sqlBulk.ColumnMappings.Add("DOT", "DOT")
-                'sqlBulk.ColumnMappings.Add("DOP", "DOP")
-                'sqlBulk.ColumnMappings.Add("DOC", "DOC")
-                'sqlBulk.ColumnMappings.Add("Contract_Renew", "Contract_Renew")
-                'sqlBulk.ColumnMappings.Add("Contract_Expire", "Contract_Expire")
-                'sqlBulk.ColumnMappings.Add("DOE", "DOE")
-                'sqlBulk.ColumnMappings.Add("Review Period", "Review_Period")
-                'sqlBulk.ColumnMappings.Add("Qualification", "Qualification")
-                'sqlBulk.ColumnMappings.Add("Previous Experience", "PreviousExperience")
-                'sqlBulk.ColumnMappings.Add("MRI Experience", "MRIExperience")
-                'sqlBulk.ColumnMappings.Add("Reporting PersonName", "ReportingPersonName")
-                'sqlBulk.ColumnMappings.Add("Increment Paid/Not Paid", "IncrementDetail")
-                'sqlBulk.ColumnMappings.Add("Percentage of Getting", "PercentOfGet")
-                'sqlBulk.ColumnMappings.Add("Section", "Section")
-                'sqlBulk.ColumnMappings.Add("Designation", "Designation")
-                'sqlBulk.ColumnMappings.Add("Grade", "Grade")
-                'sqlBulk.ColumnMappings.Add("Employee Name", "EmployeeName")
-                'sqlBulk.ColumnMappings.Add("Increment Effective date", "Increment_EffectiveDate")
-                'sqlBulk.ColumnMappings.Add("No of Extension", "NoOfExtension")
-                'sqlBulk.ColumnMappings.Add("PMS_Form_Category", "PMS_Form_Category")
-                ''sqlBulk.ColumnMappings.Add("Left date", "LeftDate")
-                'sqlBulk.ColumnMappings.Add("Reg", "Reg")
-                'sqlBulk.ColumnMappings.Add("Access Power", "Access_Power")
+
 
                 sqlBulk.ColumnMappings.Add("Category", "Category")
                 sqlBulk.ColumnMappings.Add("Employee Code", "EmployeeCode")
@@ -845,44 +589,6 @@ Public Class WebForm3
                 ds.Clear()
 
             End Using
-            'Using con As New SqlConnection(constr)
-            '    con.Open()
-            '    Dim sqlBulk As New SqlBulkCopy(constr)
-            '    ' Dim str As String = "[dbo]" + "." + "[" + "application1" + "]"
-            '    sqlBulk.DestinationTableName = "Employee_Master1"
-            '    sqlBulk.ColumnMappings.Add("Category", "Category")
-            '    sqlBulk.ColumnMappings.Add("Employee Code", "EmployeeCode")
-            '    sqlBulk.ColumnMappings.Add("Employee Name", "EmployeeName")
-            '    sqlBulk.ColumnMappings.Add("Designation", "Designation")
-            '    sqlBulk.ColumnMappings.Add("Grade", "Grade")
-            '    sqlBulk.ColumnMappings.Add("Department", "Department")
-            '    sqlBulk.ColumnMappings.Add("Section", "Section")
-            '    sqlBulk.ColumnMappings.Add("DOJ", "DOJ")
-            '    sqlBulk.ColumnMappings.Add("DOT", "DOT")
-            '    sqlBulk.ColumnMappings.Add("DOP", "DOP")
-            '    sqlBulk.ColumnMappings.Add("DOC", "DOC")
-            '    sqlBulk.ColumnMappings.Add("Contract_Renew", "Contract_Renew")
-            '    sqlBulk.ColumnMappings.Add("Contract_Expire", "Contract_Expire")
-            '    sqlBulk.ColumnMappings.Add("DOE", "DOE")
-            '    sqlBulk.ColumnMappings.Add("Review Period", "Review_Period")
-            '    sqlBulk.ColumnMappings.Add("Qualification", "Qualification")
-            '    sqlBulk.ColumnMappings.Add("Previous Experience", "PreviousExperience")
-            '    sqlBulk.ColumnMappings.Add("MRI Experience", "MRIExperience")
-            '    sqlBulk.ColumnMappings.Add("Reporting PersonName", "ReportingPersonName")
-            '    sqlBulk.ColumnMappings.Add("Increment Paid/Not Paid", "IncrementDetail")
-            '    sqlBulk.ColumnMappings.Add("Percentage of Getting", "PercentOfGet")
-            '    sqlBulk.ColumnMappings.Add("Increment Effective date", "Increment_EffectiveDate")
-            '    sqlBulk.ColumnMappings.Add("No of Extension", "NoOfExtension")
-            '    sqlBulk.ColumnMappings.Add("PMS_Form_Category", "PMS_Form_Category")
-            '    'sqlBulk.ColumnMappings.Add("Left date", "LeftDate")
-            '    sqlBulk.ColumnMappings.Add("Reg", "Reg")
-            '    sqlBulk.ColumnMappings.Add("Access Power", "Access_Power")
-            '    sqlBulk.WriteToServer(dt)
-            '    Response.Write("<script language='javascript'>alert('Inserted Successfully');window.location = '" + Request.RawUrl + "';</script>")
-            '    con.Close()
-            '    ds.Clear()
-
-            'End Using
 
             fill()
         Catch ex As Exception
@@ -945,11 +651,6 @@ Public Class WebForm3
     Public Function RemoveSpecialCharacters(ByVal text As String) As String
         Return System.Text.RegularExpressions.Regex.Replace(text, "(\s+|\*|\#|\@|\$|\&)", "")
     End Function
-
-
-
-
-
 
 
 End Class

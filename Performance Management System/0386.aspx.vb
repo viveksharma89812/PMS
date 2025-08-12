@@ -21,6 +21,11 @@ Public Class WebForm10
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
+            'If Session("access power") = "" Then
+            '    Response.Redirect("login.aspx")
+            'End If
+            Session("empl code") = "124421"
+            Session("access power") = "4"
             If IsPostBack Then
                 result()
             End If
@@ -38,25 +43,7 @@ Public Class WebForm10
                     sectsign.Enabled = False
                 End If
             End If
-            'If empsign.Checked = True Then
-            '    '' Remote IP Address (useful for getting user's IP from public site; run locally it just returns localhost)  
-            '    'Dim remoteIpAddress As String = Request.ServerVariables("HTTP_X_FORWARDED_FOR")
-            '    'If (String.IsNullOrEmpty(remoteIpAddress)) Then
-            '    '    remoteIpAddress = Request.ServerVariables("REMOTE_ADDR")
-            '    'End If
-            '    'Response.Write("<em>Your Remote IP Address is:  " + remoteIpAddress + "</em><br />")
-            '    '' External IP Address (get your external IP locally)  
-            '    'Dim utf8 As New UTF8Encoding()
-            '    'Dim webClient As New WebClient()
-            '    'Dim externalIp As String = utf8.GetString(webClient.DownloadData("http://whatismyip.com/automation/n09230945.asp"))
-            '    'Response.Write("<h2>Your External IP Address is: " & externalIp & " </h2><br />")
-            '    '' Local IP Address (returns your internal IP address)  
-            '    'Dim hostName As String = System.Net.Dns.GetHostName()
-            '    'Dim myIPs As IPHostEntry = Dns.GetHostEntry(hostName)
-            '    'Response.Write("<em>Your Local IP Address is:  " & myIPs.AddressList(0).ToString() & "</em><br />")
 
-            '    GetIPAddress1()
-            'End If
             check()
             'strsql = "select * from Employee_Master where EmployeeCode='" & Session("empl code") & "' or EmployeeCode='" & Session("form empid") & "'"
             strsql = "select * from Employee_Master1 where EmployeeCode='" & Session("empl code") & "' or EmployeeCode='" & Session("form empid") & "'"
@@ -232,9 +219,7 @@ Public Class WebForm10
         For i As Integer = 0 To CheckBoxList5.Items.Count - 1
             CheckBoxList5.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
         Next
-        'For i As Integer = 0 To reviewstatus.Items.Count - 1
-        '    reviewstatus.Items(i).Attributes.Add("onclick", "MutExChkList(this)")
-        'Next
+
     End Sub
 
     Private Sub result()
@@ -262,64 +247,8 @@ Public Class WebForm10
             reviewstatus.SelectedValue = "Extend"
         End If
     End Sub
-    'Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-    '    Dim Tot, Tot1, Tot2, Tot3, Tot4, Gtot As Double
-    '    Tot = Double.Parse(scor1.Text)
-    '    Tot1 = Double.Parse(scor2.Text)
-    '    Tot2 = Double.Parse(scor3.Text)
-    '    Tot3 = Double.Parse(scor4.Text)
-    '    Tot4 = Double.Parse(scor5.Text)
-
-
-    '    Gtot = Tot + Tot1 + Tot2 + Tot3 + Tot4
-    '    Label20.Text = Gtot.ToString
-    'End Sub
-    'Public Overloads Overrides Sub VerifyRenderingInServerForm(ByVal control As Control)
-    '    ' Verifies that the control is rendered
-    'End Sub
-    'Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    '    Try
-    '        Response.ContentType = "application/pdf"
-    '        Response.AddHeader("content-disposition", "attachment;filename=Panel.pdf")
-    '        Response.Cache.SetCacheability(HttpCacheability.NoCache)
-    '        Dim sw As New StringWriter()
-    '        Dim hw As New HtmlTextWriter(sw)
-    '        Panel1.RenderControl(hw)
-    '        Dim sr As New StringReader(sw.ToString())
-    '        Dim pdfDoc As New Document(PageSize.A3, 8.0F, 10.0F, 100.0F, 0.0F)
-    '        Dim htmlparser As New HTMLWorker(pdfDoc)
-    '        PdfWriter.GetInstance(pdfDoc, Response.OutputStream)
-    '        pdfDoc.Open()
-    '        htmlparser.Parse(sr)
-    '        pdfDoc.Close()
-    '        Response.Write(pdfDoc)
-    '        Response.End()
-    '    Catch ex As Exception
-    '        Response.Write("<script language='javascript'>alert('" + Server.HtmlEncode(ex.Message) + "')</script>")
-    '    End Try
-    'End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles insert.Click
-
-
-        'If CheckBoxList1.SelectedValue = "" Then
-        '    Label21.Visible = "true"
-        '    Label21.Text = "Please select filed1"
-        'ElseIf CheckBoxList2.SelectedValue = "" Then
-        '    Label21.Visible = "true"
-        '    Label21.Text = "Please select filed2"
-        'ElseIf CheckBoxList3.SelectedValue = "" Then
-        '    Label21.Visible = "true"
-        '    Label21.Text = "Please select filed3"
-        'ElseIf CheckBoxList4.SelectedValue = "" Then
-        '    Label21.Visible = "true"
-        '    Label21.Text = "Please select field4"
-        'ElseIf CheckBoxList5.SelectedValue = "" Then
-        '    Label21.Visible = "true"
-        '    Label21.Text = "Please select filed5"
-
-        'Else
-        'End If
         Dim deptaccept As String = ""
         Dim sectaccept As String = ""
         If deptsign.Checked = True Then
@@ -356,7 +285,6 @@ Public Class WebForm10
                 ' clear()
             End If
         End If
-
     End Sub
 
     Protected Sub empsign_CheckedChanged(sender As Object, e As EventArgs) Handles empsign.CheckedChanged
@@ -365,10 +293,6 @@ Public Class WebForm10
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Messagebox", "alert('Submitted successfully');window.close()", True)
         End If
     End Sub
-
-    'Protected Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
-
-    'End Sub
     Public Shared Function GetIPAddress1() As String
         Dim context As System.Web.HttpContext = System.Web.HttpContext.Current
         Dim sIPAddress As String = context.Request.ServerVariables("HTTP_X_FORWARDED_FOR")
@@ -384,15 +308,9 @@ Public Class WebForm10
         Dim strHostName As String
 
         Dim strIPAddress As String
-
-
-
         strHostName = System.Net.Dns.GetHostName()
 
         strIPAddress = System.Net.Dns.GetHostByName(strHostName).AddressList(0).ToString()
-
-
-
         Label22.Text = "Host Name: " & strHostName & ", IP Address: " & strIPAddress & ""
     End Sub
 End Class
